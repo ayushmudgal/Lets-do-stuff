@@ -167,7 +167,7 @@ DEPENDENCIES
   annotate
   byebug
   coffee-rails (~> 4.1.0)
-  devise
+  devise (~> 3.5, >= 3.5.2)
   has_scope
   jbuilder (~> 2.0)
   jquery-rails
