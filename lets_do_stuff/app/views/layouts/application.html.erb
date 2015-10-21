@@ -9,7 +9,9 @@
 <body>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-
+<%= link_to "Sign up", new_user_registration_path %>
+<%= link_to "Sign in", new_user_session_path %>
+<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
 <%= yield %>
 
 </body>
