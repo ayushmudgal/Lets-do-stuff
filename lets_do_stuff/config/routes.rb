@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :user_infos
   resources :rooms
   resources :categories
   devise_for :users
@@ -13,7 +12,7 @@ Rails.application.routes.draw do
   # get 'login' => 'welcome#login'
   # get 'signup' => 'welcome#signup'
 
-  root 'user_infos#index'
+  root 'rooms#index'
   post 'submit' => 'rooms#index'
 
   # Example of regular route:
