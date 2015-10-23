@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :rooms
+  resources :categories
   devise_for :users
   get 'welcome/index'
 
