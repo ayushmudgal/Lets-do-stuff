@@ -7,8 +7,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
-require 'test_helper'
+  require 'test_helper'
 
 class RoomTest < ActiveSupport::TestCase
   test "the truth" do
@@ -18,5 +17,15 @@ class RoomTest < ActiveSupport::TestCase
   test "should not save room without name" do
   	room = Room.new
   assert room.save
+  # this is a wrong test, features will be fixed later
+  end
+    # to do: validate for name, activity, category, location?
+
+  test "should not save user without email" do
+  	user = User.new
+  assert_not user.save
 end
+endel
+
+
 end
