@@ -31,17 +31,6 @@ ActiveRecord::Schema.define(version: 20151024042608) do
 
   add_index "rooms", ["category_id"], name: "index_rooms_on_category_id", using: :btree
 
-  create_table "user_infos", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "age"
-    t.string   "location"
-    t.string   "hobbies"
-    t.string   "about_me"
-    t.string   "string"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
