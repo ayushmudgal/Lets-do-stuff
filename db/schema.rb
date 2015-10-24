@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151023220822) do
+ActiveRecord::Schema.define(version: 20151024005613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,20 +24,12 @@ ActiveRecord::Schema.define(version: 20151023220822) do
 
   create_table "rooms", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "category_id"
   end
 
-  create_table "user_infos", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "age"
-    t.string   "location"
-    t.string   "hobbies"
-    t.string   "about_me"
-    t.string   "string"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  add_index "rooms", ["category_id"], name: "index_rooms_on_category_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -62,4 +54,5 @@ ActiveRecord::Schema.define(version: 20151023220822) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "rooms", "categories"
 end
