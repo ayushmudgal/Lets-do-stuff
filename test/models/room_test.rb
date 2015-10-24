@@ -14,4 +14,9 @@ class RoomTest < ActiveSupport::TestCase
   test "the truth" do
     assert true
   end
+
+  test "should not save room without name" do
+  	room = Room.new
+  assert room.save
+end
 end
