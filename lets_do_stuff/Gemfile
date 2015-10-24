@@ -27,6 +27,7 @@ gem 'annotate'
 gem 'simple_form'
 gem 'kaminari'
 gem 'has_scope'
+gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -51,4 +52,6 @@ group :development do
 
   gem 'devise', '~> 3.5', '>= 3.5.2'
 end
+
+ruby "2.2.3"
 
