@@ -25,7 +25,5 @@ class RoomTest < ActiveSupport::TestCase
   	user = User.new
   assert_not user.save
 end
-endel
-
-
 end
+
