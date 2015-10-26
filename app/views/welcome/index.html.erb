@@ -4,11 +4,12 @@
 
     </head>
     
-    <h1>Welcome#index</h1>
-<!-- 
-    <body>
-        <a href="login">Log In!</button>
-        <a href="signup">Sign Up!</button>
-    </body> -->
+    <h1>Let's Do Stuff!</h1>
+
+    <% if current_user.present? %>
+    <%= link_to 'Create your own room', new_room_path %><br>
+    <%= link_to 'Browse rooms', rooms_path %><br>
+    <%= link_to 'Complete your profile', edit_user_path(current_user) %>
+    <% end %>
 
 </html>
