@@ -6,7 +6,21 @@
 
   <strong>Location:</strong>
   <%= @room.location %>
+
+  <strong>Category ID:</strong>
+  <%= @room.category_id %>
+
+  <strong>Description:</strong>
+  <%= @room.date %>
+
+  <strong>Time:</strong>
+  <%= @room.time %>
+
+  <strong>Private:</strong>
+  <%= @room.private %>
 </p>
+
+<%= link_to 'Join the room!', join_room_path(@room), method: :post %>
 
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>

@@ -61,6 +61,12 @@ class RoomsController < ApplicationController
     end
   end
 
+  def join
+    flash[:notice] = "You successfully joined the room!"
+    redirect_to room_path
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_room
@@ -69,7 +75,6 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:name)
-      params.require(:room).permit(:location)
+      params.require(:room).permit(:name, :location, :category_id, :description, :date, :time, :location, :private)
     end
 end
