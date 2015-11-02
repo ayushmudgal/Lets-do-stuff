@@ -62,8 +62,12 @@ class RoomsController < ApplicationController
   end
 
   def join
-    @UserRoom = UserRoom.create(user_id: current_user.id, room_id: params[:id])
-    flash[:notice] = "You successfully joined the room!"
+    if UserRoom.exists?(user_id: current_user.id, room_id: params[:id])
+      flash[:notice] = "You already joined the room!"
+    else
+      UserRoom.create(user_id: current_user.id, room_id: params[:id])
+      flash[:notice] = "You successfully joined the room!"
+    end
     redirect_to room_path
   end
 
