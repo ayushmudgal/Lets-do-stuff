@@ -10,6 +10,12 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @rooms = Room.where(id: 1)
+    UserRoom.where(user_id: current_user.id).
+    # Room.joins("LEFT OUTER JOIN user_rooms ON user_rooms.room_id = rooms.id")
+    # Room.joins(:room).where('user_rooms.room_id = rooms.id')
+    # User.includes(:vehicles).where(vehicles: { type: 'auto' })
+    # @rooms = Room.where(id: UserRoom.where(user_id: current_user.id))
   end
 
   # GET /users/new

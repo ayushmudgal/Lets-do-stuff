@@ -9,7 +9,9 @@
     <% if current_user.present? %>
     <%= link_to 'Create your own room', new_room_path %><br>
     <%= link_to 'Browse rooms', rooms_path %><br>
-    <%= link_to 'Complete your profile', edit_user_path(current_user) %>
+    <%= link_to 'Complete your profile', edit_user_path(current_user) 
+    	%><br>
+    <%= link_to 'My Profile', user_path(current_user) %>
     <% end %>
 
 </html>

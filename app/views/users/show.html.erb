@@ -3,22 +3,30 @@
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
-
+  <br>
   <strong>Age:</strong>
   <%= @user.age %>
-
+  <br>
   <strong>Location:</strong>
   <%= @user.location %>
-
+  <br>
   <strong>Hobbies:</strong>
   <%= @user.hobbies %>
-
+  <br>
   <strong>About_me:</strong>
   <%= @user.about_me %>
-
+  <br>
+  <strong>Rooms I have joined:</strong>
+  <%= @joined %>
+  <% @rooms.each do |room| %>
+      <tr>
+        <td><%= room.name %></td>
+      </tr>
+    <% end %>
+  <br>
 
 </p>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', root_path %>
+<%= link_to 'Edit my profile', edit_user_path(@user) %> |
+<%= link_to 'Home page', root_path %>

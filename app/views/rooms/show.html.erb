@@ -21,6 +21,8 @@
 </p>
 
 <%= link_to 'Join the room!', join_room_path(@room), method: :post %>
-
+<br>
+<%= link_to 'My Profile', user_path %>
+<br>
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>
