@@ -7,10 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to "Sign up", new_user_registration_path %>
-<%= link_to "Sign in", new_user_session_path %>
-<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+<div id="main">
+<div id="nav">
+	<%= link_to "Sign up", new_user_registration_path %>
+	<%= link_to "Sign in", new_user_session_path %>
+	<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+</div>
+
+<BR><BR>
 <%= yield %>
+</div>
 
 </body>
 </html>
