@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @rooms = Room.where(id: 1)
-    UserRoom.where(user_id: current_user.id).
+    UserRoom.where(user_id: current_user.id)
     # Room.joins("LEFT OUTER JOIN user_rooms ON user_rooms.room_id = rooms.id")
     # Room.joins(:room).where('user_rooms.room_id = rooms.id')
     # User.includes(:vehicles).where(vehicles: { type: 'auto' })
@@ -75,6 +75,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :age, :location, :hobbies, :about_me)
+      params.require(:user).permit(:name, :age, :location, :hobbies, :about_me, :avatar)
     end
 end
