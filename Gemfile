@@ -57,4 +57,8 @@ group :development do
   gem 'binding_of_caller'
 end
 
+group :development, :test do
+  gem 'rspec-rails',      ">= 2.0.0.beta"
+end
+
 ruby "2.2.3"
