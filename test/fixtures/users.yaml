@@ -38,7 +38,7 @@
 # two: {}
 #  column: value
 one:
-	id: 1
+#	id: 1
 	email: a@abc.com
 	name: Adam
 	age: 22
@@ -46,7 +46,7 @@ one:
 	hobbies: basketball, board games
 
 two:
-	id: 2
+#	id: 2
 	email: b@abc.com
 	name: Betsy
 	age: 19

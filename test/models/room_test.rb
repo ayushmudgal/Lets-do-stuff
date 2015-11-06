@@ -34,19 +34,18 @@ class RoomTest < ActiveSupport::TestCase
   # end
 
   test "room should belong to category" do
-    get rooms(:basketball).category
+    get rooms(:Basketball).category
     assert_equal(2, rooms(:basketball).category)
   end
 
-  test "room should have id" do
-    get rooms(:tennis).id
-    assert_equal(2, rooms(:tennis).id)
-  end
+  # test "room should have id" do
+  #   get rooms(:tennis).id
+  #   assert_equal(2, rooms(:tennis).id)
+  # end
 
   test "rooms should have name" do
-    get rooms(:boardgames).name
+    get rooms(:Boardgames).name
     assert_same('Boardgames', rooms(:boardgames).name)
   end
 
 end
-

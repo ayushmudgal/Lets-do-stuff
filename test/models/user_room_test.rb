@@ -16,10 +16,10 @@ class UserRoomTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-  test "userroom should have one id" do
-  	get user_rooms(:one).id
-  	assert_equal(1, user_rooms(:one).id)
-  end
+  # test "userroom should have one id" do
+  # 	get user_rooms(:one).id
+  # 	assert_equal(1, user_rooms(:one).id)
+  # end
 
   test "userroom should have one user_id" do
   	get user_rooms(:two).user_id

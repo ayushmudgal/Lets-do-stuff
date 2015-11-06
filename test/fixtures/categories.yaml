@@ -11,9 +11,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 entertainment:
-	id: 1
 	name: Entertainment
-
 sports:
-	id: 2
 	name: Sports
