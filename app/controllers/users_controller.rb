@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @rooms = Room.where(id: 1)
+    @rooms = Room.where(id: 1) #shouldnt it be params?
     UserRoom.where(user_id: current_user.id)
     # Room.joins("LEFT OUTER JOIN user_rooms ON user_rooms.room_id = rooms.id")
     # Room.joins(:room).where('user_rooms.room_id = rooms.id')
@@ -70,7 +70,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = User.find(current_user.id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
