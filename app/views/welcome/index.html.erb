@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+    <link href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'> 
+  <link href='https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     </head>
     
     <h1>Let's Do Stuff!</h1>
 
+
+    <div id="content">
+    <div class="links">
     <% if current_user.present? %>
     <%= link_to 'Create your own room', new_room_path %><br>
     <%= link_to 'Browse rooms', rooms_path %><br>
@@ -15,5 +19,7 @@
     <br>
     <%= link_to 'Messages', messages_path %>
     <% end %>
+    </div>
+    </div>
 
 </html>

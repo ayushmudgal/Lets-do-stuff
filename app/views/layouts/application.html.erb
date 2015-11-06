@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LetsDoStuff</title>
+  <title>Let's Do Stuff</title>
+  <!-- <link href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'> 
+  <link href='https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext' rel='stylesheet' type='text/css'> -->
+  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' %>
+  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -15,7 +19,11 @@
 </div>
 
 <BR><BR>
+
+<div id="content">
 <%= yield %>
+</div>
+
 </div>
 
 </body>
