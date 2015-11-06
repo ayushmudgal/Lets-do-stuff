@@ -10,7 +10,4 @@
 #
 
 class UserRoom < ActiveRecord::Base
-	has :id
-	has :user_id
-	has :room_id
 end
