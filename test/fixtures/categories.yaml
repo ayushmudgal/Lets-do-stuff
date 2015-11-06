@@ -10,7 +10,7 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-entertainment:
-	name: Entertainment
-sports:
-	name: Sports
+# entertainment:
+# 	name: Entertainment
+# sports:
+# 	name: Sports
