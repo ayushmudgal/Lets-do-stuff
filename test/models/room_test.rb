@@ -34,7 +34,6 @@ class RoomTest < ActiveSupport::TestCase
   # end
 
   test "room should belong to category" do
-    get rooms(:Basketball).category
     assert_equal(2, rooms(:basketball).category)
   end
 
@@ -44,7 +43,6 @@ class RoomTest < ActiveSupport::TestCase
   # end
 
   test "rooms should have name" do
-    get rooms(:Boardgames).name
     assert_same('Boardgames', rooms(:boardgames).name)
   end
 

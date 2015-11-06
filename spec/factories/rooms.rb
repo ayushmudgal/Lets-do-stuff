@@ -14,6 +14,10 @@
 #  private     :boolean
 #
 
-class Room < ActiveRecord::Base
-    belongs_to :category
+FactoryGirl.define do
+  factory :room do
+    # name "happy"
+    # location "school"
+    # private true
+  end
 end

@@ -14,6 +14,14 @@
 #  private     :boolean
 #
 
-class Room < ActiveRecord::Base
-    belongs_to :category
+require 'spec_helper'
+
+describe Room do
+	describe 'instantiation' do
+    	let!(:room) { build(:room) }
+
+    	it 'instantiates a room' do
+      	expect(room.class.name).to eq("Room")
+    end
+  end
 end
