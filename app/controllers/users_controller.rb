@@ -25,7 +25,6 @@ class UsersController < ApplicationController
     # User.includes(:vehicles).where(vehicles: { type: 'auto' })
     # @rooms = Room.where(id: UserRoom.where(user_id: current_user.id))
   end
-
   # GET /users/new
   def new
     @user = User.new
