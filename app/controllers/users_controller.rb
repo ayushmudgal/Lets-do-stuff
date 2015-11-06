@@ -10,8 +10,16 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @rooms = Room.where(id: 1)
-    UserRoom.where(user_id: current_user.id)
+    @rooms = Room.all
+    @joined = UserRoom.where(user_id: current_user.id)
+    @finaljoin = ""
+    @joined.each do |join|
+      if @finaljoin != ""
+        @finaljoin = @finaljoin + ", " + @rooms.find(join.room_id).name
+      else
+        @finaljoin = @rooms.find(join.room_id).name
+      end
+    end
     # Room.joins("LEFT OUTER JOIN user_rooms ON user_rooms.room_id = rooms.id")
     # Room.joins(:room).where('user_rooms.room_id = rooms.id')
     # User.includes(:vehicles).where(vehicles: { type: 'auto' })
@@ -70,7 +78,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = User.find(current_user.id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
