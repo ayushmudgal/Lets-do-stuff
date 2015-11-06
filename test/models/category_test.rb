@@ -19,4 +19,9 @@ class CategoryTest < ActiveSupport::TestCase
   # 	get categories(:entertainment).count
   # 	assert_equal (categories
 
+  test "creates a category correctly" do
+  	category = Category.new(name: "new cat")
+  	assert true 
+  end
+
 end
