@@ -16,20 +16,20 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-basketball:
-	# id: 1
-	name: Basketball
-	category_id: 2
-	description: this is a room for Basketball
-
-tennis:
-	# id: 2
-	name: Tennis
-	category_id: 2
-	description: this is a room for tennis
-
-boardgames:
-	# id: 3
-	name: Boardgames
-	category_id: 1
-	description: this is a room for board games
+# basketball:
+# 	# id: 1
+# 	name: Basketball
+# 	category_id: 2
+# 	description: this is a room for Basketball
+#
+# tennis:
+# 	# id: 2
+# 	name: Tennis
+# 	category_id: 2
+# 	description: this is a room for tennis
+#
+# boardgames:
+# 	# id: 3
+# 	name: Boardgames
+# 	category_id: 1
+# 	description: this is a room for board games
