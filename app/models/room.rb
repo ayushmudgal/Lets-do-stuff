@@ -16,4 +16,6 @@
 
 class Room < ActiveRecord::Base
     belongs_to :category
+    has :id
+    has :name
 end

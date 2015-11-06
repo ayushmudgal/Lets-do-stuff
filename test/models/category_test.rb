@@ -14,4 +14,9 @@ class CategoryTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+
+  # test "category has at least one room" do
+  # 	get categories(:entertainment).count
+  # 	assert_equal (categories
+
 end

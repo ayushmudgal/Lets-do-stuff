@@ -16,8 +16,20 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+basketball:
+	id: 1
+	name: Basketball
+	category_id: 2
+	description: basketball
 
-two:
-  name: MyString
+tennis:
+	id: 2
+	name: Tennis
+	category_id: 2
+	description: tennis
+
+boardgames:
+	id: 3
+	name: Boardgames
+	category_id: 1
+	description: board games

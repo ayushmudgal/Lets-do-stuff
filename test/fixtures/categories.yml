@@ -10,8 +10,10 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+entertainment:
+	id: 1
+	name: Entertainment
 
-two:
-  name: MyString
+sports:
+	id: 2
+	name: Sports

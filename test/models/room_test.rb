@@ -21,16 +21,32 @@ class RoomTest < ActiveSupport::TestCase
     assert true
   end
 
-  test "should not save room without name" do
-  	room = Room.new
-  assert room.save
-  # this is a wrong test, features will be fixed later
-  end
-    # to do: validate for name, activity, category, location?
+  # test "should not save room without name" do
+  # 	room = Room.new
+  # assert room.save
+  # # this is a wrong test, features will be fixed later
+  # end
+  #   # to do: validate for name, activity, category, location?
 
-  test "should not save user without email" do
-  	user = User.new
-  assert_not user.save
-end
+  # test "should not save user without email" do
+  # 	user = User.new
+  # assert_not user.save
+  # end
+
+  test "room should belong to category" do
+    get rooms(:basketball).category
+    assert_equal(2, rooms(:basketball).category)
+  end
+
+  test "room should have id" do
+    get rooms(:tennis).id
+    assert_equal(2, rooms(:tennis).id)
+  end
+
+  test "rooms should have name" do
+    get rooms(:boardgames).name
+    assert_same('Boardgames', rooms(:boardgames).name)
+  end
+
 end
 
