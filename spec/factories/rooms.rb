@@ -13,11 +13,12 @@
 #  location    :string
 #  private     :boolean
 #
+require 'faker'
 
 FactoryGirl.define do
   factory :room do
-    # name "happy"
-    # location "school"
-    # private true
+    name {Faker::Internet.user_name}
+    location {Faker::Internet.name}
+    private true
   end
 end

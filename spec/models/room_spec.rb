@@ -22,6 +22,9 @@ describe Room do
 
     	it 'instantiates a room' do
       	expect(room.class.name).to eq("Room")
-    end
+      end
+      it "create valid room" do    
+    		FactoryGirl.build(:user, name: "happy").should be_valid
+  		end	
   end
 end
