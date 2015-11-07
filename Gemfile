@@ -48,6 +48,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem "factory_girl_rails", "~> 4.0"
+  gem 'selenium-webdriver', '~> 2.48', '>= 2.48.1'
+  gem 'capybara'
+  gem 'rspec-rails',      ">= 2.0.0.beta"
 end
 
 group :development do
@@ -60,8 +63,4 @@ group :development do
   gem 'binding_of_caller'
 end
 
-group :development, :test do
-  gem 'rspec-rails',      ">= 2.0.0.beta"
-end
-
-ruby "2.1.2"
+ruby "2.2.3"

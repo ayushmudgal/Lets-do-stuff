@@ -1,0 +1,10 @@
+require "spec/ruby"
+require "spec/runner"
+
+# output T/F as Green/Red
+ENV['RSPEC_COLOR'] = 'true'
+
+require "Join & Make & Join 2 rooms"
+require "Log in and Make Room"
+require "Login, Create, & Delete a Room"
+require "Log In & Send Message"
