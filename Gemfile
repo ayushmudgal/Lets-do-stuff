@@ -64,4 +64,4 @@ group :development, :test do
   gem 'rspec-rails',      ">= 2.0.0.beta"
 end
 
-ruby "2.2.3"
+ruby "2.1.2"

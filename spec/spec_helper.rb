@@ -21,6 +21,8 @@ require 'factory_girl'
 
 require_relative '../lib/models/room'
 require_relative '../spec/factories/rooms.rb'
+require_relative '../lib/models/user'
+require_relative '../spec/factories/users.rb'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
