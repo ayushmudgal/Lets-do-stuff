@@ -36,23 +36,23 @@ describe User do
       	expect(user.class.name).to eq("User")
     end
 
-    it "create invalid sign_in_count" do    
+    it "create invalid sign_in_count" do
     	FactoryGirl.build(:user, sign_in_count: "").should_not be_valid
-  	end	
+  	end
 
-    it "create valid user" do    
+    it "create valid user" do
     	FactoryGirl.build(:user).should be_valid
-  	end	
+  	end
 
-  	it "create invalid user hobby" do    
-    	FactoryGirl.build(:user).should be_valid
-  	end	
+  	it "create invalid user hobby" do
+    	FactoryGirl.build(:user, hobbies:1).should_not be_valid
+  	end
 
-  	it "invalid empty password" do    
+  	it "invalid empty password" do
     	FactoryGirl.build(:user, password: "").should_not be_valid
   	end
 
-  	it "email already exists" do    
+  	it "email already exists" do
 	    email = "ayyy@lmao.edu"
 	  	FactoryGirl.create(:user, email: email)
 	  	FactoryGirl.build(:user, email: email).should_not be_valid
@@ -61,4 +61,3 @@ describe User do
 
   end
 end
-
