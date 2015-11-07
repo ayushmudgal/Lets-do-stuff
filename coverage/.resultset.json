@@ -1,15 +1,15 @@
 {
   "RSpec": {
     "coverage": {
-      "/vagrant/Lets-do-stuff/lib/models/room.rb": [
+      "/Users/bofanchen1/Lets-do-stuff/lib/models/room.rb": [
         1,
         null
       ],
-      "/vagrant/Lets-do-stuff/lib/models/user.rb": [
+      "/Users/bofanchen1/Lets-do-stuff/lib/models/user.rb": [
         1,
         null
       ]
     },
-    "timestamp": 1446860390
+    "timestamp": 1446864295
   }
 }

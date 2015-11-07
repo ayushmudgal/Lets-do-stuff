@@ -16,4 +16,6 @@
 
 class Room < ActiveRecord::Base
     belongs_to :category
+
+    validates :name, presence: true, length: {maximum: 40}   
 end
