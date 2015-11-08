@@ -32,6 +32,7 @@ gem 'has_scope'
 gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'rails_12factor', group: :production
 gem 'paperclip', '~> 4.3'
+gem 'jquery-turbolinks'
 gem 'rspec'
 gem 'faker'
 gem 'simplecov', :require => false, :group => :test
