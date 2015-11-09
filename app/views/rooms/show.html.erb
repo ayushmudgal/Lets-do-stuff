@@ -18,6 +18,8 @@
 
   <strong>Private:</strong>
   <%= @room.private %>
+
+  <%= render "messages/index" %>
 </p>
 
 <%= link_to 'Join the room!', join_room_path(@room), method: :post %>

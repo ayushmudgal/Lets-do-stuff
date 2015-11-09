@@ -1,4 +1,6 @@
 <%= form_for Message.new, remote: true do |f| %>
   <%= f.text_field :content %>
+  <%= f.hidden_field :user_id, :value => current_user.id%>
+  <%= f.hidden_field :room_id, :value => @room.id%>
   <%= f.submit "Send" %>
 <% end %>

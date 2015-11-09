@@ -14,6 +14,7 @@ class MessagesController < ApplicationController
 
   # GET /messages/new
   def new
+    puts "In New"
     @message = Message.new
   end
 
@@ -57,6 +58,6 @@ class MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:content)
+      params.require(:message).permit(:content, :room_id, :user_id)
     end
 end

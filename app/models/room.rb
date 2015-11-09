@@ -20,4 +20,6 @@ class Room < ActiveRecord::Base
     validates :name, presence: true, length: {maximum: 40} 
     validates :location, presence: true, length: { minimum: 6 }
   	validates :description, presence: true, length: { maximum: 255 }
+
+    has_many :messages
 end

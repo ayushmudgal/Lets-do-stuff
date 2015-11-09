@@ -1,4 +1,5 @@
 <li>
   <span class="created_at"><%= message.created_at.strftime("%H:%M") %></span>
+  <b><%= message.user.name %></b>
   <%= message.content %>
 </li>
