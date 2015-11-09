@@ -1,25 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @room.name %>
+  <div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><b><%= @room.name %></b></div>
+  <div class="panel-body">
+    <strong>Description:</strong>
+    <%= @room.description %>
+    <br>
+    <strong>Location:</strong>
+    <%= @room.location %>
+    <br>
+    <strong>Category:</strong>
+    <%= @room.category.name %>
+    <br>
+    <strong>Time:</strong>
+    <%= @room.time %>
+    <br>
+    <strong>Private:</strong>
+    <%= @room.private %>
+    <br>
+      <%= render "messages/index" %>
+  </div>
 
-  <strong>Location:</strong>
-  <%= @room.location %>
 
-  <strong>Category ID:</strong>
-  <%= @room.category_id %>
 
-  <strong>Description:</strong>
-  <%= @room.date %>
 
-  <strong>Time:</strong>
-  <%= @room.time %>
 
-  <strong>Private:</strong>
-  <%= @room.private %>
 
-  <%= render "messages/index" %>
 </p>
 
 <%= link_to 'Join the room!', join_room_path(@room), method: :post %>
