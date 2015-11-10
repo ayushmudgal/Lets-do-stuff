@@ -4,10 +4,11 @@
   <strong>Name:</strong>
   <%= @category.name %>
 
-  <% @rooms.each do |room| %>
+<!--   <% @rooms.each do |room| %>
     <br>
     <%= room.name %>
-  <% end %>
+  <% end %> -->
+  <%= render "rooms/index" %>
 </p>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
