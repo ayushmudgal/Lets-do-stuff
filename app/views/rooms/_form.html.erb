@@ -8,7 +8,7 @@
     <%= f.input :date %>
     <%= f.input :time %>
     <%= f.input :location %>
-    <%= f.input :category %>
+    <b>Category</b><br><%= f.collection_select :category_id, Category.order(:name),:id,:name %>
   </div>
 
   <div class="form-actions">

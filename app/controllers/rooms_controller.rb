@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
   # GET /rooms/1
   # GET /rooms/1.json
   def show
-    
+    @messages = Message.all
   end
 
   # GET /rooms/new
@@ -25,6 +25,7 @@ class RoomsController < ApplicationController
   # POST /rooms
   # POST /rooms.json
   def create
+    puts room_params
     @room = Room.new(room_params)
 
     respond_to do |format|
@@ -81,6 +82,6 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:name, :location, :category_id, :description, :date, :time, :location, :private)
+      params.require(:room).permit(:name, :location, :category_id, :description, :date, :time, :location, :private, :category)
     end
 end

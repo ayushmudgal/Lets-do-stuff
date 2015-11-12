@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+category_names = [
+  { name: 'Sports' },
+  { name: 'Entertainment' },
+  { name: 'Food' },
+  { name: 'Exercise' }
+]
+
+category_names.each do |cat|
+  Category.create(cat) unless Category.where(cat).first
+end

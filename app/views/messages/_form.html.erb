@@ -1,11 +1,6 @@
-<%= simple_form_for(@message) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+<%= form_for Message.new, remote: true do |f| %>
+  <%= f.text_field :content %>
+  <%= f.hidden_field :user_id, :value => current_user.id%>
+  <%= f.hidden_field :room_id, :value => @room.id%>
+  <%= f.submit "Send" %>
 <% end %>

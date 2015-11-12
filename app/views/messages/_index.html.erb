@@ -1,0 +1,9 @@
+<!-- <h1>Chat</h1> -->
+
+<ul id="chat">
+  <%= render @messages %>
+</ul>
+
+<%= render "messages/form" %>
+
+<%= subscribe_to '/messages/new' %>

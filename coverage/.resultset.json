@@ -1,15 +1,27 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
       "/Users/Zhuosi/Documents/cs169:294_Software_Engineering/project/Lets-do-stuff/lib/models/room.rb": [
         1,
         null
       ],
       "/Users/Zhuosi/Documents/cs169:294_Software_Engineering/project/Lets-do-stuff/lib/models/user.rb": [
+=======
+      "/Users/bofanchen1/Lets-do-stuff/lib/models/room.rb": [
+        1,
+        null
+      ],
+      "/Users/bofanchen1/Lets-do-stuff/lib/models/user.rb": [
+>>>>>>> 07ce47c472120a69501537afb2efc2557ce19dd5
         1,
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1446864077
+=======
+    "timestamp": 1446864295
+>>>>>>> 07ce47c472120a69501537afb2efc2557ce19dd5
   }
 }

@@ -6,6 +6,8 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  content    :text
+#  room_id    :integer
+#  user_id    :integer
 #
 
 require 'test_helper'

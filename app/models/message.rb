@@ -6,8 +6,11 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  content    :text
+#  room_id    :integer
+#  user_id    :integer
 #
 
 class Message < ActiveRecord::Base
-    # attr_accessible :content
+    belongs_to :room
+    belongs_to :user
 end

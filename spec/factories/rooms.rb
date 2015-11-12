@@ -16,9 +16,14 @@
 require 'faker'
 
 FactoryGirl.define do
-  factory :room do
-    name {Faker::Internet.user_name}
-    location {Faker::Internet.name}
-    private true
+  factory :room do |f|
+    f.name {Faker::Internet.user_name}
+    f.location {Faker::Internet.name}
+    f.category_id 3
+    f.description "Happy Room"
+    f.date {Faker::Date.forward(23)}
+    f.time {Faker::Date.forward(23)}
+
+    f.private true
   end
 end
