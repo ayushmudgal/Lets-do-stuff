@@ -1,5 +1,12 @@
 class WelcomeController < ApplicationController
   def index
     @categories = Category.all
-  end
+   if current_user.present?
+	   if current_user.name == "name"
+	   		@name = ""
+	   	else
+	   		@name = current_user.name.to_s + "'s Page"
+	  	end
+	  end
+	end
 end
