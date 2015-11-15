@@ -6,20 +6,21 @@
    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' %>
   <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext' %>
     </head>
-    
+
     <h1>Let's Do Stuff!</h1>
 
-    <h2><% if current_user.present? %>
-        <div><%= @name %></div>
-    <% end %></h2>
+    <% if current_user.present? %>
+        <h1>
+        <div><%= @name %></div> </h1>
+    <% end %>
 
-    <%= render "categories/index" %> 
+    <%= render "categories/index" %>
     <div id="content"/>
     <div class="links"/>
     <% if current_user.present? %>
     <%= link_to 'Create your own room', new_room_path %><br>
    <!--  <%= link_to 'Browse rooms', rooms_path %><br> -->
-  <!--   <%= link_to 'Complete your profile', edit_user_path(current_user) 
+  <!--   <%= link_to 'Complete your profile', edit_user_path(current_user)
     	%><br> -->
     <%= link_to 'My Profile', user_path(current_user) %>
     <br>
