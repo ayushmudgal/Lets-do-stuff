@@ -24,10 +24,6 @@
   </div>
 
 
-
-
-
-
 </p>
 
 <%= link_to 'Join the room!', join_room_path(@room), method: :post %>
@@ -35,4 +31,5 @@
 <%= link_to 'My Profile', user_path %>
 <br>
 <%= link_to 'Edit', edit_room_path(@room) %> |
+<%= link_to 'Destroy', method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', categories_path.to_s + "/" + @toback.to_s %>
