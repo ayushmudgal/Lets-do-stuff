@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <!-- <h1>Listing Categories</h1> -->
+<%= 'List of categories' %>
+</br>
 <table>
   <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td><%= category.name %></td>
-        <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<td>
-        <td><%= link_to 'Show', category %></td>
+        <td><%= link_to (category.name), category %></td>
         <!-- <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
