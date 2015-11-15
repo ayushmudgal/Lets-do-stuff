@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Rooms in :</strong>
-  <%= @category.name %>
+  <!-- <strong>Name:</strong> -->
+
+  <% @cateroyNam = @category.name %>
 
 <!--   <% @rooms.each do |room| %>
     <br>
@@ -11,4 +12,5 @@
   <%= render "rooms/index" %>
 </p>
 
+<%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', root_path %>
