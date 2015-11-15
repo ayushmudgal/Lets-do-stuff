@@ -7,15 +7,16 @@
   <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext' %>
     </head>
 
-    <h1>Let's Do Stuff!</h1>
+    <h1>Let's Do Stuff!
+    </h1>
 
     <% if current_user.present? %>
         <div><%= @name %></div>
+        <%= render "categories/index" %>
     <% end %>
 
-    <%= render "categories/index" %>
-    <div id="content"/>
-    <div class="links"/>
+    <div id="content">
+    <div class="links">
     <% if current_user.present? %>
     <%= link_to 'Create your own room', new_room_path %><br>
    <!--  <%= link_to 'Browse rooms', rooms_path %><br> -->

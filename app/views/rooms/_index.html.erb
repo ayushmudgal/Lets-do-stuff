@@ -3,11 +3,17 @@
 <h1> <%= @cateroyNam %> rooms</h1>
 
 <table>
+
   <tbody>
     <% @rooms.each do |room| %>
       <tr>
-        <td><%= link_to (room.name), room %></td>
+        <td><%= room.name %></td>
         <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<td>
+        <td><%= link_to 'Show', room %></td>
+        <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<td>
+        <td><%= link_to 'Edit', edit_room_path(room) %></td>
+        <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<td>
+        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
