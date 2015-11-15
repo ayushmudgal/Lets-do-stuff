@@ -7,9 +7,8 @@
   <tbody>
     <% @rooms.each do |room| %>
       <tr>
-        <td><%= room.name %></td>
         <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<td>
-        <td><%= link_to 'Show', room %></td>
+        <td><%= link_to (room.name), room %></td>
         <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<td>
         <td><%= link_to 'Edit', edit_room_path(room) %></td>
         <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<td>
