@@ -68,6 +68,6 @@ group :development do
 end
 
 
-#ruby "2.2.3"
-ruby "2.1.2" #FOR AYUSH ONLY 
+ruby "2.2.3"
+#ruby "2.1.2" #FOR AYUSH ONLY 
 
