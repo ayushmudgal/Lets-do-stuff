@@ -11,6 +11,7 @@ class RoomsController < ApplicationController
   # GET /rooms/1.json
   def show
     @messages = Message.all
+    @toback = @room.category_id
   end
 
   # GET /rooms/new
@@ -56,8 +57,7 @@ class RoomsController < ApplicationController
   # DELETE /rooms/1
   # DELETE /rooms/1.json
   def destroy
-    @room.destroy
-    respond_to do |format|
+Ω    respond_to do |format|
       format.html { redirect_to rooms_url, notice: 'Room was successfully destroyed.' }
       format.json { head :no_content }
     end
