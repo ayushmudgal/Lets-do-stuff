@@ -13,9 +13,12 @@
 <body>
 <div id="main">
 <div id="nav">
-	<%= link_to "Sign up", new_user_registration_path %>
-	<%= link_to "Sign in", new_user_session_path %>
-	<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+  <% if current_user.present? %>
+	 <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+  <%else%>
+  <%= link_to "Sign up", new_user_registration_path %>
+  <%= link_to "Sign in", new_user_session_path %>
+  <%end%>
 </div>
 
 <BR><BR>

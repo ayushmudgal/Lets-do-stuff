@@ -4,12 +4,13 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    @messages = Message.find(room_id: params[:id])
   end
 
   # GET /messages/1
   # GET /messages/1.json
   def show
+    @message = Message.find(room_id: params[:id])
   end
 
   # GET /messages/new
