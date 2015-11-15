@@ -10,8 +10,7 @@
     <h1>Let's Do Stuff!</h1>
 
     <% if current_user.present? %>
-        <h1>
-        <div><%= @name %></div> </h1>
+        <div><%= @name %></div>
     <% end %>
 
     <%= render "categories/index" %>
