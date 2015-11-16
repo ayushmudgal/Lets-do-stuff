@@ -7,7 +7,7 @@ gem 'rails', '4.2.4'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-gem 'sass'
+# gem 'sass'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -39,7 +39,7 @@ gem 'thin'
 gem 'rspec'
 gem 'faker'
 gem 'simplecov', :require => false, :group => :test
-gem 'google-webfonts-rails', '~> 0.0.4'
+# gem 'google-webfonts-rails', '~> 0.0.4'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
