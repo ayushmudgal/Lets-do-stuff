@@ -7,6 +7,9 @@ $orange: #F38630;
 $orange2: #FA6900;
 */
 
+@import url(https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext);
+
 html, body {
   margin: 0 auto;
   position: relative;
@@ -15,8 +18,8 @@ html, body {
   background-color: #69D2E7;
 }
 body {
-    color: #333;
-    font-family: 'Slabo 27px', serif;
+  color: #333;
+  font-family: 'Slabo 27px', serif;
 /*  font-family: verdana, arial, helvetica, sans-serif;*/
   font-size: 15px;
 /*  line-height: 18px;*/
@@ -50,16 +53,16 @@ a:visited {
 h1 {
   margin: 0 auto;
   text-align: center;
+  font-family: 'Lobster', cursive;
   font-weight: bold;
   border-bottom: 2px black solid;
   padding-top: 10px;
   padding-bottom: -5px;
   text-transform: capitalize;
-  text-shadow: 1px 1px rgba(105,210,231,1);
-  font-family: 'Lobster', cursive;
   letter-spacing: 1px;
   color: rgba(250,105,0,1);
   font-size: 45px;
+  text-shadow: 1px 1px rgba(105,210,231,1);
 }
 
 
