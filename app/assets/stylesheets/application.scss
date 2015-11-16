@@ -26,7 +26,8 @@ $orange2: #FA6900;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext);
-@import url(https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext);
+/*@import url(https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext);*/
+@import url(https://fonts.googleapis.com/css?family=Arvo);
 
 html, body {
   margin: 0 auto;
@@ -38,16 +39,17 @@ html, body {
 body {
   background-color: #69D2E7;
   color: #333;
-  font-family: 'Slabo 27px', serif;
+  /*font-family: 'Slabo 27px', serif;*/
+  font-family: 'Arvo', serif;
 /*  font-family: verdana, arial, helvetica, sans-serif;*/
-  font-size: 20px;
+  font-size: 18px;
 /*  line-height: 18px;*/
 }
 
 p, ol, ul, td {
   /*font-family: verdana, arial, helvetica, sans-serif;*/
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 18px;
+  line-height: 20px;
 }
 
 pre {
@@ -58,17 +60,25 @@ pre {
 
 a {
   color: #000;
+  -webkit-transition: color 0.5s; /* Safari */
+   transition: color 0.5s;
 }
 
 a:visited {
     color: #666;
+    -webkit-transition: color 0.5s; /* Safari */
+    transition: color 0.5s;
 }
 
  a:hover {
-    color: #fff;
-    text-shadow: 0px 0px 2px #fff;
-    background-color: rgba(167,219,216,1);
+    /*color: #fff;*/
+    color: $orange2;
+    text-shadow: 0px 0px 2px $orange2;
+    /*background-color: rgba(167,219,216,1);*/
     text-decoration: none;
+    font-weight: bold;
+    -webkit-transition: color 0.5s; /* Safari */
+    transition: color 0.5s;
 }
 
 h1 {
