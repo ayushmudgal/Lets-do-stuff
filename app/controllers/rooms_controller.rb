@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
   # GET /rooms/1
   # GET /rooms/1.json
   def show
-    @messages = Message.all
+    @messages = Message.where(room_id: params[:id])
     @toback = @room.category_id
   end
 
@@ -26,7 +26,6 @@ class RoomsController < ApplicationController
   # POST /rooms
   # POST /rooms.json
   def create
-    puts room_params
     @room = Room.new(room_params)
 
     respond_to do |format|
