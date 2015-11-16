@@ -16,8 +16,8 @@
 <body>
 <div id="main">
 <div id="nav">
+<%= link_to 'Home', root_path %>
   <% if current_user.present? %>
-  	<%= link_to 'Home', root_path %>
   	 <%= link_to 'Create your own room', new_room_path %>
     <%= link_to 'My Profile', user_path(current_user) %>
 	 <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
