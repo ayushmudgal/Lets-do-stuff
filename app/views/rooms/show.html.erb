@@ -17,8 +17,11 @@
     <strong>Time:</strong>
     <%= @room.time %>
     <br>
-    <strong>Private:</strong>
-    <%= @room.private %>
+    <% if @room.private %>
+        <strong>This is a private room~</strong>
+    <% else %>
+        <strong>This is not a private room~</strong>
+    <% end %>
     <br>
       <%= render "messages/index" %>
   </div>
