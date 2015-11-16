@@ -25,9 +25,10 @@
 
 
 </p>
-
-<%= link_to 'Join the room!', join_room_path(@room), method: :post %>
-<br>
+<% if !UserRoom.where(:user_id  => current_user.id, :room_id => @room.id).present? %>
+  <%= link_to 'Join the room!', join_room_path(@room), method: :post %>
+  <br>
+<% end %>
 <%= link_to 'My Profile', user_path %>
 <br>
 <%= link_to 'Edit', edit_room_path(@room) %> |
