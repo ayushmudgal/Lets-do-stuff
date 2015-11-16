@@ -2,19 +2,23 @@
 <html>
 <head>
   <title>Let's Do Stuff</title>
+<<<<<<< Updated upstream
+  <!--<link href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'> 
+  <link href='https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext' rel='stylesheet' type='text/css'> -->
+=======
   <link href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'> 
   <link href='https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext' rel='stylesheet' type='text/css'> 
+>>>>>>> Stashed changes
   <!--<%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' %>
   <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext' %>
   <link href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-  <%= google_webfonts_init({
-    google: ['Lobster', 'Slabo 27px']
-  }) %>-->
+  <link href='https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext' rel='stylesheet' type='text/css'>-->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
+<<<<<<< Updated upstream
+=======
 <!--<style type="text/css">
 html, body {
   margin: 0 auto;
@@ -44,10 +48,12 @@ h1 {
   text-shadow: 1px 1px rgba(105,210,231,1);
 }</style>-->
 
+>>>>>>> Stashed changes
 </head>
 <body>
 <div id="main">
 <div id="nav">
+<%= link_to 'Home', root_path %>
   <% if current_user.present? %>
   	 <%= link_to 'Create your own room', new_room_path %>
     <%= link_to 'My Profile', user_path(current_user) %>

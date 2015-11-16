@@ -14,13 +14,20 @@
  *= require_self
  */
 
+/*color palette: http://www.colourlovers.com/palette/92095/Giant_Goldfish*/
+
+$blue: #69D2E7;
+$blue2: #A7DBD8;
+$beige: #E0E4CC;
+$orange: #F38630;
+$orange2: #FA6900;
+
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext);
-@import url(https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext);
-
-@import url(https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext);
-@import url(https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext);
+/*@import url(https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext);*/
+@import url(https://fonts.googleapis.com/css?family=Arvo);
 
 html, body {
   margin: 0 auto;
@@ -32,16 +39,17 @@ html, body {
 body {
   background-color: #69D2E7;
   color: #333;
-  font-family: 'Slabo 27px', serif;
+  /*font-family: 'Slabo 27px', serif;*/
+  font-family: 'Arvo', serif;
 /*  font-family: verdana, arial, helvetica, sans-serif;*/
-  font-size: 15px;
+  font-size: 18px;
 /*  line-height: 18px;*/
 }
 
 p, ol, ul, td {
   /*font-family: verdana, arial, helvetica, sans-serif;*/
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 18px;
+  line-height: 20px;
 }
 
 pre {
@@ -52,15 +60,25 @@ pre {
 
 a {
   color: #000;
+  -webkit-transition: color 0.5s; /* Safari */
+   transition: color 0.5s;
 }
 
 a:visited {
     color: #666;
+    -webkit-transition: color 0.5s; /* Safari */
+    transition: color 0.5s;
 }
 
  a:hover {
-    color: #fff;
-    background-color: rgba(167,219,216,1);
+    /*color: #fff;*/
+    color: $orange2;
+    text-shadow: 0px 0px 2px $orange2;
+    /*background-color: rgba(167,219,216,1);*/
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-transition: color 0.5s; /* Safari */
+    transition: color 0.5s;
 }
 
 h1 {
@@ -99,13 +117,15 @@ div {
 #nav {
   position: fixed;
   z-index: 100;
+  margin: 0px 0 0 -20px;
   width: 90%;
-  margin: 0 auto;
+  /*left: -10px;*/
   top: 0px;
 /*  left: px;*/
   padding: 10px 20px 20px 0px;
   text-align: center;
-  border-top: 1px solid black;
+  /*border: 1px solid black;*/
+  /*border-top: 1px solid black;*/
   border-bottom: 1px solid black;
   background-color: rgba(167,219,216,1)
 }
