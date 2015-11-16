@@ -15,7 +15,6 @@ class MessagesController < ApplicationController
 
   # GET /messages/new
   def new
-    puts "In New"
     @message = Message.new
   end
 

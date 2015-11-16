@@ -11,7 +11,13 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @rooms = Room.where(category_id: params[:id])
+    @rooms = Room.where(category_id: params[:id]).where("private=?", false)
+    joined_rooms = UserRoom.where(user_id: current_user.id).where(category_id: params[:id])
+    joined_rooms.each do |room|
+      r = Room.where(id: room.room_id)
+      @rooms = @rooms.concat(r)
+    end
+    @rooms = @rooms.uniq
   end
 
   # GET /categories/new

@@ -22,4 +22,5 @@ class Room < ActiveRecord::Base
   	validates :description, presence: true, length: { maximum: 255 }
 
     has_many :messages, dependent: :destroy
+    has_many :user_rooms
 end

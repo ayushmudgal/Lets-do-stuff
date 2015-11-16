@@ -10,4 +10,5 @@
 
 class Category < ActiveRecord::Base
     has_many :rooms, dependent: :destroy
+    has_many :user_rooms
 end
