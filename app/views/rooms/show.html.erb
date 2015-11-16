@@ -30,9 +30,10 @@
 <% else %>
   <%= link_to 'Quit the room!', quit_room_path(@room), method: :post %>
 <% end %>
-  <br>
+  <!-- <br>
 <%= link_to 'My Profile', user_path %>
-<br>
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Destroy', method: :delete, data: { confirm: 'Are you sure?' } %> |
+<br> -->
+<!-- <%= link_to 'Edit', edit_room_path(@room) %> |
+<%= link_to 'Destroy', method: :delete, data: { confirm: 'Are you sure?' } %> | -->
+</br>
 <%= link_to 'Back', categories_path.to_s + "/" + @toback.to_s %>
