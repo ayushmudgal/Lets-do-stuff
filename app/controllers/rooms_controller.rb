@@ -73,13 +73,14 @@ class RoomsController < ApplicationController
   end
 
   def quit
-    # if UserRoom.exists?(user_id: current_user.id, room_id: params[:id])
-    #   # @currentUserRoom = UserRoom.where(user_id: current_user.id, room_id: params[:id])
-    #   # UserRoom.delete(  @currentUserRoom.id )
-    #    UserRoom.find(:user_id => ["user_id = ? and room_id - ?"], params[:current_user.id], params[params[:id]]).destroy
-    #   flash[:notice] = "You have quit the room!"
-    # end
+    if UserRoom.exists?(user_id: current_user.id, room_id: params[:id])
+      @currentUserRoom = UserRoom.where(user_id: current_user.id, room_id: params[:id])
+      UserRoom.delete(@currentUserRoom)
+       # UserRoom.find(:user_id => ["user_id = ? and room_id - ?"], params[:current_user.id], params[params[:id]).destroy
+      flash[:notice] = "You have quit the room!"
+    end
     # redirect_to room_path
+    redirect_to room_path 
   end
 
   private
