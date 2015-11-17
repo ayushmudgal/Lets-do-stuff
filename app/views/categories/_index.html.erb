@@ -1,13 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <!-- <h1>Listing Categories</h1> -->
+<<<<<<< Updated upstream
 <%= 'Categories' %>
 </br>
+=======
+	<br><div class="header"><%= 'List of categories' %></div>
+>>>>>>> Stashed changes
 <table>
   <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td><%= link_to (category.name), category %></td>
+        <td>
+        <%= link_to (category.name), category %>
+        </td>
         <!-- <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>

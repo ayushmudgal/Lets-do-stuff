@@ -90,16 +90,16 @@ a:visited {
 h1 {
   margin: 0 auto;
   text-align: center;
+  text-transform: capitalize;
   font-family: 'Lobster', cursive;
   font-weight: bold;
+  color: rgba(250,105,0,1);
+  text-shadow: 1px 1px rgba(105,210,231,1);
+  letter-spacing: 1px;
   border-bottom: 2px black solid;
   padding-top: 10px;
   padding-bottom: -5px;
-  text-transform: capitalize;
-  letter-spacing: 1px;
-  color: rgba(250,105,0,1);
   font-size: 45px;
-  text-shadow: 1px 1px rgba(105,210,231,1);
 }
 
 h2 {
@@ -175,6 +175,27 @@ div {
   text-transform: capitalize;
 }
 
+.navbar, .dropdown-menu {
+	/*position: fixed;*/
+  	z-index: 100;
+	background-color: rgba(167,219,216,1)
+}
+
+.navbar-brand {
+  text-transform: capitalize;
+  font-family: 'Lobster', cursive;
+  font-weight: bold;
+  color: rgba(250,105,0,1) !important;
+  text-shadow: 1px 1px rgba(105,210,231,1);
+  font-size: 30px !important;
+}
+
+.navbar a {
+  font-size: 18px;
+  /*padding: 0px 90px;*/
+  text-transform: capitalize;
+}
+
 #content {
     position: relative;
     padding-top: 10px;
@@ -188,12 +209,21 @@ div {
     text-align: center;
 }
 
-.links a:first-child::before {
-	font-weight: bold;
-	border-bottom: 1px solid black;
+.links table {
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
 }
 
-.links a {
+
+.links > .header{
+	font-weight: bold;
+	font-size: 20px;
+	/*border-bottom: 1px solid black;*/
+	text-transform: capitalize;;
+}
+
+.links td {
 	margin: 0 auto;
     position: relative;
     width: 100% !important;
@@ -201,8 +231,28 @@ div {
     padding: 0 10px;
 /*    margin: 100px;*/
     line-height: 30px;
-    background-color: rgba(167,219,216,1);
     text-align: center;
+}
+
+.links tr:nth-child(even){
+	background-color: $beige;
+}
+
+.links tr:nth-child(odd){
+	background-color: rgba(167,219,216,1);
+}
+
+.links td:hover {
+	/*border: 1px black solid;*/
+	background-color: white;
+	color: $orange2 !important;
+    text-shadow: 0px 0px 2px $orange2;
+    /*background-color: rgba(167,219,216,1);*/
+    font-weight: bold;
+    -webkit-transition: font-weight 0.5s; /* Safari */
+    transition: font-weight 0.5s;
+    -webkit-transition: text-shadow 0.5s; /* Safari */
+    transition: text-shadow 0.5s;
 }
 
 .nav2 {
