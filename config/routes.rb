@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   get 'login' ,to: 'welcome#login'
   get 'signup', to: 'welcome#signup'
+  get '/user/:id', to: 'users#show'
   post 'rooms/:id/join', to: 'rooms#join', as: 'join_room'
   post 'rooms/:id/delete', to: 'rooms#quit', as: 'quit_room'
   root 'welcome#index'
