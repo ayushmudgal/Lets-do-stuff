@@ -11,13 +11,18 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @rooms = Room.all
-    @joined = UserRoom.where(user_id: current_user.id)
+    if User.exists?(params[:id]) == false
+      flash[:notice] = "User does not exist"
+    end
+    @joined = UserRoom.where(user_id: params[:id])
     @finaljoin = ""
     @joined.each do |join|
-      if @finaljoin != ""
-        @finaljoin = @finaljoin + ", " + @rooms.find(join.room_id).name
-      else
-        @finaljoin = @rooms.find(join.room_id).name
+      if @rooms.exists?(join.room_id)
+        if @finaljoin != ""
+          @finaljoin = @finaljoin + ", " + @rooms.find(join.room_id).name
+        else
+          @finaljoin = @rooms.find(join.room_id).name
+        end
       end
     end
     # Room.joins("LEFT OUTER JOIN user_rooms ON user_rooms.room_id = rooms.id")
@@ -77,7 +82,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(current_user.id)
+      @user = User.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

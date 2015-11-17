@@ -35,5 +35,6 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   has_many :messages, dependent: :destroy
   has_many :user_rooms
+  include Amistad::FriendModel
   #### HAVE TO ADD AMISTAD
 end
