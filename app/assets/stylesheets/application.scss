@@ -214,12 +214,12 @@ div {
 .nav2 a {
 		display: inline-block;
 		text-align: center;
-	}
+}
 
 .nav2 a:first-child::after {
 		content: ' |';
 		visibility: visible;
-	}
+}	
 
 
 #notice {
