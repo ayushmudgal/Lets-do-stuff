@@ -39,6 +39,7 @@
         1,
         1,
         1,
+        null,
         null
       ],
       "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/helpers/application_helper.rb": [
@@ -46,6 +47,10 @@
         null
       ],
       "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/helpers/categories_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/helpers/friendships_helper.rb": [
         1,
         null
       ],
@@ -63,6 +68,72 @@
       ],
       "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/helpers/welcome_helper.rb": [
         1,
+        null
+      ],
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/controllers/friendships_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
         null
       ],
       "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/models/room.rb": [
@@ -94,6 +165,6 @@
         null
       ]
     },
-    "timestamp": 1447731014
+    "timestamp": 1447736229
   }
 }

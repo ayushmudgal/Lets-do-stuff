@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :categories
   devise_for :users
   resources :users
+  resources :friends, :controller => 'friendships', :except => [:show, :edit] do
+    get "requests", :on => :collection
+    get "invites", :on => :collection
+  end
   # get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
