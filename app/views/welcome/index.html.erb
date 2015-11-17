@@ -11,8 +11,9 @@
     </h1>
 
     <% if current_user.present? %>
-        <div><%= @name %></div>
-        <%= render "categories/index" %>
+    <h3><%= @name %></h3>
+        
+        <div class="links"><%= render "categories/index" %></div>
     <% end %>
 
     <div id="content">
