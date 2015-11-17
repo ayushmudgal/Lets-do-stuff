@@ -1,15 +1,99 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/bofanchen1/Lets-do-stuff/lib/models/room.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/models/user.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
         1,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/lib/models/user.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/helpers/categories_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/helpers/messages_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/helpers/rooms_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/helpers/welcome_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/models/room.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
         1,
         null
       ]
     },
-    "timestamp": 1447571677
+    "timestamp": 1447730073
   }
 }

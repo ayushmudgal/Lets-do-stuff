@@ -14,7 +14,7 @@
 #  private     :boolean
 #
 
-require 'spec_helper'
+require 'rails_helper'
 
 describe Room do
 	describe 'instantiation' do
@@ -24,13 +24,13 @@ describe Room do
       	expect(room.class.name).to eq("Room")
       end
       it "create valid room" do    
-    		FactoryGirl.build(:room, name: "happy").should be_valid
+    		build(:room, name: "happy").should be_valid
   		end	
   		it "create valid date" do    
-    		FactoryGirl.build(:room, date: "2015/11/06").should be_valid
+    		build(:room, date: "2015/11/06").should be_valid
   		end	
   		it "create valid location" do    
-    		FactoryGirl.build(:room, location: "Berkeley").should be_valid
+    		build(:room, location: "Berkeley").should be_valid
   		end	
 
   end
