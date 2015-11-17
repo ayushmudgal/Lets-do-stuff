@@ -62,12 +62,16 @@ a {
   color: #000;
   -webkit-transition: color 0.5s; /* Safari */
    transition: color 0.5s;
+   -webkit-transition: text-shadow 0.5s; /* Safari */
+   transition: text-shadow 0.5s;
 }
 
 a:visited {
     color: #666;
     -webkit-transition: color 0.5s; /* Safari */
     transition: color 0.5s;
+    -webkit-transition: text-shadow 0.5s; /* Safari */
+    transition: text-shadow 0.5s;
 }
 
  a:hover {
@@ -79,6 +83,8 @@ a:visited {
     font-weight: bold;
     -webkit-transition: color 0.5s; /* Safari */
     transition: color 0.5s;
+    -webkit-transition: text-shadow 0.5s; /* Safari */
+    transition: text-shadow 0.5s;
 }
 
 h1 {
@@ -96,6 +102,22 @@ h1 {
   text-shadow: 1px 1px rgba(105,210,231,1);
 }
 
+h2 {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  text-align: center;
+  /*font-family: 'Lobster', cursive;*/
+  font-weight: bold;
+  border-bottom: 1px black solid;
+  padding-top: 10px;
+  padding-bottom: -5px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  color: $orange;
+  font-size: 30px;
+  text-shadow: 1px 1px rgba(105,210,231,1);
+  /*background: $beige !important;*/
+}
 
 /*
 div {
@@ -158,8 +180,28 @@ div {
     background-color: rgba(167,219,216,1);
 }
 
+.nav2 {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+.nav2 a {
+		display: inline-block;
+		text-align: center;
+	}
+
+.nav2 a:first-child::after {
+		content: ' |';
+		visibility: visible;
+	}
+
+
 #notice {
+  text-align: center;
   color: green;
+  width: 100%;
+  background-color: $beige;
 }
 
 .field_with_errors {
@@ -177,7 +219,7 @@ div {
   background-color: #f0f0f0;
 }
 
-  h2 {
+#error_explanation h2 {
     text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
