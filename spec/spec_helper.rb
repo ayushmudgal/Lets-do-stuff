@@ -22,11 +22,6 @@ SimpleCov.start 'rails'
 require 'rubygems'
 require 'factory_girl'
 
-require_relative '../lib/models/room'
-require_relative '../spec/factories/rooms.rb'
-require_relative '../lib/models/user'
-require_relative '../spec/factories/users.rb'
-
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

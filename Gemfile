@@ -39,6 +39,7 @@ gem 'thin'
 gem 'rspec'
 gem 'faker'
 gem 'simplecov', :require => false, :group => :test
+gem 'amistad'
 # gem 'google-webfonts-rails', '~> 0.0.4'
 
 # Use ActiveModel has_secure_password
@@ -53,10 +54,13 @@ gem 'simplecov', :require => false, :group => :test
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem "factory_girl_rails", "~> 4.0"
+  gem 'factory_girl_rails', :require => false
   gem 'selenium-webdriver', '~> 2.48', '>= 2.48.1'
   gem 'capybara'
   gem 'rspec-rails',      ">= 2.0.0.beta"
+
+  gem 'pry'
+  gem 'pry-rescue'
 end
 
 group :development do
@@ -70,6 +74,6 @@ group :development do
 end
 
 
-ruby "2.2.3"
-#ruby "2.1.2" #FOR AYUSH ONLY 
+#ruby "2.2.3"
+ruby "2.1.2" #FOR AYUSH ONLY 
 

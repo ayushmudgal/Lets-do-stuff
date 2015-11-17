@@ -32,6 +32,14 @@ FactoryGirl.define do
   factory :user do
     email {Faker::Internet.email}
     encrypted_password {Faker::Internet.password}
-    private true
+  end
+
+  factory :room do |f|
+    f.name {Faker::Internet.user_name}
+    f.location {Faker::Internet.name}
+    f.category_id 3
+    f.description "Happy Room"
+    f.date {Faker::Date.forward(23)}
+    f.time {Faker::Date.forward(23)}
   end
 end
