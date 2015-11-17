@@ -7,10 +7,10 @@ class FriendshipsController < ApplicationController
   end
 
   def new
-    @users = User.all :conditions => ["id != ?", current_user.id]
+	@users = (User.find(:all, :conditions => ["id != ?", current_user.id]))
   end
 
-  def create	
+  def create
     invitee = User.find_by_id(params[:user_id])
     if current_user.invite invitee
       redirect_to new_friend_path, :notice => "Successfully invited friend!"

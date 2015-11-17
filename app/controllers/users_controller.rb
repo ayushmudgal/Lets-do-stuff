@@ -12,7 +12,6 @@ class UsersController < ApplicationController
   def show
     @rooms = Room.all
     if User.exists?(params[:id]) == false
-      flash[:notice] = "User does not exist"
     end
     @joined = UserRoom.where(user_id: params[:id])
     @finaljoin = ""
@@ -82,7 +81,12 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      if User.exists?(params[:id])
+        @user = User.find(params[:id])
+      else
+        flash[:notice] = "User does not exist"
+        @user = User.last
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
