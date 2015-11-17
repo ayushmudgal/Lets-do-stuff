@@ -119,6 +119,23 @@ h2 {
   /*background: $beige !important;*/
 }
 
+h3 {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  text-align: center;
+  /*font-family: 'Lobster', cursive;*/
+  font-weight: bold;
+  /*border-bottom: 1px black solid;*/
+  padding-top: 10px;
+  padding-bottom: -5px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  color: $orange;
+  font-size: 30px;
+  text-shadow: 1px 1px rgba(105,210,231,1);
+  /*background: $beige !important;*/
+}
+
 /*
 div {
   &.field, &.actions {
@@ -164,13 +181,20 @@ div {
 }
 
 .links {
+	width: 100%;
     position: relative;
     margin: 0 auto;
 /*    width: 500px;*/
     text-align: center;
 }
 
+.links a:first-child::before {
+	font-weight: bold;
+	border-bottom: 1px solid black;
+}
+
 .links a {
+	margin: 0 auto;
     position: relative;
     width: 100% !important;
     font-size: 20px;
@@ -178,6 +202,7 @@ div {
 /*    margin: 100px;*/
     line-height: 30px;
     background-color: rgba(167,219,216,1);
+    text-align: center;
 }
 
 .nav2 {
