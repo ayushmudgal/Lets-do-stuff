@@ -37,6 +37,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.3.8)
+    amistad (0.10.2)
     annotate (2.6.10)
       activerecord (>= 3.2, <= 4.3)
       rake (~> 10.4)
@@ -289,6 +290,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  amistad
   annotate
   autoprefixer-rails
   better_errors
