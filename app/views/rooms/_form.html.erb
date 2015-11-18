@@ -11,6 +11,7 @@
     <b>Category</b><br><%= f.collection_select :category_id, Category.order(:name),:id,:name %>
   </div>
 
+<br>
   <div class="form-actions">
     <%= f.button :submit %>
   </div>

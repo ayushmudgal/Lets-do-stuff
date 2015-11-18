@@ -283,15 +283,16 @@ div {
     transition: color 0.5s;
 }
 
-.nav2 {
+.nav1, .nav2 {
 	position: relative;
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
 }
-.nav2 a {
+.nav1 a, .nav2 a {
 		display: inline-block;
 		text-align: center;
+		letter-spacing: 3px;
 }
 
 .nav2 a:first-child::after {
@@ -306,6 +307,21 @@ div {
   width: 100%;
   background-color: $beige;
   padding: 10px 0;
+  font-weight: bold;
+}
+
+.alert, .alert-danger {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.btn {
+	-webkit-transition: color 0.5s; /* Safari */
+    transition: color 0.5s;
+    -webkit-transition: background 0.5s; /* Safari */
+    transition: background 0.5s;
+    -webkit-transition: background-color 0.5s; /* Safari */
+    transition: background-color 0.5s;
 }
 
 .field_with_errors {
