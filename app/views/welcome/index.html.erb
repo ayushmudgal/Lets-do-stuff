@@ -11,13 +11,13 @@
     <br>
     <h3><%= @name %></h3>
         <div class="links"><%= render "categories/index" %></div>
-    <% end %>
-
+    <% else %>
     <div class="about">
     <h3>About</h3>
     Welcome to Let's Do Stuff! This website enables you to find activities
     around you that you are interested in, by simply browsing and joining a variety of activity rooms listed up here. On Let's Do Stuff!, you can not only instantly engage in fun activities as a newcomer to the area, at the same time, it is a great platform to make friends. Who doesn't like people who share same interests? Without further ado, let's begin the journey!~
     </div>
+    <% end %>
     <!-- <div id="content">
     <div class="links">
     <% if current_user.present? %>

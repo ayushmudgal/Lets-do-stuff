@@ -2,3 +2,6 @@ bugs:
 
 - When I sign in, it tells me I'm signed in one page too late - I get it when I'm on Browse Rooms rather than the Home page
 - The description of a just-edited room (possibly all rooms) has a date. The time is also wrong - it says 1/1/2000 instead of today's date, which is in description.
+ 
+NEW: 
+- location validates for 6 characters - should be 5.
