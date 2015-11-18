@@ -9,13 +9,7 @@
   <div class="panel-heading"><b>  
   <%= link_to '< Back', categories_path.to_s + "/" + @toback.to_s %>&nbsp&nbsp 
   <h3><%=  @room.name %></h3>
-    </b></div>
-=======
-  <div class="panel-heading"><b>
-     <%= link_to 'Back', categories_path.to_s + "/" + @toback.to_s %>
-     &nbsp&nbsp
-     <%=  @room.name %></b>
->>>>>>> ad4b9ac016d9d761b547290b76bff6f8e2d2576c
+    </b>
   </div>
   <div class="panel-body">
     <strong>Description:</strong>
@@ -35,11 +29,6 @@
       This is a <b>private</b> room
     <% else %>
         This is not a private room
-=======
-        <strong>This is a private room</strong>
-    <% else %>
-        <strong>This is not a private room</strong>
->>>>>>> ad4b9ac016d9d761b547290b76bff6f8e2d2576c
     <% end %>
     <br><br>
 
