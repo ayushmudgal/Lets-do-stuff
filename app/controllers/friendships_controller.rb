@@ -13,11 +13,13 @@ class FriendshipsController < ApplicationController
   end
 
   def create
-    invitee = User.find_by_id(params[:user_id])
+    invitee = User.find_by_id(params[:user_id])	
     if current_user.invite invitee
-      redirect_to user_room_path, :notice => "Successfully invited friend!"
+    	redirection = "/user/" + params[:user_id].to_s
+      	redirect_to redirection, :notice => "Successfully invited friend!"
     else
-      redirect_to user_room_path, :notice => "Sorry! You can't invite that user!"
+    	redirection = "/user/" + params[:user_id].to_s
+     	redirect_to redirection, :notice => "Sorry! You can't invite that user!"
     end
   end
 

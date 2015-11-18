@@ -48,7 +48,11 @@
       <span class="pull-right">
         <!-- <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a> -->
 
-        <%= link_to "Send Friend Request", friend_path(@user), class: "btn btn-sm btn-warning", type: "button", :method => "put"%>
+        <% if current_user.friend_with? @user %>
+          <%= link_to "Already Friends", type: "button", class: "btn btn-sm btn-warning"%>
+        <%else %>
+           <%= link_to "Add friend?", friends_path(:user_id => params[:id]), class: "btn btn-sm btn-warning", type: "button", :method => "post"%>
+        <%end%> 
 
         <%= link_to edit_user_path(@user), class: "btn btn-sm btn-warning", type: "button", :data => {:toggle=>"tooltip"} do %>
             <i class="glyphicon glyphicon-edit"></i>

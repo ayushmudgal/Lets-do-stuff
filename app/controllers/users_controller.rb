@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @rooms = Room.all
+    @isfriend = @user.friend_with? current_user
     if User.exists?(params[:id]) == false
     end
     @joined = UserRoom.where(user_id: params[:id])
