@@ -4,6 +4,3 @@ bugs:
 - The description of a just-edited room (possibly all rooms) has a date. The time is also wrong - it says 1/1/2000 instead of today's date, which is in description.
 - The friend button styling inconsistencies
 - Change back button into an image button with a small arrow ( the class for back button is class="nav1" U can search for key words to find where are they)
-
-NEW:
-- location validates for 6 characters - should be 5.
