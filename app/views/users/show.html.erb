@@ -1,4 +1,6 @@
+<% if notice %>
 <p id="notice"><%= notice %></p>
+<% end %>
 
 <div class="container">
 
@@ -54,7 +56,8 @@
             <% elsif @user.pending_invited_by.include? current_user%>
               <%= link_to "Friend Request Sent", class: "btn btn-sm btn-warning", type: "button",%>
             <% elsif current_user.pending_invited_by.include? @user%>
-              <%= link_to "Confirm friend?", friend_path(@user), :method => "put"%> 
+              <%= link_to "Confirm friend?", friend_path(@user), class: "btn btn-sm btn-warning", type: "button", :method => "put"%> 
+              <%= link_to "Delete Request", friend_path(@user), class: "btn btn-sm btn-warning", type: "button", :method => "delete"%> 
             <% elsif !current_user.friend_with? @user%>
                <%= link_to "Add friend?", friends_path(:user_id => params[:id]), class: "btn btn-sm btn-warning", type: "button", :method => "post"%>
             <%end%> 

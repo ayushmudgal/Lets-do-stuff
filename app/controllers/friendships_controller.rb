@@ -17,7 +17,7 @@ class FriendshipsController < ApplicationController
     invitee = User.find_by_id(params[:user_id])	
     if current_user.invite invitee
     	redirection = "/user/" + params[:user_id].to_s
-      	redirect_to redirection, :notice => "Successfully invited friend!"
+      	redirect_to redirection, :notice => "Successfully sent friend request!"
     else
     	redirection = "/user/" + params[:user_id].to_s
      	redirect_to redirection, :notice => "Sorry! You can't invite that user!"
@@ -27,7 +27,7 @@ class FriendshipsController < ApplicationController
   def update
     inviter = User.find_by_id(params[:id])
     if current_user.approve inviter
-      	redirect_to user_room_path, :notice => "Successfully confirmed friend!"
+      	redirect_to user_room_path, :notice => "Successfully added friend!"
     else
       redirect_to user_room_path, :notice => "Sorry! Could not confirm friend!"
     end
@@ -44,7 +44,7 @@ class FriendshipsController < ApplicationController
   def destroy
     user = User.find_by_id(params[:id])
     if current_user.remove_friendship user
-      redirect_to user_room_path, :notice => "Successfully removed friend!"
+      redirect_to user_room_path, :notice => "Successfully deleted request!"
     else
       redirect_to user_room_path, :notice => "Sorry, couldn't remove friend!"
     end
