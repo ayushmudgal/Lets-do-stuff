@@ -300,6 +300,28 @@ div {
 		visibility: visible;
 }	
 
+#chat {
+	/*list-style: none;*/
+	width: 80%;
+	margin: 0 auto;
+	background-color: $beige;
+	padding: 10px;
+}
+
+#chat li {
+	margin: 0 auto;
+	font-size: 15px;
+	list-style-type: none;
+	left: 0;
+}
+
+#chat li:nth-child(odd){
+	background-color: white;
+}
+
+#chat li:nth-child(even){
+	background-color: $beige;
+}
 
 #notice {
   text-align: center;
@@ -323,6 +345,7 @@ div {
     -webkit-transition: background-color 0.5s; /* Safari */
     transition: background-color 0.5s;
 }
+
 
 .field_with_errors {
   padding: 2px;

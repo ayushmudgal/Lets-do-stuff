@@ -5,7 +5,11 @@
 <p>
   <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading"><b>  <%= link_to 'Back', categories_path.to_s + "/" + @toback.to_s %>&nbsp&nbsp <%=  @room.name %></b></div>
+  <div class="panel-heading"><b>  
+  <%= link_to '< Back', categories_path.to_s + "/" + @toback.to_s %>&nbsp&nbsp 
+  <h3><%=  @room.name %></h3>
+    </b></div>
+  </div>
   <div class="panel-body">
     <strong>Description:</strong>
     <%= @room.description %>
@@ -20,23 +24,31 @@
     <%= @room.time %>
     <br>
     <% if @room.private %>
-        <strong>This is a private room~</strong>
+      This is a <b>private</b> room
     <% else %>
-        <strong>This is not a private room~</strong>
+        This is not a private room
     <% end %>
-    <br>
-    <strong>&nbsp&nbsp&nbsp&nbspChat history:</strong>
+    <br><br>
+
+    <center>
+    <!-- <strong> -->
+    <!-- &nbsp&nbsp&nbsp&nbsp -->
+    <h3>Chat history:</h3>
+    <!-- </strong> -->
     <br>
       <%= render "messages/index" %>
+    </center>
   </div>
 
 
 </p>
+<div class="nav1">
 <% if !UserRoom.where(:user_id  => current_user.id, :room_id => @room.id).present? %>
-  <%= link_to 'Join the room!', join_room_path(@room), method: :post %>
+  <%= link_to 'Join room!', join_room_path(@room), method: :post %>
 <% else %>
-  <%= link_to 'Quit the room!', quit_room_path(@room), method: :post %>
+  <%= link_to 'Leave room!', quit_room_path(@room), method: :post %>
 <% end %>
+  </div>
   <!-- <br>
 <%= link_to 'My Profile', user_path %>
 <br> -->
