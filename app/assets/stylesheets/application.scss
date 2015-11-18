@@ -58,7 +58,7 @@ pre {
   font-size: 11px;
 }
 
-a {
+a, a:visited {
   color: #000;
   -webkit-transition: color 0.5s; /* Safari */
    transition: color 0.5s;
@@ -66,11 +66,20 @@ a {
    transition: text-shadow 0.5s;
 }
 
-a:visited {
-    color: #666;
-    -webkit-transition: color 0.5s; /* Safari */
+
+/*a:visited {
+    color: $orange;
+    -webkit-transition: color 0.5s; 
     transition: color 0.5s;
-    -webkit-transition: text-shadow 0.5s; /* Safari */
+    -webkit-transition: text-shadow 0.5s;
+    transition: text-shadow 0.5s;
+}*/
+
+a:active {
+    color: #666;
+    -webkit-transition: color 0.5s; 
+    transition: color 0.5s;
+    -webkit-transition: text-shadow 0.5s;
     transition: text-shadow 0.5s;
 }
 
@@ -98,7 +107,7 @@ h1 {
   letter-spacing: 1px;
   border-bottom: 2px black solid;
   padding-top: 10px;
-  padding-bottom: -5px;
+  padding-bottom: -8px;
   font-size: 45px;
 }
 
@@ -196,7 +205,7 @@ div {
   text-transform: capitalize;
 }
 
-#content {
+#content { 
     position: relative;
     padding-top: 10px;
 }
@@ -210,7 +219,7 @@ div {
 }
 
 .links table {
-	width: 100%;
+	width: 80%;
 	position: relative;
 	margin: 0 auto;
 }
@@ -220,7 +229,8 @@ div {
 	font-weight: bold;
 	font-size: 20px;
 	/*border-bottom: 1px solid black;*/
-	text-transform: capitalize;;
+	text-transform: capitalize;
+	letter-spacing: 3px;
 }
 
 .links td {
@@ -232,6 +242,13 @@ div {
 /*    margin: 100px;*/
     line-height: 30px;
     text-align: center;
+    letter-spacing: 3px;
+    -webkit-transition: font-weight 0.5s; /* Safari */
+    transition: font-weight 0.5s;
+    -webkit-transition: text-shadow 0.5s; /* Safari */
+    transition: text-shadow 0.5s;
+    webkit-transition: color 0.5s; /* Safari */
+    transition: color 0.5s;
 }
 
 .links tr:nth-child(even){
@@ -253,6 +270,17 @@ div {
     transition: font-weight 0.5s;
     -webkit-transition: text-shadow 0.5s; /* Safari */
     transition: text-shadow 0.5s;
+    webkit-transition: color 0.5s; /* Safari */
+    transition: color 0.5s;
+}
+
+.links a{
+	-webkit-transition: font-weight 0.5s; /* Safari */
+    transition: font-weight 0.5s;
+    -webkit-transition: text-shadow 0.5s; /* Safari */
+    transition: text-shadow 0.5s;
+    webkit-transition: color 0.5s; /* Safari */
+    transition: color 0.5s;
 }
 
 .nav2 {
@@ -277,6 +305,7 @@ div {
   color: green;
   width: 100%;
   background-color: $beige;
+  padding: 10px 0;
 }
 
 .field_with_errors {
@@ -324,11 +353,17 @@ div {
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width : 321px) {
 /* Styles */
+	.links table {
+		width: 80%;
+	}
 }
 
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : 320px) {
 /* Styles */
+	.links table {
+		width: 100%;
+	}
 }
 
 /* iPads (portrait and landscape) ----------- */
@@ -339,21 +374,33 @@ div {
 /* iPads (landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
 /* Styles */
+	.links table {
+		width: 80%;
+	}
 }
 
 /* iPads (portrait) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
 /* Styles */
+	.links table {
+		width: 100%;
+	}
 }
 
 /* Desktops and laptops ----------- */
 @media only screen  and (min-width : 1224px) {
 /* Styles */
+	.links table {
+		width: 80%;
+	}
 }
 
 /* Large screens ----------- */
 @media only screen  and (min-width : 1824px) {
 /* Styles */
+	.links table {
+		width: 50%;
+	}
 }
 
 
