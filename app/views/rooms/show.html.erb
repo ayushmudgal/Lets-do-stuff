@@ -5,7 +5,11 @@
 <p>
   <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading"><b>  <%= link_to 'Back', categories_path.to_s + "/" + @toback.to_s %>&nbsp&nbsp <%=  @room.name %></b></div>
+  <div class="panel-heading"><b>
+     <%= link_to 'Back', categories_path.to_s + "/" + @toback.to_s %>
+     &nbsp&nbsp
+     <%=  @room.name %></b>
+  </div>
   <div class="panel-body">
     <strong>Description:</strong>
     <%= @room.description %>
