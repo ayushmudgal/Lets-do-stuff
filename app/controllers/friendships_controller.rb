@@ -4,6 +4,7 @@ class FriendshipsController < ApplicationController
 
   def index
     @friends = current_user.friends
+    @pending_requests = []
   end
 
   def new
@@ -13,18 +14,20 @@ class FriendshipsController < ApplicationController
   end
 
   def create
-    invitee = User.find_by_id(params[:user_id])
+    invitee = User.find_by_id(params[:user_id])	
     if current_user.invite invitee
-      redirect_to user_room_path, :notice => "Successfully invited friend!"
+    	redirection = "/user/" + params[:user_id].to_s
+      	redirect_to redirection, :notice => "Successfully invited friend!"
     else
-      redirect_to user_room_path, :notice => "Sorry! You can't invite that user!"
+    	redirection = "/user/" + params[:user_id].to_s
+     	redirect_to redirection, :notice => "Sorry! You can't invite that user!"
     end
   end
 
   def update
     inviter = User.find_by_id(params[:id])
     if current_user.approve inviter
-      redirect_to user_room_path, :notice => "Successfully confirmed friend!"
+      	redirect_to user_room_path, :notice => "Successfully confirmed friend!"
     else
       redirect_to user_room_path, :notice => "Sorry! Could not confirm friend!"
     end
