@@ -3,7 +3,7 @@
 <p>
   <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading"><b><%= @room.name %></b></div>
+  <div class="panel-heading"><b>  <%= link_to 'Back', categories_path.to_s + "/" + @toback.to_s %>&nbsp&nbsp <%=  @room.name %></b></div>
   <div class="panel-body">
     <strong>Description:</strong>
     <%= @room.description %>
@@ -23,6 +23,8 @@
         <strong>This is not a private room~</strong>
     <% end %>
     <br>
+    <strong>&nbsp&nbsp&nbsp&nbspChat history:</strong>
+    <br>
       <%= render "messages/index" %>
   </div>
 
@@ -39,4 +41,3 @@
 <!-- <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Destroy', method: :delete, data: { confirm: 'Are you sure?' } %> | -->
 </br>
-<%= link_to 'Back', categories_path.to_s + "/" + @toback.to_s %>
