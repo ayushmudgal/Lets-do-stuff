@@ -8,6 +8,7 @@ class FriendshipsController < ApplicationController
 
   def new
 	@users = User.all
+	@users = @users - current_user
 	redirect_to get user_room_path 
   end
 
@@ -42,7 +43,7 @@ class FriendshipsController < ApplicationController
     if current_user.remove_friendship user
       redirect_to user_room_path, :notice => "Successfully removed friend!"
     else
-      redirect_to user_room_path	, :notice => "Sorry, couldn't remove friend!"
+      redirect_to user_room_path, :notice => "Sorry, couldn't remove friend!"
     end
   end
 
