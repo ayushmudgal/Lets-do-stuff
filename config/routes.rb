@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :categories
   devise_for :users
   resources :users
-  resources :friends, :controller => 'friendships', :except => [:show, :edit] do
+  resources :friends, :controller => 'friendships', :except => [:show, :edit, :new] do
     get "requests", :on => :collection
     get "invites", :on => :collection
   end
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   get 'login' ,to: 'welcome#login'
   get 'signup', to: 'welcome#signup'
-  get '/user/:id', to: 'users#show' 
+  get '/user/:id', to: 'users#show', as: 'user_room'
   post 'rooms/:id/join', to: 'rooms#join', as: 'join_room'
   post 'rooms/:id/delete', to: 'rooms#quit', as: 'quit_room'
   root 'welcome#index'
