@@ -11,12 +11,12 @@
       <div class="panel-heading">
         <h3 class="panel-title">Name: <%= @user.name %></h3>
       </div>
-      
+
       <div class="panel-body">
         <div class="row">
           <!-- <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div> -->
           <%= image_tag @user.avatar.url(:thumb), :class=>"col-md-3 col-lg-3 "  %>
-          <div class=" col-md-9 col-lg-9 "> 
+          <div class=" col-md-9 col-lg-9 ">
             <table class="table table-user-information">
               <tbody>
                 <tr>
@@ -37,14 +37,19 @@
                 </tr>
                 <tr>
                   <td>Rooms I have joined:</td>
-                  <td><%= @finaljoin %></td>
+
+                  <% @joined.each do |join| %>
+                      <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<td>
+                      <td><%= link_to (@rooms.find(join.room_id).name), @rooms.find(join.room_id) %></td>
+                  <% end %>
+                  <!-- <td><%= @finaljoin %></td> -->
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
       </div>
-    </div>  
+    </div>
     <div class="panel-footer">
       <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
       <span class="pull-right">
@@ -56,12 +61,12 @@
             <% elsif @user.pending_invited_by.include? current_user%>
               <%= link_to "Friend Request Sent", class: "btn btn-sm btn-warning", type: "button"%>
             <% elsif current_user.pending_invited_by.include? @user%>
-              <%= link_to "Confirm friend?", friend_path(@user), class: "btn btn-sm btn-warning", type: "button", :method => "put"%> 
-              <%= link_to "Delete Request", friend_path(@user), class: "btn btn-sm btn-warning", type: "button", :method => "delete"%> 
+              <%= link_to "Confirm friend?", friend_path(@user), class: "btn btn-sm btn-warning", type: "button", :method => "put"%>
+              <%= link_to "Delete Request", friend_path(@user), class: "btn btn-sm btn-warning", type: "button", :method => "delete"%>
             <% elsif !current_user.friend_with? @user%>
                <%= link_to "Add friend?", friends_path(:user_id => params[:id]), class: "btn btn-sm btn-warning", type: "button", :method => "post"%>
-            <%end%> 
-          <% end %>      
+            <%end%>
+          <% end %>
 
           <%= link_to edit_user_path(@user), class: "btn btn-sm btn-warning", type: "button", :data => {:toggle=>"tooltip"} do %>
               <i class="glyphicon glyphicon-edit"></i>
