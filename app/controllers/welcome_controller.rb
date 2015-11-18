@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
 	   if current_user.name == "Name" or current_user.name == nil
 	   		@name = ""
 	   	else
-	   		@name = current_user.name.to_s + "'s Page ~ "
+	   		@name = current_user.name.to_s + "'s Page"
 	  	end
 	  end
 	end
