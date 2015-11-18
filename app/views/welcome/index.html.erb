@@ -7,8 +7,7 @@
   <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext' %>-->
     <!-- </head> -->
 
-    <h1>Let's Do Stuff!
-    </h1>
+    <h1>Let's Do Stuff!</h1>
 
     <% if current_user.present? %>
     <h3><%= @name %></h3>
@@ -16,17 +15,22 @@
         <div class="links"><%= render "categories/index" %></div>
     <% end %>
 
-    <div id="content">
+    <div class="about">
+    <h3>About</h3>
+    Welcome to Let's Do Stuff! This website enables you to find activities 
+    around you that you are interested in, by simply browsing and joining a variety of activity rooms listed up here. On Let's Do Stuff!, you can not only instantly engage in fun activities as a newcomer to the area, at the same time, it is a great platform to make friends. Who doesn't like people who share same interests? Without further ado, let's begin the journey!~
+    </div>
+    <!-- <div id="content">
     <div class="links">
     <% if current_user.present? %>
-   <!--  <%= link_to 'Create your own room', new_room_path %><br>
+    <%= link_to 'Create your own room', new_room_path %><br>
      <%= link_to 'Browse rooms', rooms_path %><br>
      <%= link_to 'Complete your profile', edit_user_path(current_user)
     	%><br> 
-    <%= link_to 'My Profile', user_path(current_user) %> -->
+    <%= link_to 'My Profile', user_path(current_user) %>
     <br>
     <% end %>
     </div>
-    </div>
+    </div> -->
 
 <!-- </html> -->
