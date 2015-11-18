@@ -39,7 +39,6 @@
           <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></lI>
         <%else%>
           <%= link_to "Sign up", new_user_registration_path %>
-          <span style="padding-left:20px;padding-right:20px"></span>
           <%= link_to "Sign in", new_user_session_path %>
         <%end%>
                 </ul>
