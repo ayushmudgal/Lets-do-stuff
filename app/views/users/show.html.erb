@@ -48,15 +48,19 @@
       <span class="pull-right">
         <!-- <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a> -->
 
-        <% if current_user.friend_with? @user %>
-          <%= link_to "Already Friends", type: "button", class: "btn btn-sm btn-warning"%>
-        <%else %>
-           <%= link_to "Add friend?", friends_path(:user_id => params[:id]), class: "btn btn-sm btn-warning", type: "button", :method => "post"%>
-        <%end%> 
+        <% if current_user != @user %>
+            <% if current_user.friend_with? @user %>
+              <%= link_to "Already Friends", type: "button", class: "btn btn-sm btn-warning"%>
+            <% elsif current_user.pending_invited_by @user%>
+              <%= link_to "Confirm friend?", friend_path(@user), :method => "put"%>
+            <%else %>
+               <%= link_to "Add friend?", friends_path(:user_id => params[:id]), class: "btn btn-sm btn-warning", type: "button", :method => "post"%>
+            <%end%> 
+          <% end %>      
 
-        <%= link_to edit_user_path(@user), class: "btn btn-sm btn-warning", type: "button", :data => {:toggle=>"tooltip"} do %>
-            <i class="glyphicon glyphicon-edit"></i>
-        <% end %>    
+          <%= link_to edit_user_path(@user), class: "btn btn-sm btn-warning", type: "button", :data => {:toggle=>"tooltip"} do %>
+              <i class="glyphicon glyphicon-edit"></i>
+            <% end %>
 
       <!-- <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a> -->
       </span>
