@@ -1,9 +1,11 @@
 <%= form_for Message.new, remote: true do |f| %>
 
-  <% if UserRoom.where(:user_id  => current_user.id, :room_id => @room.id).present? %>
-    <%= f.text_field :content %>
-    <%= f.hidden_field :user_id, :value => current_user.id%>
-    <%= f.hidden_field :room_id, :value => @room.id%>
-     <%= f.submit "Send" %>
-  <%end%>
+  <% if user_signed_in? %>
+	  <% if UserRoom.where(:user_id  => current_user.id, :room_id => @room.id).present? %>
+	    <%= f.text_field :content %>
+	    <%= f.hidden_field :user_id, :value => current_user.id%>
+	    <%= f.hidden_field :room_id, :value => @room.id%>
+	     <%= f.submit "Send" %>
+	  <%end%>
+	<%end%>
 <% end %>
