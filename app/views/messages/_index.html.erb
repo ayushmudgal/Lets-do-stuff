@@ -4,6 +4,7 @@
   <%= render @messages %>
 </ul>
 
-<%= render "messages/form" %>
+<br>
+	<div class="form-inputs chat-input"><%= render "messages/form" %></div>
 
 <%= subscribe_to '/messages/new' %>
