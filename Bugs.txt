@@ -6,7 +6,6 @@ bugs:
 - Change back button into an image button with a small arrow ( the class for back button is class="nav1" U can search for key words to find where are they)
 
 NEW:
-- When you create a new room with the automatic default date, it inputs the date as 01/01/some year that's not correct
 - time should preferably be in your zip code's time zone, not in UTC. Maybe you can set your time zone from your user profile or have it autoloaded after you put down your time zone.
 - the chat should auto-refresh or something (just in that window) after you press enter
 - please wipe the box after submitting a message
