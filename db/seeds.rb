@@ -7,10 +7,15 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 category_names = [
+
   { name: 'Sports' },
-  { name: 'Entertainment' },
   { name: 'Food' },
-  { name: 'Exercise' }
+  { name: 'Exercise' },
+  { name: 'Religion' },
+  { name: 'Music' },
+  { name: 'Health' },
+  { name: 'Gaming' },
+
 ]
 
 category_names.each do |cat|
