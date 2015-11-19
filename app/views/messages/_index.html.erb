@@ -1,3 +1,11 @@
+<script>
+var scroll = document.getElementById("chat");
+// allow 1px inaccuracy by adding 1
+var isScrolledToBottom = scroll.scrollHeight - scroll.clientHeight <= scroll.scrollTop + 1;
+if(isScrolledToBottom)
+    scroll.scrollTop = scroll.scrollHeight - scroll.clientHeight;
+</script>
+
 <!-- <h1>Chat</h1> -->
 
 <div id="messages">

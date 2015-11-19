@@ -6,4 +6,5 @@ bugs:
 NEW:
 - time should preferably be in your zip code's time zone, not in UTC. Maybe you can set your time zone from your user profile or have it autoloaded after you put down your time zone.
 - the chat should auto-refresh or something (just in that window) after you press enter
+- AND AUTO-SCROLL: http://stackoverflow.com/a/21067431
 - please wipe the box after submitting a message
