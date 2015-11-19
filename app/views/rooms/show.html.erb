@@ -5,7 +5,6 @@
 <p>
   <div class="panel panel-default">
   <!-- Default panel contents -->
-<<<<<<< HEAD
   <div class="panel-heading"><b>  
   <%= link_to '< Back', categories_path.to_s + "/" + @toback.to_s %>&nbsp&nbsp 
   <h3><%=  @room.name %></h3>
@@ -25,7 +24,6 @@
     <%= @room.time %>
     <br>
     <% if @room.private %>
-<<<<<<< HEAD
       This is a <b>private</b> room
     <% else %>
         This is not a private room
@@ -54,6 +52,8 @@
   <!-- <br>
 <%= link_to 'My Profile', user_path %>
 <br> -->
-<!-- <%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Destroy', method: :delete, data: { confirm: 'Are you sure?' } %> | -->
+<% if current_user.id == @room.creator_id %>
+  <%= link_to 'Edit', edit_room_path(@room) %> |
+  <%= link_to 'Destroy', method: :delete, data: { confirm: 'Are you sure?' } %>
+<%end%>
 </br>
