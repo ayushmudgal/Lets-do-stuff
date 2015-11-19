@@ -78,7 +78,7 @@ class RoomsController < ApplicationController
       @currentUserRoom = UserRoom.where(user_id: current_user.id, room_id: params[:id])
       UserRoom.delete(@currentUserRoom)
        # UserRoom.find(:user_id => ["user_id = ? and room_id - ?"], params[:current_user.id], params[params[:id]).destroy
-      flash[:notice] = "You have quit the room!"
+      flash[:notice] = "You have left the room!"
     end
     # redirect_to room_path
     redirect_to room_path 
