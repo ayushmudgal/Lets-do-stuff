@@ -50,9 +50,9 @@ html, body {
 body {
   background-color: $blue;
   color: #333;
-  /*font-family: 'Slabo 27px', serif;*/
-  font-family: 'Arvo', serif;
-/*  font-family: verdana, arial, helvetica, sans-serif;*/
+  /*font-family: 'Slabo 27px', serif;
+  font-family: 'Arvo', serif;*/
+  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 18px;
 /*  line-height: 18px;*/
 }
@@ -313,7 +313,6 @@ div {
 	margin: 0 auto;
 	padding: 10px;
 	overflow: auto;
-	height: 400px;
 	background-color: $beige;
 }
 
