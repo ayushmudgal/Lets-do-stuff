@@ -15,16 +15,7 @@ class UsersController < ApplicationController
     if User.exists?(params[:id]) == false
     end
     @joined = UserRoom.where(user_id: params[:id])
-    @finaljoin = ""
-    @joined.each do |join|
-      if @rooms.exists?(join.room_id)
-        if @finaljoin != ""
-          @finaljoin = @finaljoin + ", " + @rooms.find(join.room_id).name
-        else
-          @finaljoin = @rooms.find(join.room_id).name
-        end
-      end
-    end
+    @created = Room.where(creator_id: params[:id])
     # Room.joins("LEFT OUTER JOIN user_rooms ON user_rooms.room_id = rooms.id")
     # Room.joins(:room).where('user_rooms.room_id = rooms.id')
     # User.includes(:vehicles).where(vehicles: { type: 'auto' })

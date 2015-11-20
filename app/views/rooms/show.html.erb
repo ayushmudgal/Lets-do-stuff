@@ -6,11 +6,15 @@
  <% if user_signed_in? %>
   <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading"><b>  
-  <%= link_to '< Back', categories_path.to_s + "/" + @toback.to_s %>&nbsp&nbsp 
+  <div class="panel-heading"><b>
+  <%= link_to '< Back', categories_path.to_s + "/" + @toback.to_s %>&nbsp&nbsp
+  <% if current_user.id == @room.creator_id %>
+    <%= link_to 'Edit', edit_room_path(@room) %> |
+    <%= link_to 'Delete', method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%end%>
   <h2><%=  @room.name %></h2>
     </b>
-  
+
   <div class="info">
     <strong>Description:</strong>
     <%= @room.description %>
@@ -34,7 +38,7 @@
     <% end %>
 
   </div>
-  
+
 </div>
 <div class="panel-body">
     <center>
@@ -58,9 +62,5 @@
   <!-- <br>
 <%= link_to 'My Profile', user_path %>
 <br> -->
-<% if current_user.id == @room.creator_id %>
-  <%= link_to 'Edit', edit_room_path(@room) %> |
-  <%= link_to 'Delete', method: :delete, data: { confirm: 'Are you sure?' } %>
-<%end%>
 <%end%>
 </br>
