@@ -5,7 +5,12 @@
 
 <p>
   <!-- <strong>Name:</strong> -->
-<div class="nav1"><%= link_to 'Back', root_path %></div>
+  <div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><b>
+  <%= link_to '< Back', root_path %>&nbsp&nbsp
+  </b>
+<!-- <div class="nav1"><%= link_to 'Back', root_path %></div> -->
   <% @cateroyNam = @category.name %>
 
 <!--   <% @rooms.each do |room| %>
