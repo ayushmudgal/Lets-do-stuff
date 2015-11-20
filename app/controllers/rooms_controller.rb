@@ -12,6 +12,7 @@ class RoomsController < ApplicationController
   def show
     @messages = Message.where(room_id: params[:id])
     @toback = @room.category_id
+    @joinedUsers= UserRoom.where(room_id: params[:id])
   end
 
   # GET /rooms/new
@@ -81,7 +82,7 @@ class RoomsController < ApplicationController
       flash[:notice] = "You have left the room!"
     end
     # redirect_to room_path
-    redirect_to room_path 
+    redirect_to room_path
   end
 
   private

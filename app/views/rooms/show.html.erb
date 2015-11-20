@@ -36,7 +36,12 @@
     <% else %>
         This is not a private room
     <% end %>
-
+    <br>
+    <strong>Friends in this room:</strong>
+    <% @joinedUsers.each do |u| %>
+        <td>&nbsp&nbsp&nbsp&nbsp<td>
+        <td><%= link_to (User.find(u.user_id).name), User.find(u.user_id) %></td>
+    <% end %>
   </div>
 
 </div>
