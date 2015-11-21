@@ -1,5 +1,11 @@
 <li>
+<<<<<<< Updated upstream
   <span class="created_at"><%= message.created_at.localtime.strftime("%m/%d %I:%M%p") %></span>
   <b><%= message.user.name + ':' %></b>
   <%= message.content %>
+=======
+  <span class="created_at"><%= message.created_at.localtime.strftime("%m/%d/%Y %I:%M%p") %></span>
+  <b><%= message.user.name + ':' %></b><br>
+  <div class="mess"><%= message.content %></div>
+>>>>>>> Stashed changes
 </li>
