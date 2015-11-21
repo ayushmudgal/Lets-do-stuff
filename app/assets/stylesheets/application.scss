@@ -170,6 +170,7 @@ div {
   padding: 20px;
   padding-bottom: 80px;
   background-color: rgba(255,255,255,0.8);
+  box-shadow: 0px 0px 5px gray;
 /*  height: 100%;*/
 }
 
@@ -281,6 +282,13 @@ div {
 	-webkit-transition: all 0.5s; /* Safari */
     transition: all 0.5s;
 }
+
+table {
+	word-wrap:break-word;
+	word-break: break-word;
+	/*word-break: break-all;*/
+}
+
 
 .nav1, .nav2 {
 	position: relative;
