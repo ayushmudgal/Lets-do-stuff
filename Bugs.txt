@@ -1,10 +1,8 @@
 bugs:
 
 - The friend button styling inconsistencies
-- Change back button into an image button with a small arrow ( the class for back button is class="nav1" U can search for key words to find where are they)
 
 NEW:
 - time should preferably be in your zip code's time zone, not in UTC. Maybe you can set your time zone from your user profile or have it autoloaded after you put down your time zone.
 - AND AUTO-SCROLL: http://stackoverflow.com/a/21067431
-- please wipe the box after submitting a message
 - Delete button (for deleting each room) is not working 
