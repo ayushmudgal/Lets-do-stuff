@@ -289,6 +289,25 @@ table {
 	/*word-break: break-all;*/
 }
 
+.userbox {
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.user-info {
+	position: relative;
+	/*width: 100%;*/
+}
+
+.user-info th {
+	width: 34%;
+	text-transform: capitalize;
+}
+.user-info td {
+	width: 66%;
+}
+
 
 .nav1, .nav2 {
 	position: relative;

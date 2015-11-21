@@ -4,7 +4,8 @@
 
 <div class="container">
 
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+  <!-- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" > -->
+  <div class="userbox">
     <br>
 
     <div class="panel panel-info">
@@ -17,35 +18,35 @@
           <!-- <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div> -->
           <%= image_tag @user.avatar.url(:thumb), :class=>"col-md-3 col-lg-3 "  %>
           <div class=" col-md-9 col-lg-9 ">
-            <table class="table table-user-information">
+            <table class="table table-user-information user-info">
               <tbody>
                 <tr>
-                  <td>Age:</td>
+                  <th>Age:</td>
                   <td><%= @user.age %></td>
                 </tr>
                 <tr>
-                  <td>Location:</td>
+                  <th>Location:</td>
                   <td><%= @user.location %></td>
                 </tr>
                 <tr>
-                  <td>Hobbies:</td>
+                  <th>Hobbies:</td>
                   <td><%= @user.hobbies %></td>
                 </tr>
                 <tr>
-                  <td>About Me:</td>
+                  <th>About Me:</td>
                   <td><%= @user.about_me %></td>
                 </tr>
                 <tr>
-                  <td>Rooms I have joined:</td>
+                  <th>Rooms I have joined:</td>
                   <td>
                   <% @joined.each do |join| %>
                       <%= link_to (@rooms.find(join.room_id).name), @rooms.find(join.room_id) %>
-                      &nbsp&nbsp&nbsp&nbsp
+                      <br>
                   <% end %>
                   </td>
                 </tr>
                 <tr>
-                  <td>Rooms I have created:</td>
+                  <th>Rooms I have created:</td>
                   <td>
                   <% @created.each do |create| %>
                     <%= link_to (create.name), create%>
@@ -54,7 +55,7 @@
                  </td>
                </tr>
                <tr>
-                 <td>My friends:</td>
+                 <th>My friends:</td>
                  <td>
                  <% @friends.each do |f| %>
                    <%= link_to (f.name), f%>
