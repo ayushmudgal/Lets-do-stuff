@@ -3,7 +3,6 @@ bugs:
 
 NEW:
 - AND AUTO-SCROLL: http://stackoverflow.com/a/21067431
-- Delete button (for deleting each room) is not working
 - The profile table is not centralized when u try to shrink the page
 - On user's profile, the edit button should locate at top right and the message button should locate under user's avatar
 - Modify the css of input box in the chat room so it can auto expand when the text size is larger then the default text size

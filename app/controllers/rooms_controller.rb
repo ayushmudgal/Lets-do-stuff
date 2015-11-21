@@ -58,8 +58,10 @@ class RoomsController < ApplicationController
   # DELETE /rooms/1
   # DELETE /rooms/1.json
   def destroy
+    category = Category.find(@room.category_id)
+    @room.destroy
     respond_to do |format|
-      format.html { redirect_to rooms_url, notice: 'Room was successfully destroyed.' }
+      format.html { redirect_to category, notice: 'Room was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
