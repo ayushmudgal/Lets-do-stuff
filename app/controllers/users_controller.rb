@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     if User.exists?(params[:id]) == false
     end
     @joined = UserRoom.where(user_id: params[:id])
+    @friends = 
     @created = Room.where(creator_id: params[:id])
     # Room.joins("LEFT OUTER JOIN user_rooms ON user_rooms.room_id = rooms.id")
     # Room.joins(:room).where('user_rooms.room_id = rooms.id')

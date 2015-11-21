@@ -37,18 +37,31 @@
                 </tr>
                 <tr>
                   <td>Rooms I have joined:</td>
+                  <td>
                   <% @joined.each do |join| %>
-                      <td>&nbsp&nbsp&nbsp&nbsp<td>
-                      <td><%= link_to (@rooms.find(join.room_id).name), @rooms.find(join.room_id) %></td>
+                      <%= link_to (@rooms.find(join.room_id).name), @rooms.find(join.room_id) %>
+                      &nbsp&nbsp&nbsp&nbsp
                   <% end %>
+                  </td>
                 </tr>
                 <tr>
                   <td>Rooms I have created:</td>
+                  <td>
                   <% @created.each do |create| %>
-                    <td>&nbsp&nbsp&nbsp&nbsp<td>
-                    <td><%= link_to (create.name), create%></td>
+                    <%= link_to (create.name), create%>
+                    &nbsp&nbsp&nbsp&nbsp
                  <% end %>
-              </tr>
+                 </td>
+               </tr>
+               <tr>
+                 <td>My friends:</td>
+                 <td>
+                 <% @friends.each do |f| %>
+                   <%= link_to (f.name), f%>
+                   nbsp&nbsp&nbsp&nbsp
+                <% end %>
+                </td>
+               </tr>
               </tbody>
             </table>
           </div>

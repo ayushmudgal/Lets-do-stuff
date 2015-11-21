@@ -12,12 +12,11 @@
 #  time        :time
 #  location    :string
 #  private     :boolean
-#
 
 class Room < ActiveRecord::Base
     belongs_to :category
 
-    validates :name, presence: true, length: {maximum: 40} 
+    validates :name, presence: true, length: {maximum: 40}
     validates :location, presence: true, length: { minimum: 5 }
   	validates :description, presence: true, length: { maximum: 255 }
 
