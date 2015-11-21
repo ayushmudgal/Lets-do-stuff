@@ -37,6 +37,9 @@
         This is not a private room
     <% end %>
     <br>
+    <strong> Created by: </strong>
+    <td>&nbsp&nbsp&nbsp&nbsp<%= link_to (User.find(@room.creator_id).name), User.find(@room.creator_id) %></td>
+    <br>
     <strong>Friends in this room:</strong>
     <% @joinedUsers.each do |u| %>
         <td>&nbsp&nbsp&nbsp&nbsp<td>
