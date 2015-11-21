@@ -12,7 +12,7 @@
   <div class="navbar-right">
     <% if current_user.id == @room.creator_id %>
       <%= link_to 'Edit', edit_room_path(@room) %> |
-      <%= link_to 'Delete', @room, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'delete', @room, method: :delete, data: { confirm: 'Are you sure?' } %>
     <%end%>
   </div>
 
@@ -47,7 +47,9 @@
     <strong>Friends in this room:</strong>
     <% @joinedUsers.each do |u| %>
         <td>&nbsp&nbsp&nbsp&nbsp<td>
-        <td><%= link_to (User.find(u.user_id).name), User.find(u.user_id) %></td>
+        <% if @room.creator_id != u.user_id %>
+            <td><%= link_to (User.find(u.user_id).name), User.find(u.user_id) %></td>
+        <% end %>
     <% end %>
   </div>
 
