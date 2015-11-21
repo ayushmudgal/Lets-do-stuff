@@ -8,10 +8,13 @@
   <!-- Default panel contents -->
   <div class="panel-heading"><b>
   <%= link_to '< Back', categories_path.to_s + "/" + @toback.to_s %>&nbsp&nbsp
-  <% if current_user.id == @room.creator_id %>
-    <%= link_to 'Edit', edit_room_path(@room) %> |
-    <%= link_to 'Delete', method: :delete, data: { confirm: 'Are you sure?' } %>
-  <%end%>
+
+  <div class="navbar-right">
+    <% if current_user.id == @room.creator_id %>
+      <%= link_to 'Edit', edit_room_path(@room) %> |
+      <%= link_to 'Delete', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%end%>
+  </div>
   <h2><%=  @room.name %></h2>
     </b>
 
