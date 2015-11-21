@@ -33,7 +33,7 @@
     <%= @room.date %>
     <br>
     <strong>Time:</strong>
-    <%= @room.time.strftime("%H:%M") %>
+    <%= @room.time.localtime.strftime("%H:%M%p") %>
     <br>
     <% if @room.private %>
       This is a <b>private</b> room
