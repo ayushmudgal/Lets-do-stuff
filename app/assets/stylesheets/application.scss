@@ -57,7 +57,7 @@ body {
 /*  line-height: 18px;*/
 }
 
-p, ol, ul, td {
+p, ol, ul, td, a {
   /*font-family: verdana, arial, helvetica, sans-serif;*/
   font-size: 18px;
   line-height: 20px;
@@ -110,7 +110,7 @@ a:active {
 h1 {
   margin: 0 auto;
   text-align: center;
-  text-transform: capitalize;
+  text-transform: none;
   font-family: 'Lobster', cursive;
   font-weight: bold;
   color: rgba(250,105,0,1);
@@ -131,7 +131,7 @@ h2 {
   border-bottom: 1px black solid;
   padding-top: 10px;
   padding-bottom: -5px;
-  text-transform: capitalize;
+  text-transform: none;
   letter-spacing: 1px;
   color: $orange;
   font-size: 30px;
@@ -148,7 +148,7 @@ h3 {
   /*border-bottom: 1px black solid;*/
   padding-top: 10px;
   padding-bottom: -5px;
-  text-transform: capitalize;
+  text-transform: none;
   letter-spacing: 1px;
   color: $orange;
   font-size: 30px;
