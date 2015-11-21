@@ -12,7 +12,7 @@
   <div class="navbar-right">
     <% if current_user.id == @room.creator_id %>
       <%= link_to 'Edit', edit_room_path(@room) %> |
-      <%= link_to 'Delete', method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Delete', @room, method: :delete, data: { confirm: 'Are you sure?' } %>
     <%end%>
   </div>
 

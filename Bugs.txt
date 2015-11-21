@@ -7,4 +7,8 @@ NEW:
 - The profile table is not centralized when u try to shrink the page
 - On user's profile, the edit button should locate at top right and the message button should locate under user's avatar
 - Modify the css of input box in the chat room so it can auto expand when the text size is larger then the default text size
+- Modify the width of input box in the chat room so it's proportional to the chat history
 - The chat history is not scrolling for me
+- user's name got capitalized. For instance, I created a user called "bbb" (all small leter), but my user name shown in the home page is "Bbb"
+- In the profile page, the colum user's friends should be user's friends
+- In the profile page, the stats update should not be a button link to the current page
