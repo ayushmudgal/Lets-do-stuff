@@ -3,11 +3,8 @@
 <% end %>
 
 <h2> <%= @cateroyNam %> Rooms</h2>
-<% unless @rooms.empty? %>
-  <%= will_paginate @rooms %>
-<% end %>
 
-<!-- <table>
+<table>
 
   <tbody>
     <% @rooms.each do |room| %>
@@ -20,7 +17,7 @@
       </tr>
     <% end %>
   </tbody>
-</table> -->
+</table>
 
 <br>
 

@@ -40,7 +40,6 @@ gem 'rspec'
 gem 'faker'
 gem 'simplecov', :require => false, :group => :test
 gem 'amistad'
-gem 'will_paginate', '~> 3.0.7'
 # gem 'google-webfonts-rails', '~> 0.0.4'
 
 # Use ActiveModel has_secure_password
@@ -74,4 +73,6 @@ group :development do
   gem 'binding_of_caller'
 end
 
+
 ruby "2.2.3"
+
