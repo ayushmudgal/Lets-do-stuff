@@ -4,7 +4,12 @@ class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.json
   def index
-    @rooms = Room.all
+    # @rooms = Room.all
+    # @rooms = @rooms.paginate(:page => params[:page], :per_page => 5)
+    require 'will_paginate/array'
+    require 'rails/all'
+    @rooms = Room.paginate(:page => params[:page], :per_page => 5)
+    # helper.will_paginate(@rooms)
   end
 
   # GET /rooms/1
