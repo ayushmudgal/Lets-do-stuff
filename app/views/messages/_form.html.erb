@@ -2,10 +2,10 @@
 
   <% if user_signed_in? %>
 	  <% if UserRoom.where(:user_id  => current_user.id, :room_id => @room.id).present? %>
-	    <%= f.text_field :content %>
+	  <span class="write-message"><%= f.text_field :content %></span>
 	    <%= f.hidden_field :user_id, :value => current_user.id%>
 	    <%= f.hidden_field :room_id, :value => @room.id%>
-	     <%= f.submit "Send" %>
+	    <span class="btn"><%= f.submit "Send" %></span>
 	  <%end%>
 	<%end%>
 <% end %>

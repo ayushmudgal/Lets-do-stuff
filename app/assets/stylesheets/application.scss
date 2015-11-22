@@ -50,9 +50,9 @@ html, body {
 body {
   background-color: $blue;
   color: #333;
-  /*font-family: 'Slabo 27px', serif;
-  font-family: 'Arvo', serif;*/
-  font-family: verdana, arial, helvetica, sans-serif;
+  /*font-family: 'Slabo 27px', serif;*/
+  font-family: 'Arvo', serif;
+  /*font-family: verdana, arial, helvetica, sans-serif;*/
   font-size: 18px;
 /*  line-height: 18px;*/
 }
@@ -120,6 +120,7 @@ h1 {
   padding-top: 10px;
   padding-bottom: -8px;
   font-size: 45px;
+  text-transform: capitalize;
 }
 
 h2 {
@@ -137,6 +138,7 @@ h2 {
   font-size: 30px;
   text-shadow: 1px 1px rgba(105,210,231,1);
   /*background: $beige !important;*/
+  text-transform: capitalize;
 }
 
 h3 {
@@ -154,6 +156,7 @@ h3 {
   font-size: 30px;
   text-shadow: 1px 1px rgba(105,210,231,1);
   /*background: $beige !important;*/
+  text-transform: capitalize;
 }
 
 /*
@@ -335,12 +338,16 @@ table {
 	text-align: left;
 }
 
+.right {
+	float: right;
+}
+
 #messages {
 	width: 80%;
 	margin: 0 auto;
 	padding: 10px;
 	overflow: auto;
-	background-color: $beige;
+	background-color: $blue2;
 }
 
 #chat {
@@ -357,8 +364,9 @@ table {
 	font-size: 15px;
 	list-style-type: none;
 	border-radius: 8px;
-	word-wrap:break-word;
+	word-wrap: break-word;
 	word-break: break-word;
+	box-shadow: 0px 0px 1px gray;
 }
 
 #chat li:nth-child(odd){
@@ -366,9 +374,23 @@ table {
 	text-align: left;
 }
 
+#chat li:nth-child(odd) .chat-header {
+	border-bottom: 2px dashed $blue2;
+}
+
 #chat li:nth-child(even){
-	background-color: $beige;
+	background-color: $blue2;
 	text-align: left;
+}
+
+#chat li:nth-child(even) .chat-header {
+	border-bottom: 2px dashed white;
+}
+
+#chat .chat-header {
+	/*border-bottom: 2px dashed $blue2;*/
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 #chat .mess {
@@ -376,11 +398,19 @@ table {
 	margin-left: 50px;
 }
 
-.write-message {
+#form-inputs #chat-input {
 	position: relative;
-	margin: 0 auto;
-	width: 100%;
+	width: 80%;
+	left: 0 !important;
 }
+
+.write-message #message_content {
+	position: relative;
+	/*margin: 0 auto;*/
+	width: 75%;
+	left: 0 !important;
+}
+
 
 .input {
   -webkit-transition: all 0.30s ease-in-out;

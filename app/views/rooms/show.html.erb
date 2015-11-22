@@ -9,10 +9,10 @@
   <div class="panel-heading"><b>
   <%= link_to '< Back', categories_path.to_s + "/" + @toback.to_s %>&nbsp&nbsp
 
-  <div class="navbar-right">
+  <div class="right">
     <% if current_user.id == @room.creator_id %>
       <%= link_to 'Edit', edit_room_path(@room) %> |
-      <%= link_to 'delete', @room, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Delete', @room, method: :delete, data: { confirm: 'Are you sure?' } %>
     <%end%>
   </div>
 

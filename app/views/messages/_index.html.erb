@@ -8,13 +8,14 @@ if(isScrolledToBottom)
 
 <!-- <h1>Chat</h1> -->
 
-<div id="messages" class="clearfix">
+<div id="messages">
+ <!-- class="clearfix"> -->
 <ul id="chat">
   <%= render @messages %>
 </ul>
 	</div>
 
 <br>
-	<div class="form-inputs chat-input write-message"><%= render "messages/form" %></div>
+	<div class="form-inputs chat-input"><%= render "messages/form" %></div>
 
 <%= subscribe_to '/messages/new' %>
