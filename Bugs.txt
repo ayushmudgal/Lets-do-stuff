@@ -9,3 +9,4 @@ NEW:
 - Modify the width of input box in the chat room so it's proportional to the chat history
 - The chat history is not scrolling for me
 - In the profile page, the stats update should not be a button link to the current page
+- Change the "create a new room" link to a plus sign image button
