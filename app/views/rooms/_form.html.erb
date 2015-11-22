@@ -7,7 +7,7 @@
     <%= f.input :private %>
     <%= f.input :date %>
     <%= f.input :time %>
-    <%= f.input :location %> (5 digit ZIP code)</br>
+    <%= f.input :location, label: 'Zip Code (5 digit)'%></br>
     <b>Category</b><br><%= f.collection_select :category_id, Category.order(:name),:id,:name %>
   </div>
 
