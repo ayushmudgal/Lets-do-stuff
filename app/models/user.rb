@@ -35,6 +35,11 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   has_many :messages, dependent: :destroy
   has_many :user_rooms
+
+  validates :location, format:{
+      with: /\A\d{5}(-\d{4})?\z/
+  }
+
   include Amistad::FriendModel
   #### HAVE TO ADD AMISTAD
 end
