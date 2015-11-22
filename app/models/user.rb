@@ -36,9 +36,9 @@ class User < ActiveRecord::Base
   has_many :messages, dependent: :destroy
   has_many :user_rooms
 
-  validates :location, format:{
-      with: /\A\d{5}(-\d{4})?\z/
-  }
+  # validates :location, format:{
+  #     with: /\A\d{5}(-\d{4})?\z/
+  # }
 
   include Amistad::FriendModel
   #### HAVE TO ADD AMISTAD
