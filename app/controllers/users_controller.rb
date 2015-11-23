@@ -83,6 +83,7 @@ class UsersController < ApplicationController
     def require_user
       @user_accessing = current_user
       if current_user.id != @user.id
+        flash[:notice] = "Sorry, you are not authorized to access to this page!"
         redirect_to root_path
       end
     end
