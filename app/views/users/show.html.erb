@@ -61,7 +61,7 @@
                  </td>
                </tr>
                <tr>
-                 <th>My friends:</td>
+                 <th>Friends:</td>
                  <td>
                  <% @friends.each do |f| %>
                    <%= link_to (f.name), f%>
@@ -69,6 +69,10 @@
                 <% end %>
                 </td>
                </tr>
+               <tr>
+                  <th>Last login time:</td>
+                  <td><%= @user.last_sign_in_at.localtime.strftime("%m/%d %I:%M%p") %></td>
+                </tr>
               </tbody>
             </table>
           </div>
