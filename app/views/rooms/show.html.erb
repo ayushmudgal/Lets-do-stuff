@@ -70,9 +70,7 @@
 
 <% if !UserRoom.where(:user_id  => current_user.id, :room_id => @room.id).present? %>
   <%= link_to 'Join room!', join_room_path(@room), method: :post %>
-  <% end %>
-
-<% if UserRoom.where(:user_id  => current_user.id, :room_id => @room.id).present? %>
+<% else %>
   <%= link_to 'Leave room!', quit_room_path(@room), method: :post %>
 <% end %>
   </div>
