@@ -5,8 +5,16 @@ NEW:
 - AND AUTO-SCROLL: http://stackoverflow.com/a/21067431
 - The profile table is not centralized when u try to shrink the page
 - On user's profile, the edit button should locate at top right and the message button should locate under user's avatar
-- Modify the css of input box in the chat room so it can auto expand when the text size is larger then the default text size
+- Modify the css of input box in the chat room so it can auto expand when the text size is larger then the default text size - {This is not CSS. This is done with fancy javascript/jquery. will try later - VL}
 - Modify the width of input box in the chat room so it's proportional to the chat history
 - The chat history is not scrolling for me
 - In the profile page, the stats update should not be a button link to the current page
 - Change the "create a new room" link to a plus sign image button
+- Don't allow people to edit other people's profiles
+
+Possible new features:
+- see when friend has last logged in
+- see whether friend is online (track login/logout)
+- enable only one account per IP so no trolling
+- enable people to grant admin access to other users if you are an admin
+- admin is not permitted to leave room until another user has been admined.
