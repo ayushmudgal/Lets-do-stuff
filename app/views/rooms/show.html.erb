@@ -1,81 +1,68 @@
 <% if notice %>
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 <% end %>
 
+<% if user_signed_in? %>
 <p>
- <% if user_signed_in? %>
-  <div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading"><b>
-  <%= link_to '< Back', categories_path.to_s + "/" + @toback.to_s %>&nbsp&nbsp
-
-  <div class="right">
-    <% if current_user.id == @room.creator_id %>
-      <%= link_to 'Edit', edit_room_path(@room) %> |
-      <%= link_to 'Delete', @room, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%end%>
+  <div class="container">
+      <div class="row profile">
+      <div class="col-md-2">
+        <div class="profile-sidebar">
+          <!-- SIDEBAR USERPIC -->
+          <div class="profile-userpic" >
+            <!-- <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt=""> -->
+            <center style="border-bottom: 1px black solid;">
+              <%=  @room.name %>
+              <br>
+              <%= room_category_name(@room) %>
+              <br>
+              <%= @room.location %>
+              <br>
+              <% if @room.private %>
+                <i>Private</i>
+              <% end %>
+            </center>
+            Date: <%= @room.date %>
+            <br>
+            Time: <%= @room.time.strftime("%I:%M %p %Z") %>
+            <br style="border-bottom: 1px black solid;">
+            <center style="border-top: 1px black solid">
+            Created by: <%= room_creator_name(@room) %>
+            </center>
+            <center style="border-top: 1px black solid">
+            Users in Room: 
+            <% users_in_room(@room).each do |user| %>
+              <%= user %><br>
+            <% end %>
+            </center>
+          </div>
+          <div class="profile-usermenu">
+            <ul class="nav">
+              <li class="active">
+                <% if !UserRoom.where(:user_id  => current_user.id, :room_id => @room.id).present? %>
+                  <%= link_to 'Join room!', join_room_path(@room), method: :post %>
+                <% else %>
+                  <%= link_to 'Leave room!', quit_room_path(@room), method: :post %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "Logout", destroy_user_session_path, :method => :delete %>            
+              </li>
+            </ul>
+          </div>
+          <!-- END MENU -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="profile-content">
+          <center>
+            <h2> Chat </h2>
+            <%= render "messages/index" %>
+          </center>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <h2><%=  @room.name %></h2>
-    </b>
-
-  <div class="info">
-    <strong>Description:</strong>
-    <%= @room.description %>
-    <br>
-    <strong>Zip Code:</strong>
-    <%= @room.location %>
-    <br>
-    <strong>Category:</strong>
-    <%= @room.category.name %>
-    <br>
-    <strong>Date:</strong>
-    <%= @room.date %>
-    <br>
-    <strong>Time:</strong>
-    <%= @room.time.localtime.strftime("%H:%M%p") %>
-    <br>
-    <% if @room.private %>
-      This is a <b>private</b> room
-    <% else %>
-        This is not a private room
-    <% end %>
-    <br>
-    <strong> Created by: </strong>
-    <td>&nbsp&nbsp&nbsp&nbsp<%= link_to (User.find(@room.creator_id).name), User.find(@room.creator_id) %></td>
-    <br>
-    <strong>Friends in this room:</strong>
-    <% @joinedUsers.each do |u| %>
-        <td>&nbsp&nbsp&nbsp&nbsp<td>
-        <% if @room.creator_id != u.user_id %>
-            <td><%= link_to (User.find(u.user_id).name), User.find(u.user_id) %></td>
-        <% end %>
-    <% end %>
-  </div>
-
-</div>
-<div class="panel-body">
-    <center>
-    <!-- <strong> -->
-    <!-- &nbsp&nbsp&nbsh3p&nbsp -->
-    <h3>Chat history:</h3>
-    <!-- </strong> -->
-    <br>
-      <%= render "messages/index" %>
-    </center>
-  </div>
-
 </p>
-<div class="nav1">
-
-<% if !UserRoom.where(:user_id  => current_user.id, :room_id => @room.id).present? %>
-  <%= link_to 'Join room!', join_room_path(@room), method: :post %>
-<% else %>
-  <%= link_to 'Leave room!', quit_room_path(@room), method: :post %>
-<% end %>
-  </div>
-  <!-- <br>
-<%= link_to 'My Profile', user_path %>
-<br> -->
 <%end%>
-</br>
+

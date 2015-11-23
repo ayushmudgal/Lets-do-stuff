@@ -12,7 +12,9 @@
 #  time        :time
 #  location    :string
 #  private     :boolean
+#  creator_id  :integer
 #
+
 require 'faker'
 
 FactoryGirl.define do

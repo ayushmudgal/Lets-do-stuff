@@ -12,6 +12,8 @@
 #  time        :time
 #  location    :string
 #  private     :boolean
+#  creator_id  :integer
+#
 
 class Room < ActiveRecord::Base
     belongs_to :category

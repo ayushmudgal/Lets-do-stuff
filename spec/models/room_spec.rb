@@ -12,6 +12,7 @@
 #  time        :time
 #  location    :string
 #  private     :boolean
+#  creator_id  :integer
 #
 
 require 'rails_helper'
