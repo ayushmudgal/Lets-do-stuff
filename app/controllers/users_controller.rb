@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_filter :require_user, only: [:edit]
 
   # GET /users
   # GET /users.json
@@ -79,6 +80,12 @@ class UsersController < ApplicationController
       end
     end
 
+    def require_user
+      @user_accessing = current_user
+      if current_user.id != @user.id
+        redirect_to user_path
+      end
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :age, :location, :hobbies, :about_me, :avatar)
