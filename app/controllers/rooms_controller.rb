@@ -32,6 +32,8 @@ class RoomsController < ApplicationController
 
     respond_to do |format|
       if @room.save
+        UserRoom.create(user_id: current_user.id, room_id: @room.id, category_id: @room.category_id)
+        flash[:notice] = "You successfully joined the room!"
         format.html { redirect_to @room, notice: 'Room was successfully created.' }
         format.json { render :show, status: :created, location: @room }
       else
@@ -39,6 +41,7 @@ class RoomsController < ApplicationController
         format.json { render json: @room.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /rooms/1
