@@ -63,6 +63,10 @@
                 <% end %>
                 </td>
                </tr>
+               <tr>
+                  <th>Last login time:</td>
+                  <td><%= @user.last_sign_in_at.localtime.strftime("%m/%d %I:%M%p") %></td>
+                </tr>
               </tbody>
             </table>
           </div>
