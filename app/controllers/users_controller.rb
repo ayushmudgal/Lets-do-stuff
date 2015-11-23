@@ -90,6 +90,7 @@ class UsersController < ApplicationController
     end
 
     def admin
+      flash[:notice] = "Sorry, you are not authorized to access to this page!"
       redirect_to root_path
     end
     # Never trust parameters from the scary internet, only allow the white list through.
