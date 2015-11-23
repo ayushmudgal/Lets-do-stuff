@@ -83,7 +83,7 @@ class UsersController < ApplicationController
     def require_user
       @user_accessing = current_user
       if current_user.id != @user.id
-        redirect_to user_path
+        redirect_to root_path
       end
     end
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -100,7 +100,7 @@ class RoomsController < ApplicationController
     def require_user
       @user_accessing = current_user
       if current_user.id != @room.creator_id
-        redirect_to user_path
+        redirect_to room_path
       end
     end
 
