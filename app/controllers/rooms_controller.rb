@@ -64,7 +64,7 @@ class RoomsController < ApplicationController
     category = Category.find(@room.category_id)
     @room.destroy
     respond_to do |format|
-      format.html { redirect_to category, notice: 'Room was successfully destroyed.' }
+      format.html { redirect_to category, notice: 'Room was successfully deleted.' }
       format.json { head :no_content }
     end
   end
