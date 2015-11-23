@@ -35,6 +35,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   has_many :messages, dependent: :destroy
   has_many :user_rooms
+  validates :age, :inclusion => { :in => 0..99, :message => "The age should be within range of 0 ~ 99"}
 
   # validates :location, format:{
   #     with: /\A\d{5}(-\d{4})?\z/
