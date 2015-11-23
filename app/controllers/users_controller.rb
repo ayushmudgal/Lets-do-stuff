@@ -12,8 +12,6 @@ class UsersController < ApplicationController
   def show
     @rooms = Room.all
     @isfriend = @user.friend_with? current_user
-    if User.exists?(params[:id]) == false
-    end
     @joined = UserRoom.where(user_id: params[:id])
     @friends = @user.friends
     @created = Room.where(creator_id: params[:id])
