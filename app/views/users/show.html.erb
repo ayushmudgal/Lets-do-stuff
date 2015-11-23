@@ -69,10 +69,12 @@
                 <% end %>
                 </td>
                </tr>
+               <% if current_user.friend_with? @user %>
                <tr>
                   <th>Last login time:</td>
                   <td><%= @user.last_sign_in_at.localtime.strftime("%m/%d %I:%M%p") %></td>
                 </tr>
+                <%end%>
               </tbody>
             </table>
           </div>
