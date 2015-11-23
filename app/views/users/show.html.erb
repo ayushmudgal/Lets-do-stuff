@@ -88,9 +88,9 @@
 
         <% if current_user != @user and user_signed_in?%>
             <% if current_user.friend_with? @user %>
-              <%= link_to "Already Friends", class: "btn btn-sm btn-warning", type: "button"%>
+              <%= link_to "Already Friends", root_path, class: "btn btn-sm disabled", type: "button"%>
             <% elsif @user.pending_invited_by.include? current_user%>
-              <%= link_to "Friend Request Sent", class: "btn btn-sm btn-warning", type: "button"%>
+              <%= link_to "Friend Request Sent", root_path, class: "btn btn-sm disabled", type: "button"%>
             <% elsif current_user.pending_invited_by.include? @user%>
               <%= link_to "Confirm friend?", friend_path(@user), class: "btn btn-sm btn-warning", type: "button", :method => "put"%>
               <%= link_to "Delete Request", friend_path(@user), class: "btn btn-sm btn-warning", type: "button", :method => "delete"%>

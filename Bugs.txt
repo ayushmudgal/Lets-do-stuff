@@ -1,5 +1,5 @@
 bugs:
-- The friend button styling inconsistencies
+- The friend button styling inconsistencies - {fixed mostly - VL}
 
 NEW:
 - AND AUTO-SCROLL: http://stackoverflow.com/a/21067431
