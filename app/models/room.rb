@@ -13,6 +13,8 @@
 #  location    :string
 #  private     :boolean
 #  creator_id  :integer
+#  longitude   :float
+#  latitude    :float
 #
 
 class Room < ActiveRecord::Base
