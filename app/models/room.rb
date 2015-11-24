@@ -23,8 +23,6 @@ class Room < ActiveRecord::Base
     validates :location, format:{
         with: /\A\d{5}(-\d{4})?\z/
     }
-
-
     has_many :messages, dependent: :destroy
     has_many :user_rooms, dependent: :destroy
 end
