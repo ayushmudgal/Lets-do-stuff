@@ -12,8 +12,10 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up!", :class => "btn btn-success btn-lg", :role => "button"  %>
+    <%= link_to "Sign In!", new_user_session_path, :class => "btn btn-primary btn-lg", :role => "button" %>
   </div>
+
 <% end %>
 
 <%= render "devise/shared/links" %>
