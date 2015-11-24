@@ -12,14 +12,8 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @rooms = Category.find(params[:id]).rooms.page(params[:page]).per(5)
-    # @rooms = Room.where(category_id: params[:id]).where("private=? OR creator_id=?", false, current_user.id)
-    # joined_rooms = UserRoom.where(user_id: current_user.id).where(category_id: params[:id])
-    # joined_rooms.each do |room|
-    #   r = Room.where(id: room.room_id)
-    #   @rooms = @rooms.concat(r)
-    # end
-    # @rooms = @rooms.page(params[:page]).per(5)
+    myarray = Room.where(category_id: params[:id]).sort_by{|r| r.distance_to(current_user.location)}
+    @rooms = Kaminari.paginate_array(myarray).page(params[:page]).per(5)
   end
 
   # GET /categories/new
