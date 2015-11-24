@@ -43,7 +43,7 @@
                   <td><%= @user.about_me %></td>
                 </tr>
                 <tr>
-                  <th>Rooms I have joined:</td>
+                  <th>Rooms joined by @user.name:</td>
                   <td>
                   <% @joined.each do |join| %>
                       <%= link_to (@rooms.find(join.room_id).name), @rooms.find(join.room_id) %>
@@ -52,7 +52,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <th>Rooms I have created:</td>
+                  <th>Rooms created by @user.name:</td>
                   <td>
                   <% @created.each do |create| %>
                     <%= link_to (create.name), create%>
