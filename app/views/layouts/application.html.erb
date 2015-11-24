@@ -31,6 +31,33 @@
                                     <li class="active">
                                         <%= link_to '<i class="glyphicon glyphicon-home"></i>Create a new room'.html_safe, new_room_path %>
                                     </li>
+
+                                     <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style= "text-transform: none"> Friends <span class="caret"></span></a>
+                                          <ul class="dropdown-menu" >
+                                            <% if current_user.friends.empty? %>
+                                              <ul>You have no Friends! Make some by joining a Room!</ul>
+                                            <%else%>
+                                              <% current_user.friends.each do |friend| %>
+                                                 <ul><%= link_to friend.name, user_path(friend)%></ul>
+                                              <%end%>
+                                            <% end %> 
+                                        </ul>
+                                      </li>
+
+                                     <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style= "text-transform: none"> Friend Requests <span class="caret"></span></a>
+                                          <ul class="dropdown-menu" >
+                                            <%if current_user.pending_invited_by.empty?%>
+                                               <ul>No Pending Requests</ul>
+                                            <% else %> 
+                                              <% current_user.pending_invited_by.each do |request| %>
+                                                 <ul><%= link_to request.name, user_path(request)%></ul>
+                                              <% end %> 
+                                            <% end %>
+                                        </ul>
+                                      </li>
+
                                     <li>
                                         <%= link_to "Logout", destroy_user_session_path, :method => :delete %>            
                                     </li>
