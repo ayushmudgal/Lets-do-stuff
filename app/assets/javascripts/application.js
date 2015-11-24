@@ -17,3 +17,14 @@
 //= require bootstrap-sprockets
 //= require private_pub
 //= require_tree .
+
+$('.dropdown').hover(
+  function(){
+  $('.dropdown-toggle', this).trigger('click');
+  // $('.dropdown-toggle, ul',this).show();
+  },
+  function(){
+    $('.dropdown-toggle', this).trigger('click');
+    // $('.dropdown-toggle, ul',this).show();
+  }
+);
