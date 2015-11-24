@@ -1,8 +1,23 @@
 <% if current_user.present? %>
     <div class="links"><%= render "categories/index" %></div>
 <% else %>
+    <div id="page-wrapper">
 
-    <div class="jumbotron" style="background-image: url('assets/jumbotron.jpg'); height:900px; color:white; align-items: center;">
+    <!-- Banner -->
+        <section id="banner">
+            <div class="inner">
+                <h2>Let's Do Stuff!</h2>
+                <p>Find local activities<br />
+                Make friends for life<br />
+                <center><%= link_to "Sign Up!", new_user_registration_path, :class => "btn btn-success btn-lg", :role => "button" %>
+                <%= link_to "Sign In!", new_user_session_path, :class => "btn btn-primary btn-lg", :role => "button" %>
+                </center></p>
+            </div>
+        </section>
+
+    </div>
+
+<!--     <div class="jumbotron" style="background-image: url('assets/jumbotron.jpg'); height:900px; color:white; align-items: center;">
     <h1 style="margin-top: 250px">Let's Do Stuff!</h1><br>
     <p>
         Welcome to Let's Do Stuff! This website enables you to find activities around you that you are interested in, by simply browsing and joining a variety of activity rooms listed up here. With Let's Do Stuff!, you can  instantly engage in fun activities in your area, while making great friends along the way. Sign up today!
@@ -11,5 +26,5 @@
         <%= link_to "Sign Up!", new_user_registration_path, :class => "btn btn-success btn-lg", :role => "button" %>
         <%= link_to "Sign In!", new_user_session_path, :class => "btn btn-primary btn-lg", :role => "button" %>
     </p>
-    </div>
+    </div> -->
 <% end %>
