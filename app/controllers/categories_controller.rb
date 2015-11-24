@@ -12,8 +12,12 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    myarray = Room.where(category_id: params[:id]).sort_by{|r| r.distance_to(current_user.location)}
-    @rooms = Kaminari.paginate_array(myarray).page(params[:page]).per(5)
+    if(current_user.location != nil)
+      myarray = Room.where(category_id: params[:id]).sort_by{|r| r.distance_to(current_user.location)}
+      @rooms = Kaminari.paginate_array(myarray).page(params[:page]).per(5)
+    else
+      @rooms = Room.where(category_id: params[:id]).page(params[:page]).per(5)
+    end
   end
 
   # GET /categories/new
