@@ -21,5 +21,8 @@
 
 <br>
 
+<% unless @rooms.empty? %>
+  <%= paginate @rooms %>
+<% end %>
 	<div class="nav1"><%= link_to 'Create New Room', new_room_path %></div>
 <br>
