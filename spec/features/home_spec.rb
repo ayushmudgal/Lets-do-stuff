@@ -1,7 +1,7 @@
 require "rails_helper"
 require "pp"
 
-feature "All Features Test" do
+feature "Sign Up/Sign In Test" do
 	
  scenario "Create Good New User" do 
    visit "/users/sign_up"     
@@ -32,5 +32,15 @@ feature "All Features Test" do
    fill_in "Password", with: "1234"
    click_button "Log in"
    expect(page).to have_content("Log in")
+ end
+
+  scenario "Valid sign in" do
+   visit root_path 
+   visit "/users/sign_in"
+   user = create(:user, email: "ayushincnca@gmail.com", password: "hellohello")
+   fill_in "Email", with: user.email
+   fill_in "Password", with: user.password
+   click_button "Log in"
+   expect(page).to have_content("Let's Do Stuff!")
  end
 end
