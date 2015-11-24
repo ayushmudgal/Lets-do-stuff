@@ -40,8 +40,10 @@ gem 'rspec'
 gem 'faker'
 gem 'simplecov', :require => false, :group => :test
 gem 'amistad'
+
 gem 'kaminari'
 gem 'geocoder'
+
 # gem 'google-webfonts-rails', '~> 0.0.4'
 
 # Use ActiveModel has_secure_password

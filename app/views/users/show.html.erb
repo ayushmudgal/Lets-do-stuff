@@ -11,7 +11,7 @@
     <div class="panel panel-info">
       <div class="panel-heading">
       <div class="panel-title">
-        <% if current_user == @user %>
+        <% if current_user.id == @user.id %>
             <h3><%=  'My profile ' %></h3>
         <% else %>
           <h3><%= @user.name + '\'s profile ' %></h3>
@@ -43,7 +43,7 @@
                   <td><%= @user.about_me %></td>
                 </tr>
                 <tr>
-                  <th>Rooms joined by @user.name:</td>
+                  <th>Rooms joined by <%= @user.name %>:</td>
                   <td>
                   <% @joined.each do |join| %>
                       <%= link_to (@rooms.find(join.room_id).name), @rooms.find(join.room_id) %>
@@ -52,7 +52,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <th>Rooms created by @user.name:</td>
+                  <th>Rooms created by <%= @user.name %>:</td>
                   <td>
                   <% @created.each do |create| %>
                     <%= link_to (create.name), create%>
