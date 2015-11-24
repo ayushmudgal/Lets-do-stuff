@@ -3,11 +3,9 @@
 <% end %>
 
 <h2> <%= @cateroyNam %> Rooms</h2>
-<% unless @rooms.empty? %>
-  <%= will_paginate @rooms %>
-<% end %>
 
-<!-- <table>
+
+<table>
 
   <tbody>
     <% @rooms.each do |room| %>
@@ -20,9 +18,12 @@
       </tr>
     <% end %>
   </tbody>
-</table> -->
+</table>
 
 <br>
 
+<% unless @rooms.empty? %>
+  <%= paginate @rooms %>
+<% end %>
 	<div class="nav1"><%= link_to 'Create New Room', new_room_path %></div>
 <br>

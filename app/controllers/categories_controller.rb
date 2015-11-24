@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
       r = Room.where(id: room.room_id)
       @rooms = @rooms.concat(r)
     end
-    @rooms = @rooms.uniq
+    @rooms = @rooms.uniq.page(params[:page]).per(5)
   end
 
   # GET /categories/new
