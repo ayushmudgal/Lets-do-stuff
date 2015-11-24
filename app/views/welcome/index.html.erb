@@ -1,34 +1,18 @@
-<!-- <!DOCTYPE html>
-<html>
-    <head> -->
-    <!-- <link href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>  -->
-  <!-- <link href='https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-   <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' %>
-  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext' %>-->
-    <!-- </head> -->
+<% if current_user.present? %>
 
-    <% if current_user.present? %>
-    <br>
-    <h3><%= @name %></h3>
-        <div class="links"><%= render "categories/index" %></div>
-    <% else %>
-    <div class="about">
-    <h3>About</h3>
-    Welcome to Let's Do Stuff! This website enables you to find activities
-    around you that you are interested in, by simply browsing and joining a variety of activity rooms listed up here. On Let's Do Stuff!, you can not only instantly engage in fun activities as a newcomer to the area, at the same time, it is a great platform to make friends. Who doesn't like people who share same interests? Without further ado, let's begin the journey!~
-    </div>
-    <% end %>
-    <!-- <div id="content">
-    <div class="links">
-    <% if current_user.present? %>
-    <%= link_to 'Create your own room', new_room_path %><br>
-     <%= link_to 'Browse rooms', rooms_path %><br>
-     <%= link_to 'Complete your profile', edit_user_path(current_user)
-    	%><br>
-    <%= link_to 'My Profile', user_path(current_user) %>
-    <br>
-    <% end %>
-    </div>
-    </div> -->
+    <br> <h3><%= @name %></h3>
+    <div class="links"><%= render "categories/index" %></div>
 
-<!-- </html> -->
+<% else %>
+
+    <div class="jumbotron" style="background-image: url('assets/jumbotron.jpg'); height:900px; color:white; align-items: center;">
+    <h1 style="margin-top: 250px">Let's Do Stuff!</h1><br>
+    <p>    
+        Welcome to Let's Do Stuff! This website enables you to find activities around you that you are interested in, by simply browsing and joining a variety of activity rooms listed up here. With Let's Do Stuff!, you can  instantly engage in fun activities in your area, while making great friends along the way. Sign up today!
+    </p><br>
+    <p>
+        <%= link_to "Sign Up!", new_user_registration_path, :class => "btn btn-success btn-lg", :role => "button" %>
+        <%= link_to "Sign In!", new_user_session_path, :class => "btn btn-primary btn-lg", :role => "button" %>
+    </p>
+    </div>
+<% end %>
