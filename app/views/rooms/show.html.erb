@@ -30,7 +30,7 @@
             Created by: <%= room_creator_name(@room) %>
             </center>
             <center style="border-top: 1px black solid">
-            Users in Room: 
+            Users in Room:
             <% users_in_room(@room).each do |user| %>
               <%= user %><br>
             <% end %>
@@ -45,9 +45,12 @@
                   <%= link_to 'Leave room!', quit_room_path(@room), method: :post %>
                 <% end %>
               </li>
-              <li>
-                <%= link_to "Logout", destroy_user_session_path, :method => :delete %>            
-              </li>
+
+              <li class="active" class="panel panel-default">
+              <!-- Default panel contents -->
+              <!-- <div class="panel-heading"><b> -->
+              <%= link_to '< Back', @room.category %>&nbsp&nbsp
+             </li>
             </ul>
           </div>
           <!-- END MENU -->
@@ -65,4 +68,3 @@
   </div>
 </p>
 <%end%>
-

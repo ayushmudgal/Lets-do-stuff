@@ -5,7 +5,8 @@ class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.json
   def index
-    @rooms = Room.all
+    # @rooms = Room.all
+    @rooms.near("Berkeley, California, US",100)
     @rooms = Room.page(params[:page]).per(5)
   end
 
