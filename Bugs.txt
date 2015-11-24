@@ -12,7 +12,6 @@ NEW:
 - Don't allow people to edit other people's profiles
 
 Possible new features:
-- see when friend has last logged in
 - see whether friend is online (track login/logout)
 - enable only one account per IP so no trolling
 - enable people to grant admin access to other users if you are an admin
