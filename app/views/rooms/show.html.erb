@@ -49,7 +49,11 @@
               <li class="active" class="panel panel-default">
               <!-- Default panel contents -->
               <!-- <div class="panel-heading"><b> -->
-              <%= link_to '< Back', @room.category %>&nbsp&nbsp
+              <% if current_user.id == @room.creator_id %>
+                  <%= link_to 'Edit', edit_room_path(@room) %>
+                  <%= link_to 'Delete', @room, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+              <%= link_to '< Back', @room.category %>
              </li>
             </ul>
           </div>
@@ -59,10 +63,7 @@
       <div class="col-md-6">
         <div class="profile-content">
           <center>
-            <% if current_user.id == @room.creator_id %>
-            <td><%= link_to 'Edit', edit_room_path(@room) %></td>
-            <td><%= link_to 'Delete', @room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            <% end %>
+
             <h2> Chat </h2>
             <%= render "messages/index" %>
           </center>
