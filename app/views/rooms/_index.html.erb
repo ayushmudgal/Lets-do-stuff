@@ -1,7 +1,6 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
-
 <h2> <%= @cateroyNam %> Rooms</h2>
 
 <table>
@@ -21,5 +20,4 @@
 <% unless @rooms.empty? %>
   <%= paginate @rooms %>
 <% end %>
-	<div class="nav1"><%= link_to 'Create New Room', new_room_path %></div>
 <br>

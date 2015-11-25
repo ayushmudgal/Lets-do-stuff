@@ -582,7 +582,7 @@ body {
 .profile-userbuttons .btn:last-child {
   margin-right: 0px;
 }
-    
+
 .profile-usermenu {
   margin-top: 30px;
 }
@@ -627,6 +627,13 @@ body {
   padding: 20px;
   background: #fff;
   min-height: 460px;
+}
+
+.button_with_image_add{
+  // background : url(../images/Plus_Orange.png);
+  background-color: #f6f9fb;
+  display:block;
+  cursor:pointer;
 }
 
 /*media queries*/

@@ -2,9 +2,9 @@
 <p>
   <div class="panel panel-default">
   <div class="panel-heading"><b>
-  <%= link_to '< Back', root_path %>&nbsp&nbsp
+  <%= link_to '< Back', root_path %>&nbsp
+  <%= link_to 'New', new_room_path %>
   </b>
-  <% @cateroyNam = @category.name %>
   <%= render "rooms/index" %>
 </p>
 
