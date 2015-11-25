@@ -1,18 +1,19 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
-<h2><%=  Category.find(@rooms.first.category_id).name %> Rooms</h2>
-<table>
-  <tbody>
-    <% @rooms.each do |room| %>
-      <tr>
-        <td><%= link_to (room.name), room %></td>
-        <td> <%=room.description %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<% if Category.exists?(params[:id]) %>
+<h2><%=  Category.find(params[:id]).name %> Rooms</h2>
+	<table>
+	  <tbody>
+	    <% @rooms.each do |room| %>
+	      <tr>
+	        <td><%= link_to (room.name), room %></td>
+	        <td> <%=room.description %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+<%end%>
 <br>
 
 <% unless @rooms.empty? %>

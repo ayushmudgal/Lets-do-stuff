@@ -72,7 +72,12 @@ class CategoriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = Category.find(params[:id])
+      if Category.exists?(params[:id])
+        @category = Category.find(params[:id])
+      else
+        flash[:notice] = "This Category Does Not Exist!"
+        redirect_to root_path
+      end
     end
 
      def require_user
