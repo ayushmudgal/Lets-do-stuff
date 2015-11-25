@@ -33,7 +33,7 @@
                                         <%= link_to '<i class="glyphicon glyphicon-home"></i>Create a new room'.html_safe, new_room_path %>
                                     </li>
 
-                                     <li class="dropdown">
+                                     <!-- <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style= "text-transform: none"> Friends <span class="caret"></span></a>
                                           <ul class="dropdown-menu"  >
                                             <% if current_user.friends.empty? %>
@@ -57,7 +57,41 @@
                                               <% end %>
                                             <% end %>
                                         </ul>
-                                      </li>
+                                      </li> -->
+
+
+                                      <div class="list">
+                                        <h3>
+                                            <span> My Friends </span>
+                                         </h3>
+                                           <ul  visibility: hidden>
+                                             <% if current_user.friends.empty? %>
+                                               <li >You have no Friends! Make some by joining a Room!</li>
+                                             <%else%>
+                                               <% current_user.friends.each do |friend| %>
+                                                  <li><%= link_to friend.name, user_path(friend)%></li>
+                                               <%end%>
+                                             <% end %>
+                                         </ul>
+                                       </div>
+
+                                      <div class="list">
+                                        <h3>
+                                          <span> Friend Requests </span>
+                                        </h3>
+                                           <ul  visibility: hidden>
+                                             <%if current_user.pending_invited_by.empty?%>
+                                                <li>No Pending Requests</li>
+                                             <% else %>
+                                               <% current_user.pending_invited_by.each do |request| %>
+                                                  <li><%= link_to request.name, user_path(request)%></li>
+                                               <% end %>
+                                             <% end %>
+                                         </ul>
+                                       </div>
+
+
+
 
                                     <li>
                                         <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
@@ -84,7 +118,7 @@
 
     </div>
 
-    <script>
+    <!-- <script>
     $('.dropdown').hover(
       function(){
       $('.dropdown-toggle', this).trigger('click');
@@ -95,7 +129,18 @@
         // $('.dropdown-toggle, ul',this).show();
       }
     );
+    </script> -->
+
+    <script type="text/javascript">
+      $(function(){
+        $(".list h3").hover(function(){
+          $(this).next("ul").show(700);
+        },function(){
+         $(this).next("ul").hide(700);
+        });
+    });
     </script>
+
 
 </body>
 </html>
