@@ -2,11 +2,15 @@ require 'rails_helper'
 
 
 RSpec.describe RoomsController, :type => :controller do
+	let(:user) {create(:user, email: "ayushincnca@gmail.com", password: "hellohello")}
+	before { controller.stub(:current_user) { user } }
 
 	describe "ROOM #create" do
 		it 'let the current user to make new post with valid post data' do
+			create(:category, id:1)
+			@room = FactoryGirl.attributes_for(:room)
 			expect{
-				post :create, room: FactoryGirl.attributes_for(:room), commit: "Create Room"
+				post :create, room: @room, commit: "Create Room"
 			}.to change(Room, :count).by(1)
 
 			# Post.find(@post.id).title.should eq("Test Title")
@@ -14,7 +18,7 @@ RSpec.describe RoomsController, :type => :controller do
 			# Post.find(@post.id).category.should eq("Technology")
 			# Post.find(@post.id).price.should eq("$$")
 
-			response.should redirect_to @room
+			response.should redirect_to "/rooms/" + Room.last.id.to_s 
 		end
 
 	# 	it 'renders the post_new page when missing post title' do
@@ -38,7 +42,9 @@ RSpec.describe RoomsController, :type => :controller do
 
 	describe "GET #show" do
 		it 'renders the post page for the selected post' do
-			get :show, id: @room.id
+			create(:category, id:1)
+			room = create(:room, location: "90004")
+			get :show, id:room.id
 			response.should render_template 'show'
 		end
 	end

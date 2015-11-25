@@ -5,9 +5,10 @@ require 'rails_helper'
 	#GET #show
 
 RSpec.describe UsersController, :type => :controller do
-	
+
 	describe "GET #show" do
 		login_user
+
 		it 'renders the user profile page for the current user' do
 			get :show, id: subject.current_user.id
 			response.should render_template :show
@@ -19,9 +20,5 @@ RSpec.describe UsersController, :type => :controller do
 			response.should render_template :show
 		end
 
-		it 'raises error when the id given is invalid' do
-			expect{get :show, id: -1}.to raise_error(ActiveRecord::RecordNotFound)
-		end
 	end
-
 end

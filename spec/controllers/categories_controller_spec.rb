@@ -4,5 +4,7 @@ require 'rails_helper'
 
 	#GET #show
 
-RSpec.describe Categories, :type => :controller do
+RSpec.describe Category, :type => :controller do
+
+end
 	

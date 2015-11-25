@@ -32,14 +32,24 @@ FactoryGirl.define do
   factory :user do
     email {Faker::Internet.email}
     encrypted_password {Faker::Internet.password}
+    sign_in_count {1}
+    created_at {Faker::Date.forward(23)}
+    updated_at {Faker::Date.forward(23)}
   end
 
   factory :room do |f|
     f.name {Faker::Internet.user_name}
-    f.location {Faker::Internet.name}
-    f.category_id 3
+    f.location 90003
+    f.category_id 1
     f.description "Happy Room"
     f.date {Faker::Date.forward(23)}
-    f.time {Faker::Date.forward(23)}
+    f.time {Faker::Time.between(DateTime.now - 1, DateTime.now)
+    }
+  end
+
+  factory :category do |f|
+    f.name {Faker::Internet.user_name}
+    f.created_at {Faker::Date.forward(23)}
+    f.updated_at {Faker::Date.forward(23)}
   end
 end
