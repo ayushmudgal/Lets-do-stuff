@@ -97,8 +97,8 @@ a:active {
 
  a:hover {
     /*color: #fff;*/
-    color: $orange2;
-    text-shadow: 0px 0px 2px $orange2;
+    /*color: $orange2;
+    text-shadow: 0px 0px 2px $orange2;*/
     /*background-color: rgba(167,219,216,1);*/
     text-decoration: none;
     font-weight: bold;
@@ -135,7 +135,7 @@ h2 {
   padding-bottom: -5px;
   text-transform: none;
   letter-spacing: 1px;
-  color: $orange;
+  /*color: $orange;*/
   font-size: 30px;
   text-shadow: 1px 1px rgba(105,210,231,1);
   /*background: $beige !important;*/
@@ -211,11 +211,11 @@ div {
 
 .navbar-brand {
   text-transform: capitalize;
-  /*font-family: 'Lobster', cursive;*/
+  /*font-family: 'Lobster', cursive;
   font-weight: bold;
-  color: rgba(250,105,0,1) !important;
-  text-shadow: 1px 1px rgba(105,210,231,1);
-  font-size: 30px !important;
+  color: rgba(250,105,0,1) !important;*/
+  /*text-shadow: 1px 1px rgba(105,210,231,1);
+  font-size: 30px !important;*/
 }
 
 .navbar a {
@@ -277,7 +277,7 @@ div {
 .links td:hover {
 	/*border: 1px black solid;*/
 	background-color: white;
-	color: $orange2 !important;
+	/*color: $orange2 !important;*/
     text-shadow: 0px 0px 2px $orange2;
     /*background-color: rgba(167,219,216,1);*/
     font-weight: bold;
@@ -621,6 +621,151 @@ body {
   border-left: 2px solid #5b9bd1;
   margin-left: -2px;
 }
+/* Banner */
+
+  #banner {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    cursor: default;
+    height: 100vh;
+    min-height: 35em;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+  }
+
+    #banner h2 {
+      -moz-transform: scale(1);
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+      -moz-transition: -moz-transform 0.5s ease, opacity 0.5s ease;
+      -webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+      -ms-transition: -ms-transform 0.5s ease, opacity 0.5s ease;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      display: inline-block;
+      font-size: 1.75em;
+      opacity: 1;
+      padding: 0.35em 1em;
+      position: relative;
+      z-index: 1;
+    }
+
+      #banner h2:before, #banner h2:after {
+        -moz-transition: width 0.85s ease;
+        -webkit-transition: width 0.85s ease;
+        -ms-transition: width 0.85s ease;
+        transition: width 0.85s ease;
+        -moz-transition-delay: 0.25s;
+        -webkit-transition-delay: 0.25s;
+        -ms-transition-delay: 0.25s;
+        transition-delay: 0.25s;
+        background: #fff;
+        content: '';
+        display: block;
+        height: 2px;
+        position: absolute;
+        width: 100%;
+      }
+
+      #banner h2:before {
+        top: 0;
+        left: 0;
+      }
+
+      #banner h2:after {
+        bottom: 0;
+        right: 0;
+      }
+
+    #banner p {
+      letter-spacing: 0.225em;
+      text-transform: uppercase;
+    }
+
+      #banner p a {
+        color: inherit;
+      }
+
+    #banner .more {
+      -moz-transition: -moz-transform 0.75s ease, opacity 0.75s ease;
+      -webkit-transition: -webkit-transform 0.75s ease, opacity 0.75s ease;
+      -ms-transition: -ms-transform 0.75s ease, opacity 0.75s ease;
+      transition: transform 0.75s ease, opacity 0.75s ease;
+      -moz-transition-delay: 3.5s;
+      -webkit-transition-delay: 3.5s;
+      -ms-transition-delay: 3.5s;
+      transition-delay: 3.5s;
+      -moz-transform: translateY(0);
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+      border: none;
+      bottom: 0;
+      color: inherit;
+      font-size: 0.8em;
+      height: 8.5em;
+      left: 50%;
+      letter-spacing: 0.225em;
+      margin-left: -8.5em;
+      opacity: 1;
+      outline: 0;
+      padding-left: 0.225em;
+      position: absolute;
+      text-align: center;
+      text-transform: uppercase;
+      width: 16em;
+      z-index: 1;
+    }
+
+      #banner .more:after {
+        background-image: url("images/arrow.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        bottom: 4em;
+        content: '';
+        display: block;
+        height: 1.5em;
+        left: 50%;
+        margin: 0 0 0 -0.75em;
+        position: absolute;
+        width: 1.5em;
+      }
+
+    #banner:after {
+      -moz-pointer-events: none;
+      -webkit-pointer-events: none;
+      -ms-pointer-events: none;
+      pointer-events: none;
+      -moz-transition: opacity 3s ease-in-out;
+      -webkit-transition: opacity 3s ease-in-out;
+      -ms-transition: opacity 3s ease-in-out;
+      transition: opacity 3s ease-in-out;
+      -moz-transition-delay: 1.25s;
+      -webkit-transition-delay: 1.25s;
+      -ms-transition-delay: 1.25s;
+      transition-delay: 1.25s;
+      content: '';
+      background: #2e3842;
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+    }
 
 /* Profile Content */
 .profile-content {
