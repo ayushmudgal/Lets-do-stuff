@@ -34,6 +34,8 @@ html, body {
   position: relative;
   width: 100%;
   height: 100%;
+  top: 0px;
+  /*background: #F1F3FA;*/
   background-color: $blue;
   background: $blue; /* for non-css3 browsers */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#69D2E7', endColorstr='#E0E4CC'); /* for IE */
@@ -49,9 +51,19 @@ html, body {
 
 body {
   background-color: $blue;
+  background: $blue; /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#69D2E7', endColorstr='#E0E4CC'); /* for IE */
+  background: -webkit-linear-gradient(left top, $blue, $beige) no-repeat center center fixed; /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, $blue, $beige) no-repeat center center fixed; /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, $blue, $beige) no-repeat center center fixed; /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, $blue, $beige) no-repeat center center fixed; /* Standard syntax */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   color: #333;
   /*font-family: 'Slabo 27px', serif;*/
-  /*font-family: 'Arvo', serif;*/
+  font-family: 'Arvo', serif;
   /*font-family: verdana, arial, helvetica, sans-serif;*/
   font-size: 18px;
 /*  line-height: 18px;*/
@@ -97,27 +109,27 @@ a:active {
 
  a:hover {
     /*color: #fff;*/
-    /*color: $orange2;
-    text-shadow: 0px 0px 2px $orange2;*/
+    color: $orange2;
+    text-shadow: 0px 0px 2px $orange2;
     /*background-color: rgba(167,219,216,1);*/
     text-decoration: none;
-    font-weight: bold;
-    -webkit-transition: color 0.5s; /* Safari */
-    transition: color 0.5s;
-    -webkit-transition: text-shadow 0.5s; /* Safari */
-    transition: text-shadow 0.5s;
+    font-weight: bold !important;
+    -webkit-transition: color 0.5s !important; /* Safari */
+    transition: color 0.5s !important;
+    -webkit-transition: text-shadow 0.5s !important; /* Safari */
+    transition: text-shadow 0.5s !important;
 }
 
 h1 {
   margin: 0 auto;
   text-align: center;
   text-transform: none;
-  /*font-family: 'Lobster', cursive;*/
+  font-family: 'Lobster', cursive;
   font-weight: bold;
   color: rgba(250,105,0,1);
   text-shadow: 1px 1px rgba(105,210,231,1);
   letter-spacing: 1px;
-  border-bottom: 2px black solid;
+  border-bottom: 1px black solid;
   padding-top: 10px;
   padding-bottom: -8px;
   font-size: 45px;
@@ -135,7 +147,7 @@ h2 {
   padding-bottom: -5px;
   text-transform: none;
   letter-spacing: 1px;
-  /*color: $orange;*/
+  color: $orange;
   font-size: 30px;
   text-shadow: 1px 1px rgba(105,210,231,1);
   /*background: $beige !important;*/
@@ -155,6 +167,23 @@ h3 {
   letter-spacing: 1px;
   color: $orange;
   font-size: 30px;
+  text-shadow: 1px 1px rgba(105,210,231,1);
+  /*background: $beige !important;*/
+}
+
+h4 {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  text-align: center;
+  /*font-family: 'Lobster', cursive;*/
+  font-weight: bold;
+  /*border-bottom: 1px black solid;*/
+  padding-top: 10px;
+  padding-bottom: -5px;
+  text-transform: none;
+  letter-spacing: 1px;
+  color: $orange;
+  font-size: 20px;
   text-shadow: 1px 1px rgba(105,210,231,1);
   /*background: $beige !important;*/
 }
@@ -211,11 +240,18 @@ div {
 
 .navbar-brand {
   text-transform: capitalize;
-  /*font-family: 'Lobster', cursive;
+  font-family: 'Lobster', cursive;
   font-weight: bold;
-  color: rgba(250,105,0,1) !important;*/
-  /*text-shadow: 1px 1px rgba(105,210,231,1);
-  font-size: 30px !important;*/
+  color: rgba(250,105,0,1) !important;
+  text-shadow: 1px 1px rgba(105,210,231,1);
+  font-size: 35px !important;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 auto;
+  -webkit-transition: all 0.5s; /* Safari */
+   transition: all 0.5s;
 }
 
 .navbar a {
@@ -238,7 +274,7 @@ div {
 }
 
 .links table {
-	width: 80%;
+	width: 100%;
 	position: relative;
 	margin: 0 auto;
 }
@@ -258,6 +294,7 @@ div {
     width: 100% !important;
     font-size: 20px;
     padding: 0 10px;
+    height: 40px;
 /*    margin: 100px;*/
     line-height: 30px;
     text-align: center;
@@ -521,10 +558,6 @@ input[type=text]:focus, textarea:focus {
     list-style: none;
   }
 
-body {
-  background: #F1F3FA;
-}
-
 /* Profile container */
 .profile {
   margin: 20px 0;
@@ -534,6 +567,8 @@ body {
 .profile-sidebar {
   padding: 20px 0 10px 0;
   background: #fff;
+  -webkit-transition: all 0.5s; /* Safari */
+   transition: all 0.5s;
 }
 
 .profile-userpic img {
@@ -599,16 +634,24 @@ body {
   color: #93a3b5;
   font-size: 14px;
   font-weight: 400;
+  -webkit-transition: all 0.5s; /* Safari */
+   transition: all 0.5s;
 }
 
 .profile-usermenu ul li a i {
   margin-right: 8px;
   font-size: 14px;
+  -webkit-transition: all 0.5s; /* Safari */
+   transition: all 0.5s;
+
 }
 
-.profile-usermenu ul li a:hover {
-  background-color: #fafcfd;
-  color: #5b9bd1;
+.profile-usermenu ul li a:hover, .profile-usermenu ul li.active a:hover {
+  background-color: $beige; /*#fafcfd;*/
+  /*color: #5b9bd1;*/
+  color: $orange2;
+  -webkit-transition: all 0.5s; /* Safari */
+   transition: all 0.5s;
 }
 
 .profile-usermenu ul li.active {
@@ -617,10 +660,13 @@ body {
 
 .profile-usermenu ul li.active a {
   color: #5b9bd1;
-  background-color: #f6f9fb;
+  background-color: #f6f9fb; /*$beige;*/
   border-left: 2px solid #5b9bd1;
   margin-left: -2px;
+  -webkit-transition: all 0.5s; /* Safari */
+   transition: all 0.5s;
 }
+
 /* Banner */
 
   #banner {
@@ -813,7 +859,7 @@ body {
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
 /* Styles */
 	.links table {
-		width: 80%;
+		/*width: 80%;*/
 	}
 }
 
@@ -829,7 +875,7 @@ body {
 @media only screen  and (min-width : 1224px) {
 /* Styles */
 	.links table {
-		width: 80%;
+		/*width: 80%;*/
 	}
 }
 
@@ -837,6 +883,6 @@ body {
 @media only screen  and (min-width : 1824px) {
 /* Styles */
 	.links table {
-		width: 50%;
+		/*width: 50%;*/
 	}
 }

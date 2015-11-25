@@ -1,12 +1,12 @@
 <% if current_user.present? %>
     <div class="links"><%= render "categories/index" %></div>
 <% else %>
-    <div id="page-wrapper">
+    <!-- <div id="page-wrapper"> -->
 
     <!-- Banner -->
         <section id="banner">
             <div class="inner">
-                <h2>Let's Do Stuff!</h2>
+                <h1>Let's Do Stuff!</h1>
                 <p>Find local activities<br />
                 Make friends for life<br />
                 <center><%= link_to "Sign Up!", new_user_registration_path, :class => "btn btn-success btn-lg", :role => "button" %>
@@ -15,7 +15,7 @@
             </div>
         </section>
 
-    </div>
+    <!-- </div> -->
 
 <!--     <div class="jumbotron" style="background-image: url('assets/jumbotron.jpg'); height:900px; color:white; align-items: center;">
     <h1 style="margin-top: 250px">Let's Do Stuff!</h1><br>

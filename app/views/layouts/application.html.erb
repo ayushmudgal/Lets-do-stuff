@@ -61,9 +61,9 @@
 
 
                                       <div class="list">
-                                        <h3>
+                                        <h4>
                                             <span> My Friends </span>
-                                         </h3>
+                                         </h4>
                                            <ul  visibility: hidden>
                                              <% if current_user.friends.empty? %>
                                                <li >You have no Friends! Make some by joining a Room!</li>
@@ -76,9 +76,9 @@
                                        </div>
 
                                       <div class="list">
-                                        <h3>
+                                        <h4>
                                           <span> Friend Requests </span>
-                                        </h3>
+                                        </h4>
                                            <ul  visibility: hidden>
                                              <%if current_user.pending_invited_by.empty?%>
                                                 <li>No Pending Requests</li>
@@ -111,9 +111,9 @@
 
 
         <% else %>
-            <div class="profile-content">
+            <!-- <div class="profile-content"> -->
                 <%= yield %>
-            </div>
+            <!-- </div> -->
         <% end %>
 
     </div>
@@ -133,10 +133,10 @@
 
     <script type="text/javascript">
       $(function(){
-        $(".list h3").hover(function(){
-          $(this).next("ul").show(700);
+        $(".list h4").hover(function(){
+          $(this).next("ul").show(600);
         },function(){
-         $(this).next("ul").hide(700);
+         $(this).next("ul").hide(600);
         });
     });
     </script>
