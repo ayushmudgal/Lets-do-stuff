@@ -13,7 +13,6 @@ class RoomsController < ApplicationController
   # GET /rooms/1.json
   def show
     @messages = Message.where(room_id: params[:id])
-    @toback = @room.category_id
     @joinedUsers= UserRoom.where(room_id: params[:id])
   end
 
