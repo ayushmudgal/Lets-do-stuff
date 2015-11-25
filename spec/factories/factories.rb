@@ -47,6 +47,13 @@ FactoryGirl.define do
     }
   end
 
+  factory :friendship do |f|
+    f.friendable_id 1
+    f.friend_id 2
+    f.blocker_id 3
+    f.pending true
+  end
+
   factory :category do |f|
     f.name {Faker::Internet.user_name}
     f.created_at {Faker::Date.forward(23)}
