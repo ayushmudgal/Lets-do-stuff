@@ -29,12 +29,14 @@
 require 'faker'
 
 FactoryGirl.define do
-  factory :user do
-    email {Faker::Internet.email}
-    encrypted_password {Faker::Internet.password}
-    sign_in_count {1}
-    created_at {Faker::Date.forward(23)}
-    updated_at {Faker::Date.forward(23)}
+  factory :user do |f|
+    f.email {Faker::Internet.email}
+    f.encrypted_password {"1234567890"}
+    f.sign_in_count {1}
+    f.location "90004"
+    f.name "Ayush"
+    f.created_at {Faker::Date.forward(23)}
+    f.updated_at {Faker::Date.forward(23)}
   end
 
   factory :room do |f|

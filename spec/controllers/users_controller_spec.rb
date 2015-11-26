@@ -21,4 +21,27 @@ RSpec.describe UsersController, :type => :controller do
 		end
 
 	end
+
+	describe "GET #create" do
+		login_user
+		it 'create a bad new user' do
+			@user = FactoryGirl.attributes_for(:user)
+			expect{
+				post :create, user: @user, commit: "Create User"
+			}.to change(User, :count).by(0)
+
+			response.should render_template :new
+		end
+	end
+
+	describe "DELETE #create" do
+		login_user
+		it 'delete a bad user' do
+			@user = create(:user, password: "123456778")
+			expect{
+				delete :destroy, id: @user.id
+			}.to change(User, :count).from(User.count).to(User.count - 1)
+			expect{User.find(@user.id)}.to raise_error(ActiveRecord::RecordNotFound)
+		end
+	end
 end

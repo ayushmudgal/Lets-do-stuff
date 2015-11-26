@@ -5,6 +5,9 @@ require 'rails_helper'
 	#GET #show
 
 RSpec.describe CategoriesController, :type => :controller do
+	let(:current_user) {create(:user, email: "ayushincnca@gmail.com", password: "hellohello", location:nil)}
+	let(:category_params) {name}
+
 	describe "Categories #create" do
 		it 'create a new category' do
 			@category = FactoryGirl.attributes_for(:category)
@@ -17,6 +20,13 @@ RSpec.describe CategoriesController, :type => :controller do
 
 	describe "GET #show" do
 		login_user
+		it 'renders the category' do
+			create(:category, id:1)
+			category = create(:category, name: "Sports")
+			get :show, id:category.id
+			response.should render_template 'show'
+		end
+
 		it 'renders the category' do
 			create(:category, id:1)
 			category = create(:category, name: "Sports")
@@ -43,5 +53,6 @@ RSpec.describe CategoriesController, :type => :controller do
 			expect{Category.find(@category.id)}.to raise_error(ActiveRecord::RecordNotFound)
 		end
 	end
+
 end
 	

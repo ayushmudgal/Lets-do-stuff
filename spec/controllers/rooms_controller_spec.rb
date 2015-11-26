@@ -37,7 +37,7 @@ RSpec.describe RoomsController, :type => :controller do
 		login_user
 		it 'shows all rooms' do
 			get :index
-			response.should redirect_to '/'
+			response.should redirect_to "/"
 		end
 	end
 
@@ -52,7 +52,7 @@ RSpec.describe RoomsController, :type => :controller do
 			expect{Room.find(@room.id)}.to raise_error(ActiveRecord::RecordNotFound)
 		end
 	end
-	
+
  	end
 
 end

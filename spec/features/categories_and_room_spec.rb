@@ -14,6 +14,8 @@ feature "Categories and Room Test" do
    click_link "Wii"
    click_link("+", :match => :first)
    expect(current_path).to eq "/rooms/new"
+   visit "/categories/2" 
+   visit "/user/2"
  end
 
  scenario "Creating an invalid Room" do
