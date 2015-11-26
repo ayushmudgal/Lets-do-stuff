@@ -16,6 +16,8 @@ feature "Categories and Room Test" do
    expect(current_path).to eq "/rooms/new"
    visit "/categories/2" 
    visit "/user/2"
+   visit "/friends"
+   expect(current_path).to eq "/"
  end
 
  scenario "Creating an invalid Room" do

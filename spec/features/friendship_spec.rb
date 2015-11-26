@@ -13,6 +13,7 @@ feature "Friendship Tests" do
    	visit "users/" + user2.id.to_s
    	click_link "Add Friend?"
    	expect(page).to have_content("Friend Request Sent")
+      visit "/friends?user_id=100"
  end
 
  scenario "Test Accepting a Request" do 
