@@ -596,9 +596,9 @@ input[type=text]:focus, textarea:focus {
 }
 
 /* Profile sidebar */
-.profile-sidebar {
+.profile-sidebar.affix {
   padding: 20px 0 10px 0;
-  background: #fff;
+  background-color: #fff !important;
   -webkit-transition: all 0.5s; /* Safari */
    transition: all 0.5s;
    position: fixed;
