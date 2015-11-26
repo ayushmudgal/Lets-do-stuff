@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
   before_filter :require_user, only: [:edit]
+  before_filter :redirection, only: [:index]
 
   # GET /rooms
   # GET /rooms.json
@@ -103,6 +104,10 @@ class RoomsController < ApplicationController
         flash[:notice] = "Sorry, you are not authorized to access to this page!"
         redirect_to room_path
       end
+    end
+
+    def redirection
+      redirect_to root_path
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
