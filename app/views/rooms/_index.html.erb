@@ -3,6 +3,7 @@
 <% end %>
 <% if Category.exists?(params[:id]) %>
 <h2><%=  Category.find(params[:id]).name %> Rooms</h2>
+	<center><%= link_to 'Create New Room', new_room_path %></center>
 	<table>
 	  <tbody>
 	    <% @rooms.each do |room| %>

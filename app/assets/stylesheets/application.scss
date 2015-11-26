@@ -206,6 +206,12 @@ div {
 /*  height: 100%;*/
 }
 
+.container {
+	position: relative;
+	margin: 0 auto;
+	width: 95%;
+}
+
 #nav {
   position: fixed;
   z-index: 100;
@@ -561,6 +567,12 @@ input[type=text]:focus, textarea:focus {
 /* Profile container */
 .profile {
   margin: 20px 0;
+}
+
+.nav li {
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
 }
 
 /* Profile sidebar */
