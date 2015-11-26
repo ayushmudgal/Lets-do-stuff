@@ -1,19 +1,16 @@
 bugs:
-- The friend button styling inconsistencies - {fixed mostly - VL}
 
 NEW:
-- AND AUTO-SCROLL: http://stackoverflow.com/a/21067431
-- The profile table is not centered when u try to shrink the page
-- On user's profile, the edit button should locate at top right and the message button should locate under user's avatar
+- AUTO-SCROLL chat: http://stackoverflow.com/a/21067431
 - Modify the css of input box in the chat room so it can auto expand when the text size is larger then the default text size - {This is not CSS. This is done with fancy javascript/jquery. will try later - VL}
-- The chat history is not scrolling for me
 - In the profile page, the stats update should not be a button link to the current page
-- Change the "create a new room" link to a plus sign image button
-- Don't allow people to edit other people's profiles
 - css of edit destroy
+- add a link to the sidebar to browse categories
+- add an accordion to the sidebar of the list of rooms you've joined for easy access
 
 Possible new features:
 - see whether friend is online (track login/logout)
 - enable only one account per IP so no trolling
 - enable people to grant admin access to other users if you are an admin
 - admin is not permitted to leave room until another user has been admined.
+- message other users directly
