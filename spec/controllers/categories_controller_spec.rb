@@ -33,15 +33,6 @@ RSpec.describe CategoriesController, :type => :controller do
 		end
 	end
 
-	describe "GET #index" do
-		login_user
-		it 'shows all categories' do
-			@category = create(:category, name: "Sports")
-			get :index, id: @category.id
-			response.should redirect_to "/"
-		end
-	end
-
 	describe "DELETE #destroy" do
 		login_user
 		it 'deletes the selected room' do
