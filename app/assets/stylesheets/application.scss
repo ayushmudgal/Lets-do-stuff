@@ -351,6 +351,7 @@ table {
 	margin: 0 auto;
 	padding: 10px;
 	overflow: auto;
+	max-height: 500px;
 	background-color: $blue2;
 }
 
@@ -358,6 +359,7 @@ table {
 	/*list-style: none;*/
 	width: 100%;
 	padding: 0;
+	/*overflow: auto;*/
 }
 
 #chat li {
