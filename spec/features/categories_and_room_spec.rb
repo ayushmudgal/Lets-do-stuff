@@ -122,8 +122,8 @@ end
 scenario "Editing a room" do
    visit root_path 
    visit "/users/sign_in"
-   user = create(:user, email: "ayushincnca@gmail.com", password: "hellohello")
-   category = create(:category, name: "Wii")
+   user = create(:user, email: "ayushincnca@gmail.com", password: "hellohello", location: "90003")
+   category = create(:category, name: "Wii", )
    fill_in "Email", with: user.email
    fill_in "Password", with: user.password
    click_button "Log in"
