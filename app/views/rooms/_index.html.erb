@@ -1,23 +1,39 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
-<% end %>
+	<% end %>
 <% if Category.exists?(params[:id]) %>
-<h2>
-<%=  Category.find(params[:id]).name %> Rooms               
-<%= link_to new_room_path, class: "btn btn-sm btn-success", type: "button", :data => {:toggle=>"tooltip"} do %>
-	<i class="glyphicon glyphicon-plus" style="float:right"></i>
-<% end %>
-</h2>
-	<table>
-	  <tbody>
-	    <% @rooms.each do |room| %>
-	      <tr>
-	        <td><%= link_to (room.name), room %></td>
-	        <td> <%=room.description %></td>
-	      </tr>
-	    <% end %>
-	  </tbody>
-	</table>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2>
+			<%=  Category.find(params[:id]).name %> Rooms
+		<%= link_to new_room_path, class: "btn btn-sm btn-success", type: "button", :data => {:toggle=>"tooltip"} do %>
+			<i class="glyphicon glyphicon-plus" style="float:right"></i>
+		<% end %>
+			</h2>
+		</div>
+
+<!-- 	  <div class="panel-body">
+	    <p>...</p>
+	  </div>
+ -->	  
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Room</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @rooms.each do |room| %>
+					<tr>
+						<td><%= link_to (room.name), room %></td>
+						<td><%=room.description %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+
 <%end%>
 <br>
 
