@@ -24,6 +24,9 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.create!(message_params)
+    respond_to do |format|
+      format.js {render inline: "location.reload();" }
+    end
   end
 
   # PATCH/PUT /messages/1
