@@ -82,7 +82,7 @@ class CategoriesController < ApplicationController
 
      def require_user
       flash[:notice] = "Sorry, you are not authorized to access to this page!"
-      redirect_to room_path
+      redirect_to category_path
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

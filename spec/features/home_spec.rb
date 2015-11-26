@@ -43,4 +43,22 @@ feature "Sign Up/Sign In Test" do
    click_button "Log in"
    expect(page).to have_content("Let's Do Stuff!")
  end
+
+ scenario "Edit a User" do
+   visit root_path 
+   visit "/users/sign_in"
+   user = create(:user, email: "ayushincnca@gmail.com", password: "hellohello")
+   anotheruser = create(:user, email: "ayush@gmail.com", password: "hellohello")
+   fill_in "Email", with: user.email
+   fill_in "Password", with: user.password
+   click_button "Log in"
+   expect(page).to have_content("Let's Do Stuff!")
+   visit "users/" + user.id.to_s + "/edit"
+   expect(current_path).to eq "/users/" + user.id.to_s + "/edit"  
+   fill_in "Name", with: "newname"
+   click_button "Update User"
+   expect(page).to have_content("newname")
+   visit "/users/" + anotheruser.id.to_s + "/edit"
+   expect(current_path).to eq "/" 
+ end
 end

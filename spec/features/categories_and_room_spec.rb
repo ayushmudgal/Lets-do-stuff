@@ -113,9 +113,45 @@ scenario "Edit and Delete not available to non-creators" do
    fill_in "Password", with: newuser.password
    click_button "Log in"
    click_link "Wii"
+   visit route + "/edit"
+   expect(current_path).to eq route
    expect(page).not_to have_content("Edit")
    expect(page).not_to have_content("Delete")
 end 
 
+scenario "Editing a room" do
+   visit root_path 
+   visit "/users/sign_in"
+   user = create(:user, email: "ayushincnca@gmail.com", password: "hellohello")
+   category = create(:category, name: "Wii")
+   fill_in "Email", with: user.email
+   fill_in "Password", with: user.password
+   click_button "Log in"
+   click_link "Wii"
+   visit "/rooms/new"
+   fill_in "Name", with: "New Room New Room"
+   fill_in "Description", with: "I heart this room"
+   fill_in "Zip", with: "12345"
+   click_button "Create Room"
+   route = "/rooms/" + Room.last.id.to_s
+   click_link "Edit"
+   fill_in "Name", with: "Fresh"
+   click_button "Update Room"
+   expect(page).to have_content("Fresh")
+   expect(page).to have_content("Edit")
+   expect(page).to have_content("Delete")
+end
 
+scenario "Editing a category; should not be able to" do
+   visit root_path 
+   visit "/users/sign_in"
+   user = create(:user, email: "ayushincnca@gmail.com", password: "hellohello")
+   category = create(:category, name: "Wii")
+   fill_in "Email", with: user.email
+   fill_in "Password", with: user.password
+   click_button "Log in"
+   click_link "Wii"
+   visit "/categories/" + category.id.to_s + "/edit"
+   expect(current_path).to eq "/categories/" + category.id.to_s
+end
 end
