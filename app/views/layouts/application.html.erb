@@ -14,7 +14,7 @@
         <% if current_user.present? %>
             <div class="container">
                 <div class="row profile">
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <div class="profile-sidebar">
                             <div class="profile-userpic">
                                 <%= link_to 'Let\'s Do Stuff!', root_path, class: "navbar-brand" %>
@@ -100,7 +100,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-10">
+                    <div class="col-md-9">
                         <div class="profile-content">
                             <%= yield %>
                         </div>

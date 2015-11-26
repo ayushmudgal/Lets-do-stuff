@@ -389,8 +389,20 @@ table {
 	float: right;
 }
 
+.chatside {
+	/*padding: 20px 0 10px 0;*/
+  	background: #fff;
+  	-webkit-transition: all 0.5s; /* Safari */
+   	transition: all 0.5s;
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	border: 5px solid $blue2;
+	padding: 20px;
+}
+
 #messages {
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 	padding: 10px;
 	overflow: auto;
@@ -401,6 +413,8 @@ table {
 	/*list-style: none;*/
 	width: 100%;
 	padding: 0;
+	overflow: auto;
+	max-height: 500px;
 }
 
 #chat li {
@@ -413,7 +427,8 @@ table {
 	border-radius: 8px;
 	word-wrap: break-word;
 	word-break: break-word;
-	box-shadow: 0px 0px 1px gray;
+	box-shadow: 0px 0px 1px black;
+	z-index: 100;
 }
 
 #chat li:nth-child(odd){
@@ -428,6 +443,7 @@ table {
 #chat li:nth-child(even){
 	background-color: $blue2;
 	text-align: left;
+	border: 1px solid lightgray;
 }
 
 #chat li:nth-child(even) .chat-header {
@@ -440,6 +456,10 @@ table {
 	margin-right: 10px;
 }
 
+#chat .chat-header a {
+	text-shadow: 1px 1px 2px $blue;
+}
+
 #chat .mess {
 	position: relative;
 	margin-left: 50px;
@@ -447,14 +467,14 @@ table {
 
 #form-inputs #chat-input {
 	position: relative;
-	width: 80%;
+	width: 100%;
 	left: 0 !important;
 }
 
 #message_content {
 	position: relative;
 	/*margin: 0 auto;*/
-	width: 75%;
+	width: 90%;
 	left: 0 !important;
 	font-size: 14px;
 }
@@ -581,6 +601,7 @@ input[type=text]:focus, textarea:focus {
   background: #fff;
   -webkit-transition: all 0.5s; /* Safari */
    transition: all 0.5s;
+   position: fixed;
 }
 
 .profile-userpic img {
