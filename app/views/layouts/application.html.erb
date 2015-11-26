@@ -62,14 +62,16 @@
 
                                       <div class="list">
                                         <h4>
-                                            <span> My Friends </span>
+                                           <% if current_user.friends.empty? %>
+                                              <span id="friendSpan">My Friends</span>
+                                            <% else %>
+                                              <span id="friendSpan">My Friends +</span>
+                                            <% end %>
                                          </h4>
                                            <ul  visibility: hidden>
-                                             <% if current_user.friends.empty? %>
-                                               <li >You have no Friends! Make some by joining a Room!</li>
-                                             <%else%>
+                                             <% if !current_user.friends.empty? %>
                                                <% current_user.friends.each do |friend| %>
-                                                  <li><%= link_to friend.name, user_path(friend)%></li>
+                                                <li><%= link_to friend.name, user_path(friend)%></li>
                                                <%end%>
                                              <% end %>
                                          </ul>
@@ -77,12 +79,14 @@
 
                                       <div class="list">
                                         <h4>
-                                          <span> Friend Requests </span>
+                                          <%if current_user.pending_invited_by.empty?%>
+                                              <span id="friendRequestSpan">Friend Requests</span>
+                                          <% else %>
+                                              <span id="friendRequestSpan">Friend Requests +</span>
+                                          <% end %>
                                         </h4>
                                            <ul  visibility: hidden>
-                                             <%if current_user.pending_invited_by.empty?%>
-                                                <li>No Pending Requests</li>
-                                             <% else %>
+                                             <%if !current_user.pending_invited_by.empty?%>
                                                <% current_user.pending_invited_by.each do |request| %>
                                                   <li><%= link_to request.name, user_path(request)%></li>
                                                <% end %>
@@ -118,27 +122,34 @@
 
     </div>
 
-    <!-- <script>
-    $('.dropdown').hover(
-      function(){
-      $('.dropdown-toggle', this).trigger('click');
-      // $('.dropdown-toggle, ul',this).show();
-      },
-      function(){
-        $('.dropdown-toggle', this).trigger('click');
-        // $('.dropdown-toggle, ul',this).show();
-      }
-    );
-    </script> -->
+     <script type="text/javascript">
+      $(document).ready(function() {
 
-    <script type="text/javascript">
-      $(function(){
-        $(".list h4").hover(function(){
-          $(this).next("ul").show(600);
-        },function(){
-         $(this).next("ul").hide(600);
+
+          $(".list h4").click(function () {
+            if(document.getElementById("friendSpan").innerHTML == "My Friends +"){
+                $(this).next("ul").show(600);
+               document.getElementById("friendSpan").innerHTML = "My Friends -";
+             }else{
+              if(document.getElementById("friendSpan").innerHTML == "My Friends -"){
+                $(this).next("ul").hide(600);
+               document.getElementById("friendSpan").innerHTML = "My Friends +";
+              }
+             }
+
+             if(document.getElementById("friendRequestSpan").innerHTML == "Friend Requests +"){
+                 $(this).next("ul").show(600);
+                document.getElementById("friendRequestSpan").innerHTML = "Friend Requests -";
+              }else{
+               if(document.getElementById("friendRequestSpan").innerHTML == "Friend Requests -"){
+                 $(this).next("ul").hide(600);
+                document.getElementById("friendRequestSpan").innerHTML = "Friend Requests +";
+               }
+              }
         });
-    });
+
+
+     });
     </script>
 
 
