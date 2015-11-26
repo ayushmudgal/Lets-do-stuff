@@ -108,9 +108,9 @@ a:active {
 }
 
  a:hover {
-    /*color: #fff;*/
-    color: $orange2;
-    text-shadow: 0px 0px 2px $orange2;
+    /*color: #fff;
+    color: $orange2;*/
+    /*text-shadow: 0px 0px 2px $orange2;*/
     /*background-color: rgba(167,219,216,1);*/
     text-decoration: none;
     font-weight: bold !important;
@@ -172,12 +172,12 @@ h3 {
 }
 
 h4 {
-  margin: 0 auto;
+  /*margin: 0 auto;
   margin-bottom: 10px;
   text-align: center;
-  /*font-family: 'Lobster', cursive;*/
+  font-family: 'Lobster', cursive;
   font-weight: bold;
-  /*border-bottom: 1px black solid;*/
+  border-bottom: 1px black solid;
   padding-top: 10px;
   padding-bottom: -5px;
   text-transform: none;
@@ -185,7 +185,7 @@ h4 {
   color: $orange;
   font-size: 20px;
   text-shadow: 1px 1px rgba(105,210,231,1);
-  /*background: $beige !important;*/
+  background: $beige !important;*/
 }
 
 /*
@@ -321,7 +321,7 @@ div {
 	/*border: 1px black solid;*/
 	background-color: white;
 	/*color: $orange2 !important;*/
-    text-shadow: 0px 0px 2px $orange2;
+    /*text-shadow: 0px 0px 2px $orange2;*/
     /*background-color: rgba(167,219,216,1);*/
     font-weight: bold;
     -webkit-transition: all 0.5s; /* Safari */
@@ -576,7 +576,7 @@ input[type=text]:focus, textarea:focus {
 
   ul li {
     font-size: 12px;
-    list-style: square;
+    list-style: none;
   }
 
 .navbar ul li {
@@ -680,8 +680,8 @@ input[type=text]:focus, textarea:focus {
 
 .profile-usermenu ul li a:hover, .profile-usermenu ul li.active a:hover {
   background-color: $beige; /*#fafcfd;*/
-  /*color: #5b9bd1;*/
-  color: $orange2;
+  /*color: #5b9bd1;
+  color: $orange2;*/
   -webkit-transition: all 0.5s; /* Safari */
    transition: all 0.5s;
 }

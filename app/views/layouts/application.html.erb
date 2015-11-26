@@ -33,9 +33,8 @@
                                         <%= link_to '<i class="glyphicon glyphicon-home"></i>Create a new room'.html_safe, new_room_path %>
                                     </li>
 
-
                                         <li class="list1">
-                                            <span id="friendSpan">My Friends +</span>
+                                            <a style="cursor: pointer;"><span id="friendSpan">My Friends +</span></a>
                                          </li>
                                            <ul  visibility: hidden>
                                              <% if !current_user.friends.empty? %>
@@ -48,9 +47,9 @@
                                          </ul>
 
                                         <li class="list2">
-                                            <span id="friendRequestSpan">Friend Requests +</span>
+                                            <a style="cursor: pointer;"><span id="friendRequestSpan">Friend Requests +</span></a>
                                         </li>
-                                           <ul  visibility: hidden>
+                                            <ul  visibility: hidden>
                                              <%if !current_user.pending_invited_by.empty?%>
                                                <% current_user.pending_invited_by.each do |request| %>
                                                   <li><%= link_to request.name, user_path(request)%></li>
