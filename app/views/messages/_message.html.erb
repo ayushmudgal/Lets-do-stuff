@@ -1,5 +1,5 @@
 <li>
   <div class="chat-header"><span class="created_at"><%= message.created_at.localtime.strftime("%m/%d/%Y %I:%M%p") %></span>
-  	<b><%= message.user.name + ':' %></b></div>
+  	<b><%=link_to message.user.name + ':', user_path(User.find(message.user)) %></b></div>
   <div class="mess"><%= message.content %></div>
 </li>

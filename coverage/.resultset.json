@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/bofanchen1/Lets-do-stuff/app/models/user.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/models/user.rb": [
         null,
         null,
         null,
@@ -50,23 +50,23 @@
         null,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/app/helpers/application_helper.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/app/helpers/categories_helper.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/helpers/categories_helper.rb": [
         1,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/app/helpers/friendships_helper.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/helpers/friendships_helper.rb": [
         1,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/app/helpers/messages_helper.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/helpers/messages_helper.rb": [
         1,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/app/helpers/rooms_helper.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/helpers/rooms_helper.rb": [
         1,
         1,
         6,
@@ -86,15 +86,15 @@
         null,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/app/helpers/users_helper.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/app/helpers/welcome_helper.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/helpers/welcome_helper.rb": [
         1,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/app/controllers/categories_controller.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/controllers/categories_controller.rb": [
         1,
         1,
         1,
@@ -188,7 +188,7 @@
         null,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/app/controllers/application_controller.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -204,7 +204,7 @@
         null,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/app/controllers/friendships_controller.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/controllers/friendships_controller.rb": [
         1,
         null,
         1,
@@ -259,7 +259,7 @@
         null,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/app/controllers/messages_controller.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/controllers/messages_controller.rb": [
         1,
         1,
         null,
@@ -324,7 +324,7 @@
         null,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/app/controllers/rooms_controller.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/controllers/rooms_controller.rb": [
         1,
         1,
         1,
@@ -438,7 +438,7 @@
         null,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/app/controllers/users_controller.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/controllers/users_controller.rb": [
         1,
         1,
         1,
@@ -540,7 +540,7 @@
         null,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/app/models/room.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/models/room.rb": [
         null,
         null,
         null,
@@ -576,7 +576,7 @@
         null,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/app/models/category.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/models/category.rb": [
         null,
         null,
         null,
@@ -592,7 +592,7 @@
         1,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/app/models/user_room.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/models/user_room.rb": [
         null,
         null,
         null,
@@ -611,7 +611,7 @@
         1,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/app/models/message.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/models/message.rb": [
         null,
         null,
         null,
@@ -629,7 +629,7 @@
         1,
         null
       ],
-      "/Users/bofanchen1/Lets-do-stuff/app/controllers/welcome_controller.rb": [
+      "/Users/ayushmudgal/Desktop/workspace/Lets-do-stuff/app/controllers/welcome_controller.rb": [
         1,
         1,
         19,
@@ -637,6 +637,6 @@
         null
       ]
     },
-    "timestamp": 1448486166
+    "timestamp": 1448496301
   }
 }

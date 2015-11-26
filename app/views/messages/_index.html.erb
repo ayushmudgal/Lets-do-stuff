@@ -11,7 +11,11 @@ if(isScrolledToBottom)
 <div id="messages">
  <!-- class="clearfix"> -->
   <ul id="chat">
-    <%= render @messages %>
+  	<% if @messages.empty? %>
+    	<%= render @messages %>
+    <%else%>
+    	<li> Say Something! There are people to meet; things to do! </li>
+    <% end %> 
   </ul>
 	</div>
 
