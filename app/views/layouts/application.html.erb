@@ -62,34 +62,30 @@
 
                                       <div class="list">
                                         <h4>
-                                           <% if current_user.friends.empty? %>
-                                              <span id="friendSpan">My Friends</span>
-                                            <% else %>
-                                              <span id="friendSpan">My Friends +</span>
-                                            <% end %>
+                                            <span id="friendSpan">My Friends +</span>
                                          </h4>
                                            <ul  visibility: hidden>
                                              <% if !current_user.friends.empty? %>
                                                <% current_user.friends.each do |friend| %>
                                                 <li><%= link_to friend.name, user_path(friend)%></li>
                                                <%end%>
+                                              <%else%>
+                                                  <li>You have no Friends! Make some by joining a Room!</li>
                                              <% end %>
                                          </ul>
                                        </div>
 
                                       <div class="list">
                                         <h4>
-                                          <%if current_user.pending_invited_by.empty?%>
-                                              <span id="friendRequestSpan">Friend Requests</span>
-                                          <% else %>
-                                              <span id="friendRequestSpan">Friend Requests +</span>
-                                          <% end %>
+                                            <span id="friendRequestSpan">Friend Requests +</span>
                                         </h4>
                                            <ul  visibility: hidden>
                                              <%if !current_user.pending_invited_by.empty?%>
                                                <% current_user.pending_invited_by.each do |request| %>
                                                   <li><%= link_to request.name, user_path(request)%></li>
                                                <% end %>
+                                              <% else %>
+                                                 <li>No Pending Requests</li>
                                              <% end %>
                                          </ul>
                                        </div>
