@@ -59,4 +59,13 @@ FactoryGirl.define do
     f.created_at {Faker::Date.forward(23)}
     f.updated_at {Faker::Date.forward(23)}
   end
+
+  factory :message do |f|
+    f.content {Faker::Lorem.sentences}
+    f.created_at {Faker::Date.forward(23)}
+    f.updated_at {Faker::Date.forward(23)}
+    user
+    room
+  end
+
 end
