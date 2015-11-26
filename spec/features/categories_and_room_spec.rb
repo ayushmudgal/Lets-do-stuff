@@ -12,7 +12,7 @@ feature "Categories and Room Test" do
    fill_in "Password", with: user.password
    click_button "Log in"
    click_link "Wii"
-   click_link "Create New Room"
+   click_link("+", :match => :first)
    expect(current_path).to eq "/rooms/new"
  end
 
@@ -25,7 +25,7 @@ feature "Categories and Room Test" do
    fill_in "Password", with: user.password
    click_button "Log in"
    click_link "Wii"
-   click_link "Create New Room"
+   visit "/rooms/new"
    fill_in "Name", with: "New Room New Room"
    click_button "Create Room"
    expect(page).to have_content("New Room")
@@ -40,7 +40,7 @@ feature "Categories and Room Test" do
    fill_in "Password", with: user.password
    click_button "Log in"
    click_link "Wii"
-   click_link "Create New Room"
+   visit "/rooms/new"
    fill_in "Name", with: "New Room New Room"
    fill_in "Description", with: "I heart this room"
    fill_in "Zip", with: "12345"
@@ -58,7 +58,7 @@ feature "Categories and Room Test" do
    fill_in "Password", with: user.password
    click_button "Log in"
    click_link "Wii"
-   click_link "Create New Room"
+   visit "/rooms/new"
    fill_in "Name", with: "New Room New Room"
    fill_in "Description", with: "I heart this room"
    fill_in "Zip", with: "12345"
@@ -80,7 +80,7 @@ feature "Categories and Room Test" do
    fill_in "Password", with: user.password
    click_button "Log in"
    click_link "Wii"
-   click_link "Create New Room"
+   visit "/rooms/new"
    fill_in "Name", with: "New Room New Room"
    fill_in "Description", with: "I heart this room"
    fill_in "Zip", with: "12345"
@@ -99,7 +99,7 @@ scenario "Edit and Delete not available to non-creators" do
    fill_in "Password", with: user.password
    click_button "Log in"
    click_link "Wii"
-   click_link "Create New Room"
+   visit "/rooms/new"
    fill_in "Name", with: "New Room New Room"
    fill_in "Description", with: "I heart this room"
    fill_in "Zip", with: "12345"
