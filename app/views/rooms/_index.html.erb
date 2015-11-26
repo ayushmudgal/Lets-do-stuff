@@ -7,7 +7,7 @@
 			<h2>
 			<%=  Category.find(params[:id]).name %> Rooms
 		<%= link_to new_room_path, class: "btn btn-sm btn-success", type: "button", :data => {:toggle=>"tooltip"} do %>
-			<i class="glyphicon glyphicon-plus" style="float:right"></i>
+			<i class="glyphicon" style="float:right">+</i>
 		<% end %>
 			</h2>
 		</div>

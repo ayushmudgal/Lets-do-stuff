@@ -29,13 +29,16 @@ RSpec.describe CategoriesController, :type => :controller do
 		login_user
 		it 'redirect to the create new category page' do
 			get :new
+			response.should render_template 'new'
 		end
 	end
 
 	describe "GET #index" do
 		login_user
 		it 'shows all categories' do
-			get :index
+			@category = create(:category, name: "Sports")
+			get :index, id: @category.id
+			response.should redirect_to "/"
 		end
 	end
 
