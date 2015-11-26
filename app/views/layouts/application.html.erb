@@ -33,10 +33,10 @@
                                         <%= link_to '<i class="glyphicon glyphicon-home"></i>Create a new room'.html_safe, new_room_path %>
                                     </li>
 
-                                      <div class="list">
-                                        <h4>
+
+                                        <li class="list">
                                             <span id="friendSpan">My Friends +</span>
-                                         </h4>
+                                         </li>
                                            <ul  visibility: hidden>
                                              <% if !current_user.friends.empty? %>
                                                <% current_user.friends.each do |friend| %>
@@ -46,12 +46,10 @@
                                                   <li>You have no Friends! Make some by joining a Room!</li>
                                              <% end %>
                                          </ul>
-                                       </div>
 
-                                      <div class="list">
-                                        <h4>
+                                        <li class="list">
                                             <span id="friendRequestSpan">Friend Requests +</span>
-                                        </h4>
+                                        </li>
                                            <ul  visibility: hidden>
                                              <%if !current_user.pending_invited_by.empty?%>
                                                <% current_user.pending_invited_by.each do |request| %>
@@ -61,7 +59,6 @@
                                                  <li>No Pending Requests</li>
                                              <% end %>
                                          </ul>
-                                       </div>
 
                                     <li>
                                         <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
@@ -92,7 +89,7 @@
       $(document).ready(function() {
 
 
-          $(".list h4").click(function () {
+          $(".list").click(function () {
             if(document.getElementById("friendSpan").innerHTML == "My Friends +"){
                 $(this).next("ul").show(600);
                document.getElementById("friendSpan").innerHTML = "My Friends -";
@@ -100,18 +97,18 @@
               if(document.getElementById("friendSpan").innerHTML == "My Friends -"){
                 $(this).next("ul").hide(600);
                document.getElementById("friendSpan").innerHTML = "My Friends +";
-              }
-             }
-
-             if(document.getElementById("friendRequestSpan").innerHTML == "Friend Requests +"){
-                 $(this).next("ul").show(600);
-                document.getElementById("friendRequestSpan").innerHTML = "Friend Requests -";
               }else{
-               if(document.getElementById("friendRequestSpan").innerHTML == "Friend Requests -"){
-                 $(this).next("ul").hide(600);
-                document.getElementById("friendRequestSpan").innerHTML = "Friend Requests +";
-               }
+               if(document.getElementById("friendRequestSpan").innerHTML == "Friend Requests +"){
+                   $(this).next("ul").show(600);
+                  document.getElementById("friendRequestSpan").innerHTML = "Friend Requests -";
+                }else{
+                 if(document.getElementById("friendRequestSpan").innerHTML == "Friend Requests -"){
+                   $(this).next("ul").hide(600);
+                  document.getElementById("friendRequestSpan").innerHTML = "Friend Requests +";
+                 }
               }
+            }
+          }
         });
 
 
