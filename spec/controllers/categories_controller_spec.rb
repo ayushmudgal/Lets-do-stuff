@@ -25,5 +25,29 @@ RSpec.describe CategoriesController, :type => :controller do
 		end
 	end
 
+	describe "GET #new" do
+		login_user
+		it 'redirect to the create new category page' do
+			get :new
+		end
+	end
+
+	describe "GET #index" do
+		login_user
+		it 'shows all categories' do
+			get :index
+		end
+	end
+
+	describe "DELETE #destroy" do
+		login_user
+		it 'deletes the selected room' do
+			@category = create(:category, name: "Sports")
+			expect{
+				delete :destroy, id: @category.id
+			}.to change(Category, :count).from(Category.count).to(Category.count - 1)
+			expect{Category.find(@category.id)}.to raise_error(ActiveRecord::RecordNotFound)
+		end
+	end
 end
 	
