@@ -34,7 +34,7 @@
                                     </li>
 
 
-                                        <li class="list">
+                                        <li class="list1">
                                             <span id="friendSpan">My Friends +</span>
                                          </li>
                                            <ul  visibility: hidden>
@@ -47,7 +47,7 @@
                                              <% end %>
                                          </ul>
 
-                                        <li class="list">
+                                        <li class="list2">
                                             <span id="friendRequestSpan">Friend Requests +</span>
                                         </li>
                                            <ul  visibility: hidden>
@@ -89,7 +89,7 @@
       $(document).ready(function() {
 
 
-          $(".list").click(function () {
+          $(".list1").click(function () {
             if(document.getElementById("friendSpan").innerHTML == "My Friends +"){
                 $(this).next("ul").show(600);
                document.getElementById("friendSpan").innerHTML = "My Friends -";
@@ -97,19 +97,22 @@
               if(document.getElementById("friendSpan").innerHTML == "My Friends -"){
                 $(this).next("ul").hide(600);
                document.getElementById("friendSpan").innerHTML = "My Friends +";
-              }else{
-               if(document.getElementById("friendRequestSpan").innerHTML == "Friend Requests +"){
-                   $(this).next("ul").show(600);
-                  document.getElementById("friendRequestSpan").innerHTML = "Friend Requests -";
-                }else{
-                 if(document.getElementById("friendRequestSpan").innerHTML == "Friend Requests -"){
-                   $(this).next("ul").hide(600);
-                  document.getElementById("friendRequestSpan").innerHTML = "Friend Requests +";
-                 }
               }
             }
-          }
         });
+
+        $(".list2").click(function () {
+             if(document.getElementById("friendRequestSpan").innerHTML == "Friend Requests +"){
+                 $(this).next("ul").show(600);
+                document.getElementById("friendRequestSpan").innerHTML = "Friend Requests -";
+              }else{
+               if(document.getElementById("friendRequestSpan").innerHTML == "Friend Requests -"){
+                 $(this).next("ul").hide(600);
+                document.getElementById("friendRequestSpan").innerHTML = "Friend Requests +";
+               }
+          }
+      });
+
 
 
      });
