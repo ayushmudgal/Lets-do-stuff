@@ -27,12 +27,13 @@
             Time: <%= @room.time.strftime("%I:%M %p %Z") %>
             <br style="border-bottom: 1px black solid;">
             <center style="border-top: 1px black solid">
-            Created by: <%= room_creator_name(@room) %>
+            Created by: <%= link_to (User.find(@room.creator_id).name), User.find(@room.creator_id) %>
             </center>
             <center style="border-top: 1px black solid">
             Users in Room:
-            <% users_in_room(@room).each do |user| %>
-              <%= user %><br>
+            <% @joinedUsers.each do |juser| %>
+              <%= link_to User.find(juser.user_id).name, User.find(juser.user_id) %>
+              <br>
             <% end %>
             </center>
           </div>

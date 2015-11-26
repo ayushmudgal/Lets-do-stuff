@@ -7,12 +7,12 @@ module RoomsHelper
         User.find(room.creator_id).name
     end
 
-    def users_in_room(room)
-        urooms = UserRoom.where(room_id: room.id)
-        users = []
-        urooms.each do |uroom|
-            users = users.push(User.find(uroom.user_id).name)
-        end
-        users
-    end
+    # def users_in_room(room)
+    #     urooms = UserRoom.where(room_id: room.id)
+    #     users = []
+    #     urooms.each do |uroom|
+    #         users = users.push(User.find(uroom.user_id).name)
+    #     end
+    #     users
+    # end
 end
