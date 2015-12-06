@@ -11,6 +11,9 @@
 		<% end %>
 			</h2>
 		</div>
+		<% if @rooms.blank? %>
+			 This category is empty. Create a room to start. 
+		<% else %>
 
 		<table class="table">
 			<thead>
@@ -28,6 +31,7 @@
 				<% end %>
 			</tbody>
 		</table>
+		<% end %>
 	</div>
 
 <%end%>
