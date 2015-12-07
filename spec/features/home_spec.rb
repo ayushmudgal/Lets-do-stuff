@@ -31,7 +31,7 @@ feature "Sign Up/Sign In Test" do
    fill_in "Email", with: "ayushincnca@gmail.com"
    fill_in "Password", with: "1234"
    click_button "Log in"
-   expect(page).to have_content("Log in")
+   expect(page).to have_content("Log In")
  end
 
   scenario "Valid sign in" do

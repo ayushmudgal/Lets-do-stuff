@@ -21,7 +21,7 @@ RSpec.describe RoomsController, :type => :controller do
 			create(:category, id:1)
 			room = create(:room, location: "90004")
 			get :show, id:room.id
-			response.should render_template 'show'
+			response.should redirect_to "/rooms/" + Room.last.id.to_s 
 		end
 	end
 

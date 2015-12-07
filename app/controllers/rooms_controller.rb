@@ -6,15 +6,16 @@ class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.json
   def index
-    @rooms = Room.all
-    @rooms = Room.page(params[:page]).per(5)
+    # @rooms = Room.all
+    # @rooms = Room.page(params[:page]).per(5)
+    @rooms = Room.where(category_id: params[:id]).where("private=? OR creator_id=?", false, current_user.id)
   end
 
   # GET /rooms/1
   # GET /rooms/1.json
   def show
     @messages = Message.where(room_id: params[:id])
-    @joinedUsers= UserRoom.where(room_id: params[:id])
+    @joinedUsers = UserRoom.where(room_id: params[:id])
   end
 
   # GET /rooms/new

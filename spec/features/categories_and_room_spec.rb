@@ -117,7 +117,7 @@ scenario "Edit and Delete not available to non-creators" do
    fill_in "Password", with: newuser.password
    click_button "Log in"
    click_link "Wii"
-   visit route + "/edit"
+   expect { visit "/rooms/" + Room.last.id.to_s + "/edit" }.to raise_error
    expect(current_path).to eq route
    expect(page).not_to have_content("Edit")
    expect(page).not_to have_content("Delete")
