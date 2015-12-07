@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
-  before_filter :require_user, only: [:edit]
+  before_filter :require_user, only: [:edit, :show]
   before_filter :redirection, only: [:index]
 
   # GET /rooms
@@ -95,15 +95,23 @@ class RoomsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_room
-      @room = Room.find(params[:id])
+      if Room.exists?(id: params[:id])
+        @room = Room.find(params[:id])
+      else
+        redirect_to root_path
+      end
     end
 
     def require_user
       @user_accessing = current_user
+      if current_user.nil?
+        redirect_to root_path
+      else
       if current_user.id != @room.creator_id
         flash[:notice] = "Sorry, you are not authorized to access to this page!"
         redirect_to room_path
       end
+    end
     end
 
     def redirection
