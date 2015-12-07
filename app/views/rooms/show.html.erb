@@ -14,23 +14,25 @@
             <!-- <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt=""> -->
             <center style="border-bottom: 1px black solid;">
               <h4><%=  @room.name %></h4>
-              <%= room_category_name(@room) %>
-              <br>
-              <%= @room.location %>
+              <%= room_category_name(@room) %> in <%= @room.location %>
               <br>
               <% if @room.private %>
                 <i>Private</i>
+                <br>
               <% end %>
-            </center>
-            Date: <%= @room.date %>
+              <%= @room.description %>
+            <center style="border-top: 1px black solid;"> 
+              <b>Date:</b> <%= @room.date %>
             <br>
-            Time: <%= @room.time.strftime("%I:%M %p %Z") %>
-            <br style="border-bottom: 1px black solid;">
+            <b>Time:</b> <%= @room.time.strftime("%I:%M %p PST") %>
+            <!-- taking out %Z because it's PST not UTC -->
+            <br> 
+          </center>
             <center style="border-top: 1px black solid">
-            Created by: <%= link_to (User.find(@room.creator_id).name), User.find(@room.creator_id) %>
+              <b>Created by:</b> <%= link_to (User.find(@room.creator_id).name), User.find(@room.creator_id) %>
             </center>
             <center style="border-top: 1px black solid">
-            Users in Room:
+              <b>Users in Room:</b><br>
             <% @joinedUsers.each do |juser| %>
               <%= link_to User.find(juser.user_id).name, User.find(juser.user_id) %>
               <br>
