@@ -30,9 +30,9 @@
                             <div class="profile-usermenu">
                                 <ul class="nav">
                                     <li class="active">
-                                        <%= link_to '<i class="glyphicon glyphicon-home"></i>Create a new room'.html_safe, new_room_path %>
+                                        <%= link_to '<i class="glyphicon glyphicon-home"></i>Browse Rooms'.html_safe, root_path %>
                                     </li>
-
+                                    <li><%= link_to 'Create A New Room'.html_safe, new_room_path %></li>
                                         <li class="list1">
                                             <a style="cursor: pointer;"><span id="friendSpan">My Friends +</span></a>
                                          </li>
@@ -42,7 +42,7 @@
                                                 <li><%= link_to friend.name, user_path(friend)%></li>
                                                <%end%>
                                               <%else%>
-                                                  <li>You have no Friends! Make some by joining a Room!</li>
+                                                  <li>You have no friends! Make some by joining a room!</li>
                                              <% end %>
                                          </ul>
 
@@ -55,7 +55,7 @@
                                                   <li><%= link_to request.name, user_path(request)%></li>
                                                <% end %>
                                               <% else %>
-                                                 <li>No Pending Requests</li>
+                                                 <li>No pending requests</li>
                                              <% end %>
                                          </ul>
 
