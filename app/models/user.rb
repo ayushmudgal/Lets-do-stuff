@@ -37,9 +37,9 @@ class User < ActiveRecord::Base
   has_many :user_rooms
   validates :age, :inclusion => { :in => 0..99, :message => "The age should be within range of 0 ~ 99",:allow_nil => true}
 
-  validates :location, format:{
-      with: /\A\d{5}(-\d{4})?\z/
-  }
+  # validates :location, format:{
+  #     with: /\A\d{5}(-\d{4})?\z/
+  # }
 
   include Amistad::FriendModel
   #### HAVE TO ADD AMISTAD
