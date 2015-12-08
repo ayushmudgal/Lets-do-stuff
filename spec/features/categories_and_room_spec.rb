@@ -2,9 +2,9 @@ require "rails_helper"
 require "pp"
 
 feature "Categories and Room Test" do
-	
- scenario "Valid Create a New Room Route" do 
-   visit root_path 
+
+ scenario "Valid Create a New Room Route" do
+   visit root_path
    visit "/users/sign_in"
    user = create(:user, email: "ayushincnca@gmail.com", password: "hellohello")
    category = create(:category, name: "Wii")
@@ -14,14 +14,14 @@ feature "Categories and Room Test" do
    click_link "Wii"
    click_link("+", :match => :first)
    expect(current_path).to eq "/rooms/new"
-   visit "/categories/2" 
+   visit "/categories/2"
    visit "/user/2"
    visit "/friends"
    expect(current_path).to eq "/"
  end
 
  scenario "Creating an invalid Room" do
-   visit root_path 
+   visit root_path
    visit "/users/sign_in"
    user = create(:user, email: "ayushincnca@gmail.com", password: "hellohello")
    category = create(:category, name: "Wii")
@@ -36,7 +36,7 @@ feature "Categories and Room Test" do
  end
 
  scenario "Create a Valid Room" do
-   visit root_path 
+   visit root_path
    visit "/users/sign_in"
    user = create(:user, email: "ayushincnca@gmail.com", password: "hellohello")
    category = create(:category, name: "Wii")
@@ -50,11 +50,11 @@ feature "Categories and Room Test" do
    fill_in "Zip", with: "12345"
    click_button "Create Room"
    route = "/rooms/" + Room.last.id.to_s
-   expect(current_path).to eq route 
+   expect(current_path).to eq route
  end
 
   scenario "Successfully Leave and Join the Room" do
-   visit root_path 
+   visit root_path
    visit "/users/sign_in"
    user = create(:user, email: "ayushincnca@gmail.com", password: "hellohello")
    category = create(:category, name: "Wii")
@@ -72,11 +72,11 @@ feature "Categories and Room Test" do
    click_link "Join room!"
    expect(page).to have_content("Leave room!")
    route = "/rooms/" + Room.last.id.to_s
-   expect(current_path).to eq route 
+   expect(current_path).to eq route
  end
 
  scenario "Edit available to the creator" do
-   visit root_path 
+   visit root_path
    visit "/users/sign_in"
    user = create(:user, email: "ayushincnca@gmail.com", password: "hellohello")
    category = create(:category, name: "Wii")
@@ -95,7 +95,7 @@ feature "Categories and Room Test" do
 end
 
 scenario "Edit and Delete not available to non-creators" do
-   visit root_path 
+   visit root_path
    visit "/users/sign_in"
    user = create(:user, email: "ayushincnca@gmail.com", password: "hellohello")
    category = create(:category, name: "Wii")
@@ -117,14 +117,14 @@ scenario "Edit and Delete not available to non-creators" do
    fill_in "Password", with: newuser.password
    click_button "Log in"
    click_link "Wii"
-   expect { visit "/rooms/" + Room.last.id.to_s + "/edit" }.to raise_error
+  	visit "/rooms/" + Room.last.id.to_s + "/edit"
    expect(current_path).to eq route
    expect(page).not_to have_content("Edit")
    expect(page).not_to have_content("Delete")
-end 
+end
 
 scenario "Editing a room" do
-   visit root_path 
+   visit root_path
    visit "/users/sign_in"
    user = create(:user, email: "ayushincnca@gmail.com", password: "hellohello", location: "90003")
    category = create(:category, name: "Wii", )
@@ -147,7 +147,7 @@ scenario "Editing a room" do
 end
 
 scenario "Editing a category; should not be able to" do
-   visit root_path 
+   visit root_path
    visit "/users/sign_in"
    user = create(:user, email: "ayushincnca@gmail.com", password: "hellohello")
    category = create(:category, name: "Wii")

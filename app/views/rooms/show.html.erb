@@ -7,7 +7,7 @@
   <div class="container">
       <div class="row profile">
       <div class="col-md-4">
-                      <%= link_to '< Back', @room.category %>
+          <%= link_to '< Back', @room.category %>
         <div class="chatside">
           <!-- SIDEBAR USERPIC -->
           <div class="profile-userpic" >
@@ -21,12 +21,12 @@
                 <br>
               <% end %>
               <%= @room.description %>
-            <center style="border-top: 1px black solid;"> 
+            <center style="border-top: 1px black solid;">
               <b>Date:</b> <%= @room.date %>
             <br>
             <b>Time:</b> <%= @room.time.strftime("%I:%M %p PST") %>
             <!-- taking out %Z because it's PST not UTC -->
-            <br> 
+            <br>
           </center>
             <center style="border-top: 1px black solid">
               <b>Created by:</b> <%= link_to (User.find(@room.creator_id).name), User.find(@room.creator_id) %>

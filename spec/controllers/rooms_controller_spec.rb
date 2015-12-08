@@ -13,17 +13,8 @@ RSpec.describe RoomsController, :type => :controller do
 				post :create, room: @room, commit: "Create Room"
 			}.to change(Room, :count).by(1)
 
-			response.should redirect_to "/rooms/" + Room.last.id.to_s 
+			response.should redirect_to "/rooms/" + Room.last.id.to_s
 		end
-
-	describe "GET #show" do
-		it 'renders the post page for the selected post' do
-			create(:category, id:1)
-			room = create(:room, location: "90004")
-			get :show, id:room.id
-			response.should redirect_to "/rooms/" + Room.last.id.to_s 
-		end
-	end
 
 	describe "GET #new" do
 		login_user

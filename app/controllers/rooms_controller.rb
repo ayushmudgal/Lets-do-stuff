@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
-  before_filter :require_user, only: [:edit, :show]
+  before_filter :require_user, only: [:edit]
   before_filter :redirection, only: [:index]
 
   # GET /rooms
@@ -105,14 +105,15 @@ class RoomsController < ApplicationController
 
     def require_user
       @user_accessing = current_user
-      # if current_user.nil?
-      #   redirect_to root_path
-      # else
-      # if current_user.id != @room.creator_id
-      #   flash[:notice] = "Sorry, you are not authorized to access to this page!"
-      #   redirect_to room_path
-      # end
+      if current_user.nil?
+        redirect_to root_path
+      else
+        if current_user.id != @room.creator_id
+          flash[:notice] = "Sorry, you are not authorized to access to this page!"
+          redirect_to room_path
+        end
     end
+  end
 
     def redirection
       redirect_to root_path
