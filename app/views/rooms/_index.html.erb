@@ -20,6 +20,7 @@
 				<tr>
 					<th>Room</th>
 					<th>Description</th>
+					<th>Private</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,6 +28,12 @@
 					<tr>
 						<td><%= link_to (room.name), room %></td>
 						<td><%=room.description %></td>
+						<td><% if room.private %>
+							Yes
+							<% else %>
+							No
+							<% end %>
+						</td>
 					</tr>
 				<% end %>
 			</tbody>
