@@ -12,7 +12,7 @@
 			</h2>
 		</div>
 		<% if @rooms.blank? %>
-			 This category is empty. Create a room to start. 
+			 This category is empty. Create a room to start.
 		<% else %>
 
 		<table class="table">
@@ -26,17 +26,23 @@
 			</thead>
 			<tbody>
 				<% @rooms.each do |room| %>
-					<tr>
-						<td><%= link_to (room.name), room %></td>
-						<td><%=room.description %></td>
-						<td><% if room.private %>
-							Yes
-							<% else %>
-							No
-							<% end %>
-						</td>
-						<td><%= link_to (User.find(room.creator_id).name), User.find(room.creator_id) %></td>
-					</tr>
+					<% if room.private
+						 creator = User.find(room.creator_id)
+						 @friends = current_user.friends
+						 if (@friends.include? creator) || (current_user == creator)
+						 %>
+						 <tr>
+ 							<td><%= link_to (room.name), room %></td>
+ 							<td><%=room.description %></td>
+ 						</tr>
+						<% end %>
+					<% else %>
+						<tr>
+							<td><%= link_to (room.name), room %></td>
+							<td><%=room.description %></td>
+						</tr>
+						<% end %>
+
 				<% end %>
 			</tbody>
 		</table>

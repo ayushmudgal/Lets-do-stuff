@@ -42,6 +42,7 @@ gem 'simplecov', :require => false, :group => :test
 gem 'amistad'
 
 gem 'geocoder'
+gem 'browser-timezone-rails'
 
 # gem 'google-webfonts-rails', '~> 0.0.4'
 
