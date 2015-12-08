@@ -21,6 +21,7 @@
 					<th>Room</th>
 					<th>Description</th>
 					<th>Private</th>
+					<th>Creator</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -34,6 +35,7 @@
 							No
 							<% end %>
 						</td>
+						<td><%= link_to (User.find(room.creator_id).name), User.find(room.creator_id) %></td>
 					</tr>
 				<% end %>
 			</tbody>
